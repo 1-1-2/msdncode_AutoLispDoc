@@ -1,0 +1,94 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>vl-every</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-every </div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">检查论断结合每个元素后是否均为真</p>
+<pre class="prog_in_end">(vl-every  predicate-function list [list]...)</pre>
+<p class="body">vl-every 函数将每个表的第一个元素作为参数（如果有多个表则形成参数表）传递给测试函数，然后传递每个表中的下一个元素，以此类推，直至其中一个表到达结束处为止。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">predicate-function</p>
+<p class="define_text">测试函数。它可以是任何一个函数：参数个数和 vl-every 提供的表的个数一致，且对任何用户指定条件返回 T。predicate-function 的值可以采用下列格式之一：</p> 
+<ul>
+<li class="list_bulleted_begin">符号（函数名） </li>
+<li class="list_bulleted">
+<span class="CharCourier">'(LAMBDA (A1 A2) ...) </span>
+</li>
+<li class="list_bulleted_end">
+<span class="CharCourier">(FUNCTION (LAMBDA
+(A1 A2) ...))</span>
+</li>
+</ul>
+<p class="define_head">list</p>
+<p class="define_text">要测试的表。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果 predicate-function 结合每个元素后均返回非 nil 值，函数返回 T，否则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">检查当前目录下是否有空文件：</p>
+<pre class="prog_in">_$ (vl-every</pre>
+<pre class="prog_in">'(lambda (fnm) (&gt; (vl-file-size fnm) 0))</pre>
+<pre class="prog_in">   (vl-directory-files nil nil 1) )</pre>
+<pre class="prog_in_end">T</pre>
+<p class="body">检查 NLST 中的数值列表是否按 '&lt;= 排序：</p> 
+<pre class="prog_in">_$ (setq nlst (list 0 2 pi pi 4))</pre>
+<pre class="prog_in">(0 2 3.14159 3.14159 4)</pre>
+<pre class="prog_in">_$ (vl-every '&lt;= nlst (cdr nlst))</pre>
+<pre class="prog_in_end">T</pre>
+<p class="body">比较下列表达式的结果：</p>
+<pre class="prog_in">_$ (vl-every '= '(1 2) '(1 3))</pre>
+<pre class="prog_in">nil</pre>
+<pre class="prog_in">_$ (vl-every '= '(1 2) '(1 2 3))</pre>
+<pre class="prog_in_end">T</pre>
+<p class="body">第一个表达式返回 nil，因为 vl-every 比较两个表中的第二个元素，而它们在数值上并不相等。第二个表达式返回 T，因为 vl-every 在处理完较短的表 (1,2) 中所有元素后即停止比较，而直到这时为止，两个表是相等的。如果到达了表的结束处，则 vl-every 返回非 nil 值。</p> 
+<p class="body">下面的样例演示 vl-every 计算两个表的结果。这两个表中的一个包含整数，另一个为 nil：</p> 
+<pre class="prog_in">_$ (setq alist (list 1 2 3 4))</pre>
+<pre class="prog_in">(1 2 3 4)</pre>
+<pre class="prog_in">_$ (setq junk nil)</pre>
+<pre class="prog_in">nil</pre>
+<pre class="prog_in">_$ (vl-every '= junk alist)</pre>
+<pre class="prog_in_end">T</pre>
+<p class="body">返回值为 T，因为 vl-every 处理 nil 表时，假定已经到达了表的结束处（尽管没有对其中任何元素应用论断）。既然如此，vl-every 将返回非 nil 值。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

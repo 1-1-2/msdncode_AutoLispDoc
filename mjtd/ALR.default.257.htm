@@ -1,0 +1,99 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>vl-cmdf</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-cmdf</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">执行 AutoCAD 命令</p> 
+<p class="Heading-2">参数</p>
+<pre class="prog_in_end">(vl-cmdf  [arguments] ...)</pre>
+<p class="body">vl-cmdf 函数和 command 函数类似，但在求值传递的参数方面有所不同。vl-cmdf 
+函数在执行 AutoCAD 命令之前检查所有的描述参数，如果在这一过程中检测到错误，将不再执行 AutoCAD 命令。然而，command 函数将每个参数顺序传递给 AutoCAD，所以在发现错误之时命令可能已经开始执行了。</p> 
+<p class="body">如果对命令的调用中包含对其他函数的调用，则 vl-cmdf 在执行命令之前先进行函数调用。而 command 则在开始执行命令后执行定函数调用。</p> 
+<p class="body">有些命令在通过 vl-cmdf 调用时表现正常，而在通过 command 调用时则会失败。vl-cmdf 函数主要突破了在 command 中不能使用 getxxx 的限制。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">arguments</p>
+<p class="define_text">AutoCAD 命令及选项。</p> 
+<p class="define_text">根据执行命令提示的要求，arguments 参数可以为字符串、实数、整数或点。空字符串 ("") 和在键盘上按 ENTER 建的效果一样。不带参数调用 vl-cmdf 和按 ESC 的效果一样，可以取消大多数 AutoCAD 命令。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">
+<span class="CharCourier">T</span>
+</p>
+<p class="body">请注意，如果从 Visual LISP 中执行 vl-cmdf，焦点不会转换到 AutoCAD 窗口中。如果命令需要用户输入，则返回值 (T) 将出现在控制台窗口中，但 AutoCAD 继续等待输入。这时，必须手动激活 AutoCAD 窗口来响应提示。这之前，不会继续执行任何后续命令。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">如果在 AutoCAD 命令提示行（而不是 VLISP 控制台提示）输入下列代码，则更容易看到 command 和 vl-cmdf 之间的区别：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(command "line" (getpoint 
+&quot;点位置?&quot;) '(0 0) "")</span> 
+</p>
+<p class="prompt_end">line 指定第一点： 点位置?</p>
+<p class="prompt_end">指定下一点或 [放弃(U)]：</p> 
+<p class="prompt_end">命令： nil</p>
+<p class="body">使用 command 时，先执行 LINE 命令，然后再调用 getpoint 函数。</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(VL-CMDF "line" (getpoint 
+&quot;点位置?&quot;) '(0 0) "")</span> 
+</p>
+<p class="prompt_end">点位置?line 指定第一点：</p>
+<p class="prompt_end">指定下一点或 [放弃(U)]：</p> 
+<p class="prompt_end">命令： T</p>
+<p class="body">而使用 vl-cmdf 时，先调用  getpoint 函数（注意这时 getpoint 给出的“点位置?”提示），然后再执行 LINE 命令。</p> 
+<p class="body">下面的样例执行同样的命令，但是向  LINE 命令传递了一个无效点表作为参数。请注意结果是如何发生变化的：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(command "line" (getpoint 
+&quot;点位置?&quot;) '(0) "")</span> 
+</p>
+<p class="prompt_end">line 指定第一点： 点位置?</p>
+<p class="prompt_end">指定下一点或 [放弃(U)]：</p> 
+<p class="prompt_end">命令： ERASE nil</p>
+<p class="prompt_end">选择对象：指定对角点：*取消*</p>
+<p class="prompt_end">找到 0 个</p> 
+<p class="body">command 函数将每个参数依次传递给 AutoCAD，而并不计算参数，所以不能检测到无效的点表。</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(VL-CMDF "line" (getpoint 
+&quot;点位置?&quot;) '(0) "")</span> 
+</p>
+<p class="prompt_end">点位置?应用程序错误: 发送到 ads_cmd 的类型无效。</p> 
+<p class="prompt_end">nil</p>
+<p class="body">因为  vl-cmdf 在传递命令前先计算每个参数，所以检测到了无效点表，不再继续执行命令。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.062.htm">command</a>  函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

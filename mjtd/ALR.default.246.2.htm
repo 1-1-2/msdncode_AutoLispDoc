@@ -1,0 +1,290 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>VLAX- 函数</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>  
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>   
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">VLAX- 函数</div>  
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro">本节内容包括:</p>
+<ul>
+<li class="jumplist_nonav">
+<a title="vlax-3D-point" href="ALR.default.320.htm">vlax-3D-point</a>&nbsp; 创建与 ActiveX 兼容的（变体）三维点结构  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-add-cmd" href="ALR.default.321.htm">vlax-add-cmd</a>&nbsp; 将命令添加到 AutoCAD 内置命令集中  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-create-object" href="ALR.default.322.htm">vlax-create-object</a>&nbsp;  
+创建应用程序对象的新实例
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getArea" href="ALR.default.323.htm">vlax-curve-getArea</a>&nbsp;  
+返回曲线的面积
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getClosestPointTo" href="ALR.default.324.htm">vlax-curve-getClosestPointTo</a>&nbsp;  
+返回曲线上离指定点最近的点（在 WCS 上）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getClosestPointToProjection" href="ALR.default.325.htm">vlax-curve-getClosestPointToProjection</a>&nbsp;  
+在将曲线投影到平面上之后，返回曲线上的最近点（在 WCS 上）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getDistAtParam" href="ALR.default.326.htm">vlax-curve-getDistAtParam</a>&nbsp;  
+返回曲线从开始到指定参数的曲线段的长度
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getDistAtPoint" href="ALR.default.327.htm">vlax-curve-getDistAtPoint</a>&nbsp;  
+返回曲线从开始点到指定点的曲线段的长度
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getEndParam" href="ALR.default.328.htm">vlax-curve-getEndParam</a>
+ 返回曲线端点的参数 
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getEndPoint" href="ALR.default.329.htm">vlax-curve-getEndPoint</a>&nbsp;  
+返回曲线的端点（按 WCS 表示）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getFirstDeriv" href="ALR.default.330.htm">vlax-curve-getFirstDeriv</a>&nbsp;  
+返回曲线在指定位置的第一个衍生（在 WCS 中）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getParamAtDist" href="ALR.default.331.htm">vlax-curve-getParamAtDist</a>&nbsp;  
+返回距曲线开始点为指定距离的曲线参数
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getParamAtPoint" href="ALR.default.332.htm">vlax-curve-getParamAtPoint</a>&nbsp;  
+返回曲线在指定点的参数
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getPointAtDist" href="ALR.default.333.htm">vlax-curve-getPointAtDist</a>&nbsp;  
+返回曲线上距开始点为指定距离的点（在 WCS 中）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getPointAtParam" href="ALR.default.334.htm">vlax-curve-getPointAtParam</a>&nbsp;  
+返回曲线上具有指定参数值的点
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getSecondDeriv" href="ALR.default.335.htm">vlax-curve-getSecondDeriv</a>&nbsp;  
+返回曲线在指定位置的第二个衍生（在 WCS 中）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getStartParam" href="ALR.default.336.htm">vlax-curve-getStartParam</a>&nbsp;  
+返回曲线的开始参数
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-getStartPoint" href="ALR.default.337.htm">vlax-curve-getStartPoint</a>&nbsp;  
+返回曲线的开始点（在 WCS 中）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-isClosed" href="ALR.default.338.htm">vlax-curve-isClosed</a>&nbsp;  
+确定指定曲线是否闭合（即起点与端点是否重合）
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-isPeriodic" href="ALR.default.339.htm">vlax-curve-isPeriodic</a>&nbsp;  
+确定指定曲线是否在各个方向上都是无限的，同时存在一个周期值 dT，使得对于任何参数 u，都有曲线上的点 (u + dT) = 点 (u) 成立  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-curve-isPlanar" href="ALR.default.340.htm">vlax-curve-isPlanar</a>&nbsp;  
+确定是否存在包含曲线的平面
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-dump-object" href="ALR.default.341.htm">vlax-dump-object</a>&nbsp;  
+列出对象特性，也可选择列出对象的方法
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-ename->vla-object" href="ALR.default.342.htm">vlax-ename-&gt;vla-object</a>&nbsp;  
+将 AutoLISP 类型的对象名转换为 VLA 对象  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-erased-p" href="ALR.default.343.htm">vlax-erased-p</a>&nbsp; 确定对象是否被删除 
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-for" href="ALR.default.344.htm">vlax-for</a>&nbsp; 遍历对象集，对每个表达式进行求值 
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-get-acad-object" href="ALR.default.345.htm">vlax-get-acad-object</a>&nbsp;  
+检索当前 AutoCAD 任务中的顶层 AutoCAD 应用程序对象  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-get-object" href="ALR.default.346.htm">vlax-get-object</a>&nbsp; 返回应用程序对象的运行实例 
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-get-or-create-object" href="ALR.default.347.htm">vlax-get-or-create-object</a>&nbsp;  
+返回应用程序对象的运行实例。如果应用程序当前未运行，则创建新实例
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-get-property" href="ALR.default.348.htm">vlax-get-property</a>&nbsp;  
+检索 VLA 对象的特性  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-import-type-library" href="ALR.default.349.htm">vlax-import-type-library</a>&nbsp;  
+从类型库中输出信息
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-invoke-method" href="ALR.default.350.htm">vlax-invoke-method</a>&nbsp;  
+调用指定的 ActiveX 方法  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-ldata-delete" href="ALR.default.351.htm">vlax-ldata-delete</a>&nbsp;  
+从图形词典中删除 LISP 数据  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-ldata-get" href="ALR.default.352.htm">vlax-ldata-get</a>&nbsp; 在图形词典或对象中检索 LISP 数据  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-ldata-list" href="ALR.default.353.htm">vlax-ldata-list</a>&nbsp; 列出图形词典中的 LISP 数据  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-ldata-put" href="ALR.default.354.htm">vlax-ldata-put</a>&nbsp; 存储图形词典或对象中的 LISP 数据  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-ldata-test" href="ALR.default.355.htm">vlax-ldata-test</a>&nbsp; 确定数据是否能越任务边界保存 
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-make-safearray" href="ALR.default.356.htm">vlax-make-safearray</a>&nbsp;  
+创建 SafeArray  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-make-variant" href="ALR.default.357.htm">vlax-make-variant</a>&nbsp;  
+创建变体数据类型
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-map-collection" href="ALR.default.358.htm">vlax-map-collection</a>&nbsp;  
+将函数应用到集合中的所有对象
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-method-applicable-p" href="ALR.default.359.htm">vlax-method-applicable-p</a>&nbsp;  
+确定对象是否支持某个方法
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-object-released-p" href="ALR.default.360.htm">vlax-object-released-p</a>&nbsp;  
+确定对象是否已被释放
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-product-key" href="ALR.default.361.htm">vlax-product-key</a>&nbsp;  
+返回 AutoCAD 的 Window 注册表路径  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-property-available-p" href="ALR.default.362.htm">vlax-property-available-p</a>&nbsp;  
+确定对象是否具有指定特性
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-put-property" href="ALR.default.363.htm">vlax-put-property</a>&nbsp;  
+设置 ActiveX 对象的特性  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-read-enabled-p" href="ALR.default.364.htm">vlax-read-enabled-p</a>&nbsp;  
+确定对象是否可读
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-release-object" href="ALR.default.365.htm">vlax-release-object</a>&nbsp;  
+释放图形对象
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-remove-cmd" href="ALR.default.366.htm">vlax-remove-cmd</a>&nbsp; 删除一个命令或一组命令 
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-fill" href="ALR.default.367.htm">vlax-safearray-fill</a>&nbsp;  
+在 SafeArray 的元素中存储数据  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-get-dim" href="ALR.default.368.htm">vlax-safearray-get-dim</a>&nbsp;  
+返回 SafeArray 对象的维数  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-get-element" href="ALR.default.369.htm">vlax-safearray-get-element</a>&nbsp;  
+返回 Safearray 中的元素  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-get-l-bound" href="ALR.default.370.htm">vlax-safearray-get-l-bound</a>&nbsp;  
+返回 Safearray 某一维的下界（开始索引）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-get-u-bound" href="ALR.default.371.htm">vlax-safearray-get-u-bound</a>&nbsp;  
+返回 Safearray 某一维的上界（结束索引）  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-put-element" href="ALR.default.372.htm">vlax-safearray-put-element</a>&nbsp;  
+给 Safearray 中的某元素赋值  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray-type" href="ALR.default.373.htm">vlax-safearray-type</a>&nbsp;  
+返回 SafeArray 的数据类型  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-safearray->list" href="ALR.default.374.htm">vlax-safearray-&gt;list</a>&nbsp;  
+以表的形式返回 SafeArray 中的元素  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-tmatrix" href="ALR.default.375.htm">vlax-tmatrix</a>&nbsp; 返回 VLA 方法可用的 4x4 转换矩阵的适当表示  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-typeinfo-available-p" href="ALR.default.376.htm">vlax-typeinfo-available-p</a>&nbsp;  
+确定在指定类型的对象中是否存在 TypeLib 信息  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-variant-change-type" href="ALR.default.377.htm">vlax-variant-change-type</a>&nbsp;  
+在改变变体的数据类型后返回该变体的值
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-variant-type" href="ALR.default.378.htm">vlax-variant-type</a>&nbsp;  
+确定变体的数据类型
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-variant-value" href="ALR.default.379.htm">vlax-variant-value</a>&nbsp;  
+返回变体的值
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-vla-object->ename" href="ALR.default.380.htm">vlax-vla-object-&gt;ename</a>&nbsp;  
+将 VLA 对象转换为 AutoLISP 对象名  
+</li>
+<li class="jumplist_nonav">
+<a title="vlax-write-enabled-p" href="ALR.default.381.htm">vlax-write-enabled-p</a>&nbsp;  
+确定是否能够修改 AutoCAD 图形  
+</li>
+</ul>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
