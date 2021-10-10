@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-catch-all-error-message</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êı</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜ç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êı&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜ç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›åˆ°ä¸Šä¸€å±‚..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,27 +39,27 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">´Ó´íÎó¶ÔÏó·µ»Ø×Ö·û´®</p>
+<p id="crleadin" class="cr_leadin">ä»é”™è¯¯å¯¹è±¡è¿”å›å­—ç¬¦ä¸²</p>
 <pre class="prog_in_end">(vl-catch-all-error-message error-obj)</pre>
-<p class="Heading-2">²ÎÊı</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">error-obj</p>
-<p class="define_text">ÓÉ vl-catch-all-apply ·µ»ØµÄ´íÎó¶ÔÏó¡£</p> 
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">°üº¬´íÎóĞÅÏ¢µÄ×Ö·û´®¡£</p>
-<p class="Heading-2">Ê¾Àı</p>
-<p class="body">Ê¹ÓÃ vl-catch-all-apply Ê±±»Áã³ı£º</p> 
+<p class="define_text">ç”± vl-catch-all-apply è¿”å›çš„é”™è¯¯å¯¹è±¡ã€‚</p> 
+<p class="Heading-2">è¿”å›å€¼</p>
+<p class="body">åŒ…å«é”™è¯¯ä¿¡æ¯çš„å­—ç¬¦ä¸²ã€‚</p>
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">ä½¿ç”¨ vl-catch-all-apply æ—¶è¢«é›¶é™¤ï¼š</p> 
 <pre class="prog_in">_$ (setq catchit (vl-catch-all-apply '/ '(50 0)))</pre>
 <pre class="prog_in_end">#&lt;%catch-all-apply-error%&gt;</pre>
-<p class="body">vl-catch-all-apply º¯Êı½ØÈ¡ÁË´íÎó²¢·µ»Ø´íÎó¶ÔÏó£¬Ê¹ÓÃ vl-catch-all-error-message ¿ÉÒÔ²é¿´ÆäÖĞµÄ´íÎóĞÅÏ¢£º</p> 
+<p class="body">vl-catch-all-apply å‡½æ•°æˆªå–äº†é”™è¯¯å¹¶è¿”å›é”™è¯¯å¯¹è±¡ï¼Œä½¿ç”¨ vl-catch-all-error-message å¯ä»¥æŸ¥çœ‹å…¶ä¸­çš„é”™è¯¯ä¿¡æ¯ï¼š</p> 
 <pre class="prog_in">_$ (vl-catch-all-error-message catchit)</pre>
-<pre class="prog_in_end">&quot;³ıÊıÎªÁã&quot;</pre>
-<p class="see_also">²ÎÔÄ</p>
-<p class="body">±¾²Î¿¼ÖĞµÄ <a href="ALR.default.096.htm">*error*</a>¡¢ <a href="ALR.default.254.htm">vl-catch-all-apply</a> 
-ºÍ <a href="ALR.default.256.htm">vl-catch-all-error-p</a> º¯Êı£¬ÒÔ¼° ¡¶Visual LISP 
-¿ª·¢ÈËÔ±ÊÖ²á¡·ÖĞµÄ <a href="ms-its:ACAD_ALG.chm::/ALG.08.047.htm">´íÎó´¦Àí</a>¡£</p>
+<pre class="prog_in_end">&quot;é™¤æ•°ä¸ºé›¶&quot;</pre>
+<p class="see_also">å‚é˜…</p>
+<p class="body">æœ¬å‚è€ƒä¸­çš„ <a href="ALR.default.096.htm">*error*</a>ã€ <a href="ALR.default.254.htm">vl-catch-all-apply</a> 
+å’Œ <a href="ALR.default.256.htm">vl-catch-all-error-p</a> å‡½æ•°ï¼Œä»¥åŠ ã€ŠVisual LISP 
+å¼€å‘äººå‘˜æ‰‹å†Œã€‹ä¸­çš„ <a href="ms-its:ACAD_ALG.chm::/ALG.08.047.htm">é”™è¯¯å¤„ç†</a>ã€‚</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓĞ Î´¾­Ğí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓĞ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜ç»é€šé“</a> ç‰ˆæƒæ‰€æœ‰ æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

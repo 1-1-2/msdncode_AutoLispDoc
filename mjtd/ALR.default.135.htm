@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>handent</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,27 +39,27 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">���ݶ���ͼԪ���ľ���������Ķ���ͼԪ����</p>
+<p id="crleadin" class="cr_leadin">根据对象（图元）的句柄返回它的对象（图元）名</p>
 <pre class="prog_in_end">(handent handle) </pre>
-<p class="body">handent �����ȿ��Է���ͼ�ζ�������ƣ��ֿ��Է��ط�ͼ�ζ�������ơ�</p> 
-<p class="Heading-2">����</p>
+<p class="body">handent 函数既可以返回图形对象的名称，又可以返回非图形对象的名称。</p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">handle</p>
-<p class="define_text">��ʾͼԪ������ַ�����</p>
-<p class="Heading-2">����ֵ</p>
-<p class="body">������óɹ���handent ���������ڵ�ǰ�༭�����ڼ����ͼԪ����������ͼԪ�Ķ�������������� handent ����һ����Ч�������û�б���ǰͼ�ε��κ�ͼԪʹ�õľ�������᷵�� nil��</p> 
-<p class="body">handent �������Է����ڵ�ǰ�༭�����ڼ䱻ɾ���Ķ�������ƣ�Ȼ���û����Ե��� entdel �����ָ�����</p> 
-<p class="body">�ڲ�ͬ�ı༭�����ڼ�ͬһ��ͼԪ�Ķ��������ܻ᲻ͬ����ͼԪ�ľ��ȴ���ֲ��䡣</p>
-<p class="Heading-2">ʾ��</p>
-<p class="prompt_end">��� <span class="CharSansBold">(handent "5A2")</span> 
+<p class="define_text">表示图元句柄的字符串。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果调用成功，handent 函数返回在当前编辑任务期间与该图元句柄相关联的图元的对象名。如果传给 handent 函数一个无效句柄，或没有被当前图形的任何图元使用的句柄，它会返回 nil。</p> 
+<p class="body">handent 函数可以返回在当前编辑任务期间被删除的对象的名称，然后用户可以调用 entdel 函数恢复它。</p> 
+<p class="body">在不同的编辑任务期间同一个图元的对象名可能会不同，但图元的句柄却保持不变。</p>
+<p class="Heading-2">示例</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(handent "5A2")</span> 
 </p>
-<p class="prompt_end">&lt;ͼԪ��: 60004722&gt;</p>
-<p class="body">�ڲ�ͬ�ı༭�����ж�ͬһ��ͼ��ͬ����ִ���������룬���ܻ᷵�ز�ͬ��ͼԪ����һ����ȡ��ͼԪ�����Ϳ�������������ͼԪ�йصĺ�����������ͼԪ��</p>
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.085.htm">entdel</a>��<a href="ALR.default.086.htm">entget</a>��<a href="ALR.default.087.htm">entlast</a>��<a href="ALR.default.088.htm">entmake</a>��<a href="ALR.default.089.htm">entmakex</a>��<a href="ALR.default.090.htm">entmod</a>��<a href="ALR.default.091.htm">entnext</a>��<a href="ALR.default.092.htm">entsel</a> 
-�� <a href="ALR.default.093.htm">entupd</a>  ������ </p>
+<p class="prompt_end">&lt;图元名: 60004722&gt;</p>
+<p class="body">在不同的编辑任务中对同一个图形同样地执行上述代码，可能会返回不同的图元名。一旦获取到图元名，就可以用它调用与图元有关的函数来处理该图元。</p>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.085.htm">entdel</a>、<a href="ALR.default.086.htm">entget</a>、<a href="ALR.default.087.htm">entlast</a>、<a href="ALR.default.088.htm">entmake</a>、<a href="ALR.default.089.htm">entmakex</a>、<a href="ALR.default.090.htm">entmod</a>、<a href="ALR.default.091.htm">entnext</a>、<a href="ALR.default.092.htm">entsel</a> 
+和 <a href="ALR.default.093.htm">entupd</a>  函数。 </p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

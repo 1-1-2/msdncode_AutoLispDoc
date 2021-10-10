@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>new_dialog</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,26 +39,26 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ʼһ���µĶԻ�����ʾ�öԻ��򣬶�����ָ��һ��ȱʡ����</p>
+<p id="crleadin" class="cr_leadin">开始一个新的对话框并显示该对话框，而且能指定一个缺省操作</p>
 <pre class="prog_in_end">(new_dialog dlgname dcl_id [action [screen-pt]])</pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">dlgname</p>
-<p class="define_text">����ָ���Ի�����ַ�����</p>
+<p class="define_text">用于指定对话框的字符串。</p>
 <p class="define_head">dcl_id</p>
-<p class="define_text">�� load_dialog ��õ� DCL �ļ���ʶ����</p> 
+<p class="define_text">由 load_dialog 获得的 DCL 文件标识符。</p> 
 <p class="define_head">action</p>
-<p class="define_text">�ַ�������������ȱʡ������ AutoLISP ����ʽ���������ָ��ȱʡ���������Խ��ò���ָ��Ϊ���ַ��� ("")�����ָ���� screen-pt �ͱ���ָ�� action ������</p> 
-<p class="define_text">���û�ʰȡ��ĳ������Ŀؼ������ÿؼ�û��ͨ�� action_tile ������ DCL ��ʽָ��������ص������������ָ����ȱʡ������</p> 
+<p class="define_text">字符串，包含用作缺省操作的 AutoLISP 表达式。如果不想指定缺省操作，可以将该参数指定为空字符串 ("")。如果指定了 screen-pt 就必须指定 action 参数。</p> 
+<p class="define_text">当用户拾取了某个激活的控件，而该控件没有通过 action_tile 函数或 DCL 显式指定操作或回调函数，则计算指定的缺省操作。</p> 
 <p class="define_head">screen-pt</p>
-<p class="define_text">��ά���������ָ����Ļ�϶Ի���λ�õ� X��Y ���ꡣ�õ�ͨ��ָ�����ǶԻ�������Ͻǣ���������ƽ̨�йأ���ֵͨ����ϵͳ��λ����ʾ��������õ�ָ��Ϊ '(-1 -1)����ô�򿪶Ի���ʱ����ʾ��ȱʡλ���ϣ�AutoCAD ��ͼ����Ļ������λ�ã���</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">����ɹ��򷵻� T�����򷵻� nil��</p> 
-<p class="see_also">����</p>
-<p class="body">��Visual LISP ������Ա�ֲᡷ�е� <a href="ms-its:ACAD_ALG.chm::/ALG.12.001.htm">�����Ի���</a>  
-�� </p>
+<p class="define_text">二维点表，用于指定屏幕上对话框位置的 X、Y 坐标。该点通常指定的是对话框的左上角，但它还与平台有关，其值通常用系统单位来表示。如果将该点指定为 '(-1 -1)，那么打开对话框时它显示在缺省位置上（AutoCAD 的图形屏幕的中心位置）。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则返回 T，否则返回 nil。</p> 
+<p class="see_also">参阅</p>
+<p class="body">《Visual LISP 开发人员手册》中的 <a href="ms-its:ACAD_ALG.chm::/ALG.12.001.htm">管理对话框</a>  
+。 </p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>setvar</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,32 +39,32 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">���� AutoCAD ϵͳ����Ϊָ��ֵ</p> 
+<p id="crleadin" class="cr_leadin">设置 AutoCAD 系统变量为指定值</p> 
 <pre class="prog_in_end">(setvar varname value) </pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">varname</p>
-<p class="define_text">�����������ַ�������š�</p>
+<p class="define_text">命名变量的字符串或符号。</p>
 <p class="define_head">value</p>
-<p class="define_text">ԭ�ӻ����ʽ�������ṹ������ֵ�� varname�����ϵͳ������ֵΪ�������� value ��ֵ������ -32,768 �� +32,767 ֮�䡣</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">����ɹ��� setvar ���� value��</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">�� AutoCAD Բ�ǰ뾶����Ϊ 0.5 ����λ��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setvar "FILLETRAD"
+<p class="define_text">原子或表达式，其计算结构将被赋值给 varname。如果系统变量的值为整数，则 value 的值必须在 -32,768 和 +32,767 之间。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则 setvar 返回 value。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">将 AutoCAD 圆角半径设置为 0.5 个单位：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setvar "FILLETRAD"
 0.50)</span>
 </p>
 <p class="prompt_end">0.5</p>
-<p class="body">setvar ʹ��˵��</p> 
-<p class="body">ĳЩ AutoCAD �����ڸ�����ʾ֮ǰ�����Ѿ������ϵͳ������ֵ������������ִ�й�����ʹ�� setvar ����Ϊĳ��ϵͳ����������ֵ������ֵ����Ҫ�ȵ�ִ����һ�� AutoCAD ����ʱ����Ч��<br> 
-��ʹ�� setvar �����ı� AutoCAD ϵͳ���� ANGBASE ʱ��value ��������Ϊ����ֵ������ AutoCAD �е� SETVAR ���ͬ��setvar ����������������͡����� setvar �����ı� AutoCAD ϵͳ���� SNAPANG ʱ�������ǰ������ AutoCAD ������ 0 �ȷ��򣨼�������ʱ��������λ�ã��Ļ���ֵ���͵ġ���Ҳ�� SETVAR ���ͬ��SETVAR ����ò������ͳ������ϵͳ���� ANGBASE �ĽǶ��ҵ�λΪ�ȡ�</p> 
+<p class="body">setvar 使用说明</p> 
+<p class="body">某些 AutoCAD 命令在给出提示之前，就已经获得了系统变量的值。如果在命令的执行过程中使用 setvar 函数为某个系统变量设置新值，该新值可能要等到执行下一个 AutoCAD 命令时才有效。<br> 
+在使用 setvar 函数改变 AutoCAD 系统变量 ANGBASE 时，value 参数解释为弧度值。这与 AutoCAD 中的 SETVAR 命令不同，setvar 命令将参数按度来解释。当用 setvar 函数改变 AutoCAD 系统变量 SNAPANG 时，参数是按相对于 AutoCAD 的隐含 0 度方向（即正东或时钟三点钟位置）的弧度值解释的。这也与 SETVAR 命令不同，SETVAR 命令将该参数解释成相对于系统变量 ANGBASE 的角度且单位为度。</p> 
 <p class="note">
-<span class="note_char">ע��</span>&nbsp;UNDO ����ܳ����� setvar ������ CVPORT ϵͳ�����������޸ġ�</p> 
-<p class="body">�ڡ�����ο����а�����ǰ AutoCAD ϵͳ�������б���</p> 
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.127.htm">getvar</a>  ������</p>
+<span class="note_char">注意</span>&nbsp;UNDO 命令不能撤销由 setvar 函数对 CVPORT 系统变量所作的修改。</p> 
+<p class="body">在《命令参考》中包含当前 AutoCAD 系统变量的列表。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.127.htm">getvar</a>  函数。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

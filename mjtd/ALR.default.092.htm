@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>entsel</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,39 +39,39 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ʾ�û�ͨ��ָ��һ������ѡ�񵥸�����ͼԪ��</p>
+<p id="crleadin" class="cr_leadin">提示用户通过指定一个点来选择单个对象（图元）</p>
 <pre class="prog_in_end">(entsel [msg])</pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">msg</p>
-<p class="define_text">������ʾ�û����ַ��������ʡ�Ըò���������ʾ��ϢΪ��ѡ����󡱡�</p>
-<p class="Heading-2">����ֵ</p>
-<p class="body">�������е�һ��Ԫ�����û���ѡ�����ͼԪ�����ڶ���Ԫ�����û�ѡ�����ʱָ����ʰȡ�������ֵ���õ�ǰ UCS ��ʾ����</p> 
-<p class="body">entsel �������ص�ʰȡ�㲻һ������ѡ�����ϣ������ص���ѡ�����ʱʮ�ֹ���λ�á�ʰȡ��Ͷ���֮��Ĺ�ϵ������ʰȡ��ĳߴ�͵�ǰ���ű�����</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">����� AutoCAD ����˵���� entsel ������ʹ�÷������䷵�صı���</p> 
-<p class="prompt_end">����:  <span class="CharSansBold">line</span> 
+<p class="define_text">用于提示用户的字符串。如果省略该参数，则提示信息为“选择对象”。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">表，其中第一个元素是用户所选对象的图元名，第二个元素是用户选择对象时指定的拾取点的坐标值（用当前 UCS 表示）。</p> 
+<p class="body">entsel 函数返回的拾取点不一定在所选对象上，它返回的是选择对象时十字光标的位置。拾取点和对象之间的关系依赖于拾取框的尺寸和当前缩放比例。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">下面的 AutoCAD 命令说明了 entsel 函数的使用方法及其返回的表：</p> 
+<p class="prompt_end">命令:  <span class="CharSansBold">line</span> 
 </p>
-<p class="prompt_end">���:  <span class="CharSansBold">1,1 </span> 
+<p class="prompt_end">起点:  <span class="CharSansBold">1,1 </span> 
 </p>
-<p class="prompt_end">��һ��: <span class="CharSansBold">6,6</span> 
+<p class="prompt_end">下一点: <span class="CharSansBold">6,6</span> 
 </p>
-<p class="prompt_end">��һ��: <span class="CharSmallCaps">ENTER</span> 
+<p class="prompt_end">下一点: <span class="CharSmallCaps">ENTER</span> 
 </p>
-<p class="prompt_end">���  <span class="CharSansBold">(setq e (entsel 
-&quot;��ѡ��һ������: ")) </span> 
+<p class="prompt_end">命令：  <span class="CharSansBold">(setq e (entsel 
+&quot;请选择一个对象: ")) </span> 
 </p>
-<p class="prompt_end">��ѡ��һ������: 
+<p class="prompt_end">请选择一个对象: 
  <span class="CharSansBold">3,3</span>
 </p>
-<p class="prompt_end">(&lt;ͼԪ��: 60000014&gt;
+<p class="prompt_end">(&lt;图元名: 60000014&gt;
 (3.0 3.0 0.0))</p>
-<p class="body">��ʱ���ڲ���һ������ʱ��������Ҫѡ��һ������ͬʱ����Ҫ֪��ָ���ĵ㡣������ AutoCAD �е� Object Snap �Լ� BREAK��TRIM �� EXTEND �����о���������entsel ʹ�� AutoLISP �������ʵ�����ֲ�������ͨ��ѡȡ��ķ�ʽ��ѡȡ�������󡣳����ں��������ر����������� initget ���������Ե�ǰ Osnap ���á�entsel ����֧����ǰ��ͨ������ initget �������õĹؼ��֡�</p> 
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.086.htm">entget</a>�� <a href="ALR.default.088.htm">entmake</a>�� <a href="ALR.default.091.htm">entnext</a>��<a href="ALR.default.135.htm">handent</a> 
-�� <a href="ALR.default.140.htm">initget</a>  ������</p>
+<p class="body">有时候在操作一个对象时，不但需要选中一个对象，同时还需要知道指定的点。例如在 AutoCAD 中的 Object Snap 以及 BREAK、TRIM 和 EXTEND 命令中就是这样。entsel 使得 AutoLISP 程序可以实现这种操作。它通过选取点的方式来选取单个对象。除非在函数中作特别申明，否则 initget 函数将忽略当前 Osnap 设置。entsel 函数支持它前面通过调用 initget 函数设置的关键字。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.086.htm">entget</a>、 <a href="ALR.default.088.htm">entmake</a>、 <a href="ALR.default.091.htm">entnext</a>、<a href="ALR.default.135.htm">handent</a> 
+和 <a href="ALR.default.140.htm">initget</a>  函数。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

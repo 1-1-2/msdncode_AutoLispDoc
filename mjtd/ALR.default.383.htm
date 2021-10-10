@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlr-acdb-reactor</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">����ͨ�� Visual LISP ����</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� Visual LISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,30 +39,30 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">���� AutoCAD ���ݿⷴӦ�������ڴ�ͼ�����ݿ��м��롢�޸Ļ�ɾ������ʱ֪ͨӦ�ó���</p> 
-<p class="body">vlr-acdb-reactor �����������ݿⷴӦ������</p> 
+<p id="crleadin" class="cr_leadin">构造 AutoCAD 数据库反应器对象，在从图形数据库中加入、修改或删除对象时通知应用程序</p> 
+<p class="body">vlr-acdb-reactor 函数构造数据库反应器对象。</p> 
 <pre class="prog_in_end">(vlr-acdb-reactor data callbacks)</pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">data</p>
-<p class="define_text">�κ�Ҫ�뷴Ӧ������������� AutoLISP ���ݡ����û��������Ϊ nil��</p> 
+<p class="define_text">任何要与反应器对象相关联的 AutoLISP 数据。如果没有数据则为 nil。</p> 
 <p class="define_head">callbacks</p>
-<p class="define_text">�������а������и�ʽ�ĵ�ԣ�</p>
+<p class="define_text">表，其中包含下列格式的点对：</p>
 <p class="define_text">(e<span class="CharItalic">vent-name</span> . <span class="CharItalic">callback_function</span>) </p>
-<p class="define_text">�����event-name ���±����ݿⷴӦ���¼��еķ���֮һ��callback_function Ϊ���ţ������¼�����ʱҪ���õĺ�����ÿ���ص�������������������������</p> 
-<p class="define_text">reactor_object  ���ûص������� VLR ����</p> 
-<p class="define_text">obj  ���¼�����������ݿ����AutoLISP ͼԪ��</p> 
+<p class="define_text">在这里，event-name 是下表数据库反应器事件中的符号之一，callback_function 为符号，代表事件发生时要调用的函数。每个回调函数都接受如下两个参数：</p> 
+<p class="define_text">reactor_object  调用回调函数的 VLR 对象。</p> 
+<p class="define_text">obj  与事件相关联的数据库对象（AutoLISP 图元）</p> 
 <table class="BasicLeft" rules="cols" cellspacing="0" height="240">
 <thead>
 <tr class="row_0">
 <th colspan="2" height="16">
-<p class="table_heading">���ݿⷴӦ���¼� </p>
+<p class="table_heading">数据库反应器事件 </p>
 </th>
 </tr>
 <tr class="row_0">
 <th height="17">
-<p class="table_heading">����</p>
+<p class="table_heading">名称</p>
 </th><th height="17">
-<p class="table_heading">�¼�</p>
+<p class="table_heading">事件</p>
 </th>
 </tr>
 </thead>
@@ -71,49 +71,49 @@
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectAppended</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">�����Ѿ����ӵ�ͼ�����ݿ��С�
+<p class="table_body">对象已经附加到图形数据库中。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectUnAppended</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">�����Ѿ���ͼ�����ݿ��в��룬��ʹ�� UNDO�� 
+<p class="table_body">对象已经从图形数据库中拆离，如使用 UNDO。 
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectReAppended</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">�����������ͼ�����ݿ����Ѿ����ָ�����ʹ�� REDO�� 
+<p class="table_body">被拆离对象在图形数据库中已经被恢复，如使用 REDO。 
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectOpenedForModify</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">���󽫱��޸ġ�
+<p class="table_body">对象将被修改。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectModified</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">�����ѱ��޸ġ�
+<p class="table_body">对象已被修改。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectErased</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">�����ѱ����Ϊ����ɾ����
+<p class="table_body">对象已被标记为正在删除。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL" height="27">
 <p class="table_body">:vlr-objectUnErased</p>
 </td><td class="BasicLeft_CELL" height="27">
-<p class="table_body">�����ɾ������ѱ������
+<p class="table_body">对象的删除标记已被清除。
 </td>
 </tr>
 </tbody>
@@ -121,7 +121,7 @@
 <p class="define_text"></p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

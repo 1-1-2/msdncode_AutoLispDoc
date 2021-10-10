@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlax-safearray-get-element</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êı</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜ç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êı&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜ç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›åˆ°ä¸Šä¸€å±‚..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,20 +39,20 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">·µ»Ø Safearray ÖĞµÄÔªËØ</p> 
+<p id="crleadin" class="cr_leadin">è¿”å› Safearray ä¸­çš„å…ƒç´ </p> 
 <pre class="prog_in_end">(vlax-safearray-get-element var element...)</pre>
-<p class="Heading-2">²ÎÊı</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">var</p>
-<p class="define_text">±äÁ¿£¬ÆäÊı¾İÀàĞÍÎª SafeArray¡£&nbsp;</p>
+<p class="define_text">å˜é‡ï¼Œå…¶æ•°æ®ç±»å‹ä¸º SafeArrayã€‚&nbsp;</p>
 <p class="define_head">element...</p>
-<p class="define_text">ÕûÊıĞÍ£¬Ö¸¶¨Òª¼ìË÷µÄÔªËØµÄË÷Òı¡£¶ÔÓÚÒ»Î¬Êı×é£¬Ó¦Ö¸¶¨Ò»¸öÕûÊı£¬¶ÔÓÚ¶àÎ¬Êı×é£¬Ö¸¶¨µÄË÷ÒıÊıÓ¦ÓëÊı×éµÄÎ¬ÊıÏàµÈ¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">ÔªËØµÄÖµ¡£</p>
-<p class="Heading-2">Ê¾Àı</p>
-<p class="body">´´½¨¶şÎ¬Êı×é£¬ÆäÖĞÃ¿¸öÎ¬¶¼´ÓË÷Òı 1 ¿ªÊ¼£º</p> 
+<p class="define_text">æ•´æ•°å‹ï¼ŒæŒ‡å®šè¦æ£€ç´¢çš„å…ƒç´ çš„ç´¢å¼•ã€‚å¯¹äºä¸€ç»´æ•°ç»„ï¼Œåº”æŒ‡å®šä¸€ä¸ªæ•´æ•°ï¼Œå¯¹äºå¤šç»´æ•°ç»„ï¼ŒæŒ‡å®šçš„ç´¢å¼•æ•°åº”ä¸æ•°ç»„çš„ç»´æ•°ç›¸ç­‰ã€‚</p>
+<p class="Heading-2">è¿”å›å€¼</p>
+<p class="body">å…ƒç´ çš„å€¼ã€‚</p>
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">åˆ›å»ºäºŒç»´æ•°ç»„ï¼Œå…¶ä¸­æ¯ä¸ªç»´éƒ½ä»ç´¢å¼• 1 å¼€å§‹ï¼š</p> 
 <pre class="prog_in">_$ (setq matrix (vlax-make-safearray vlax-vbString '(1 . 2) '(1 . 2) ))</pre>
 <pre class="prog_in_end">#&lt;safearray...&gt;</pre>
-<p class="body">Ê¹ÓÃ vlax-safearray-put-element ÌîÂúÊı×é£º</p> 
+<p class="body">ä½¿ç”¨ vlax-safearray-put-element å¡«æ»¡æ•°ç»„ï¼š</p> 
 <pre class="prog_in">_$ (vlax-safearray-put-element matrix 1 1 &quot;a&quot;)</pre>
 <pre class="prog_in">&quot;a&quot;</pre>
 <pre class="prog_in">_$ (vlax-safearray-put-element matrix 1 2 &quot;b&quot;)</pre>
@@ -61,14 +61,14 @@
 <pre class="prog_in">&quot;c&quot;</pre>
 <pre class="prog_in">_$ (vlax-safearray-put-element matrix 2 2 &quot;d&quot;)</pre>
 <pre class="prog_in_end">&quot;d&quot;</pre>
-<p class="body">Ê¹ÓÃ vlax-safearray-get-element ¼ìË÷Êı×éµÚÒ»Î¬ÖĞµÄµÚ¶ş¸öÔªËØ£º</p> 
+<p class="body">ä½¿ç”¨ vlax-safearray-get-element æ£€ç´¢æ•°ç»„ç¬¬ä¸€ç»´ä¸­çš„ç¬¬äºŒä¸ªå…ƒç´ ï¼š</p> 
 <pre class="prog_in">_$ (vlax-safearray-get-element matrix 1 2)</pre>
 <pre class="prog_in_end">&quot;b&quot;</pre>
-<p class="see_also">²ÎÔÄ</p>
-<p class="body"><a href="ALR.default.356.htm">vlax-make-safearray</a>¡¢<a href="ALR.default.368.htm">vlax-safearray-get-dim</a>¡¢<a href="ALR.default.370.htm">vlax-safearray-get-l-bound</a>¡¢<a href="ALR.default.371.htm">vlax-safearray-get-u-bound</a> ºÍ <a href="ALR.default.372.htm">vlax-safearray-put-element</a> º¯Êı¡£</p>
+<p class="see_also">å‚é˜…</p>
+<p class="body"><a href="ALR.default.356.htm">vlax-make-safearray</a>ã€<a href="ALR.default.368.htm">vlax-safearray-get-dim</a>ã€<a href="ALR.default.370.htm">vlax-safearray-get-l-bound</a>ã€<a href="ALR.default.371.htm">vlax-safearray-get-u-bound</a> å’Œ <a href="ALR.default.372.htm">vlax-safearray-put-element</a> å‡½æ•°ã€‚</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓĞ Î´¾­Ğí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓĞ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜ç»é€šé“</a> ç‰ˆæƒæ‰€æœ‰ æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

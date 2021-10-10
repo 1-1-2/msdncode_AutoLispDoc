@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-registry-descendents</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êı</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜ç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êı&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜ç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›åˆ°ä¸Šä¸€å±‚..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,25 +39,25 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">·µ»ØÖ¸¶¨×¢²á±í¼üµÄ×Ó¼ü»òÖµÃû³ÆµÄÁĞ±í</p>
+<p id="crleadin" class="cr_leadin">è¿”å›æŒ‡å®šæ³¨å†Œè¡¨é”®çš„å­é”®æˆ–å€¼åç§°çš„åˆ—è¡¨</p>
 <pre class="prog_in_end">(vl-registry-descendents reg-key [val-names])</pre>
-<p class="Heading-2">²ÎÊı</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">reg-key</p>
-<p class="define_text">×Ö·û´®£¬Ö¸¶¨ Windows Ö÷¼ü¡£</p> 
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒæŒ‡å®š Windows ä¸»é”®ã€‚</p> 
 <p class="define_head">val-names</p>
-<p class="define_text">×Ö·û´®£¬°üº¬ reg-key ÌõÄ¿µÄÖµ¡£</p> 
-<p class="body">Èç¹ûÖ¸¶¨ val-names ÇÒÆäÖµ²»Îª nil£¬Ôò½«ÁĞ³ö×¢²á±íÖĞµÄÖ¸¶¨ÖµÃû¡£Èç¹ûÎ´Ö¸¶¨ val-name »òÆäÖµÎª nil£¬Ôòº¯ÊıÏÔÊ¾ reg-key µÄËùÓĞ×Ó¼ü¡£</p> 
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û³É¹¦Ôò·µ»Ø×Ö·û´®±í£¬·ñÔò·µ»Ø nil¡£</p> 
-<p class="Heading-2">Ê¾Àı</p>
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒåŒ…å« reg-key æ¡ç›®çš„å€¼ã€‚</p> 
+<p class="body">å¦‚æœæŒ‡å®š val-names ä¸”å…¶å€¼ä¸ä¸º nilï¼Œåˆ™å°†åˆ—å‡ºæ³¨å†Œè¡¨ä¸­çš„æŒ‡å®šå€¼åã€‚å¦‚æœæœªæŒ‡å®š val-name æˆ–å…¶å€¼ä¸º nilï¼Œåˆ™å‡½æ•°æ˜¾ç¤º reg-key çš„æ‰€æœ‰å­é”®ã€‚</p> 
+<p class="Heading-2">è¿”å›å€¼</p>
+<p class="body">å¦‚æœæˆåŠŸåˆ™è¿”å›å­—ç¬¦ä¸²è¡¨ï¼Œå¦åˆ™è¿”å› nilã€‚</p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
 <pre class="prog_in">_$ (vl-registry-descendents &quot;HKEY_LOCAL_MACHINE\\SOFTWARE&quot;)</pre>
 <pre class="prog_in_end">(&quot;Description&quot;  &quot;Program Groups&quot; &quot;ORACLE&quot; &quot;ODBC&quot; &quot;Netscape&quot; &quot;Microsoft&quot;)</pre>
-<p class="see_also">²ÎÔÄ</p>
-<p class="body">&nbsp; <a href="ALR.default.293.htm">vl-registry-delete</a>¡¢ <a href="ALR.default.295.htm">vl-registry-read</a> 
-ºÍ <a href="ALR.default.296.htm">vl-registry-write</a>  º¯Êı¡£</p>
+<p class="see_also">å‚é˜…</p>
+<p class="body">&nbsp; <a href="ALR.default.293.htm">vl-registry-delete</a>ã€ <a href="ALR.default.295.htm">vl-registry-read</a> 
+å’Œ <a href="ALR.default.296.htm">vl-registry-write</a>  å‡½æ•°ã€‚</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓĞ Î´¾­Ğí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓĞ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜ç»é€šé“</a> ç‰ˆæƒæ‰€æœ‰ æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

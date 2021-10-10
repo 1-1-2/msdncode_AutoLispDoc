@@ -1,1 +1,1 @@
- document.write("<P class='element'> ���ֲ�������ͨ��mccad������ƣ����°汾�����¼<a href=http://www.mjtd.com>����ͨ��</a>��ȡ��ѡ�");
+ document.write("<P class='element'> 本手册由明经通道mccad翻译编制，最新版本，请登录<a href=http://www.mjtd.com>明经通道</a>索取免费。");

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>trans</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,64 +39,64 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��һ���㣨��λ��������һ������ϵת������һ������ϵ</p>
+<p id="crleadin" class="cr_leadin">将一个点（或位移量）从一个坐标系转换成另一个坐标系</p>
 <pre class="prog_in_end">(trans pt from to [disp])   </pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">pt</p>
-<p class="define_text">��άʵ���б����ȿ��Ա����ͳ�һ����ά�㣬�ֿ��Ա����ͳ�һ����άλ�ƣ�ʸ������</p>
+<p class="define_text">三维实数列表，既可以被解释成一个三维点，又可以被解释成一个三维位移（矢量）。</p>
 <p class="define_head">from</p>
-<p class="define_text">�������롢ͼԪ������ά����ʸ����ָ�� pt ������ϵ�������������Ϊ����ֵ��</p> 
+<p class="define_text">整数代码、图元名或三维拉伸矢量，指定 pt 的坐标系。整数代码可以为如下值：</p> 
 <p class="define_text">
-<span class="CharSansBold">0</span>  ��������ϵ��WCS��</p>
+<span class="CharSansBold">0</span>  世界坐标系（WCS）</p>
 <p class="define_text">
-<span class="CharSansBold">1</span>  �û�����ϵ����ǰ UCS��</p> 
+<span class="CharSansBold">1</span>  用户坐标系（当前 UCS）</p> 
 <p class="define_text">
-<span class="CharSansBold">2</span>  ����� 0 ����� 1 һ��ʹ��ʱ����ʾ��ǰ�ӿڵ���ʾ����ϵ (DCS)������� 3 һ��ʹ��ʱ����ʾ��ǰģ�Ϳռ��ӿڵ� DCS��</p> 
+<span class="CharSansBold">2</span>  与代码 0 或代码 1 一起使用时，表示当前视口的显示坐标系 (DCS)。与代码 3 一起使用时，表示当前模型空间视口的 DCS。</p> 
 <p class="define_text">
-<span class="CharSansBold">3</span>  ͼֽ�ռ� DCS�������ڴ��� 2��</p> 
+<span class="CharSansBold">3</span>  图纸空间 DCS（仅用于代码 2）</p> 
 <p class="define_head">to</p>
-<p class="define_text">�������롢ͼԪ������ά����ʸ����ָ�����ص������ϵ����Ч����������ȡֵ��μ� from ������</p> 
+<p class="define_text">整数代码、图元名或三维拉伸矢量，指定返回点的坐标系。有效的整数代码取值请参见 from 参数。</p> 
 <p class="define_head">disp</p>
-<p class="define_text">��������Ҳ�Ϊ nil���� pt ��Ϊ��άλ�ƶ�������ά�㿴����</p> 
-<p class="body">��� from �� to ������ͼԪ�������������� entnext��entlast��entsel��nentsel �� ssname �Ⱥ������ص�ͼԪ���������Ϳ��Խ�ĳ���ض�����Ķ�������ϵ (OCS) �еĵ����ؽ���ת��������ĳЩ����OCS �ȼ��� WCS������Щ����OCS �� WCS ֮���ת���ǿղ�������ʹ����ά����ʸ��������ʵ����ɵ�һ������������ת������ OCS ����һ�ַ��������ǣ����� OCS �ȼ��� WCS 
-����Щ��������ת��Ҳ�����κβ�����</p>
-<p class="Heading-2">����ֵ</p>
-<p class="body">�ɲ��� to ָ��������ϵ��ʾ��һ����ά�㣨��λ�ƣ���</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">������������У�UCS ����������ϵ�� Z ����ת 90 �ȣ�</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(trans '(1.0 2.0
+<p class="define_text">如果存在且不为 nil，则将 pt 作为三维位移而不是三维点看待。</p> 
+<p class="body">如果 from 或 to 参数是图元名，它必须是由 entnext、entlast、entsel、nentsel 和 ssname 等函数返回的图元名。这样就可以将某个特定对象的对象坐标系 (OCS) 中的点来回进行转换（对于某些对象，OCS 等价于 WCS，对这些对象，OCS 和 WCS 之间的转换是空操作）。使用三维拉伸矢量（三个实数组成的一个表）是来回转换对象 OCS 的另一种方法。但是，对于 OCS 等价于 WCS 
+的那些对象，这种转换也不做任何操作。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">由参数 to 指定的坐标系表示的一个三维点（或位移）。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">在下面的样例中，UCS 绕世界坐标系的 Z 轴旋转 90 度：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(trans '(1.0 2.0
 3.0) 0 1)</span>
 </p>
 <p class="prompt_end">(2.0 -1.0 3.0)</p>
-<p class="prompt_end">��� <span class="CharSansBold">(trans '(1.0 2.0
+<p class="prompt_end">命令： <span class="CharSansBold">(trans '(1.0 2.0
 3.0) 1 0)</span>
 </p>
 <p class="prompt_end">(-2.0 1.0 3.0)</p>
-<p class="body">��������ϵ����ϸ��Ϣ����μ� Visual LISP ������Ա�ֲ��е�����ϵת����</p> 
-<p class="body">���磬Ҫ�ڲ�ʹ�ö���׽������£���һ���ı��Ĳ���㻭һ��ֱ�ߣ���Ҫ���ı�����Ĳ������ı������ OCS ת���� UCS��</p> 
+<p class="body">关于坐标系的详细信息，请参见 Visual LISP 开发人员手册中的坐标系转换。</p> 
+<p class="body">例如，要在不使用对象捕捉的情况下，从一行文本的插入点画一条直线，需要将文本对象的插入点从文本对象的 OCS 转换到 UCS：</p> 
 <pre class="prog_in_end">(trans text-insert-pointtext-ename 1)</pre>
-<p class="body">Ȼ��Ϳ��Խ������������㣺����ʾ��</p>
-<p class="body">�෴�أ�����ֵ�͵� entmod ������ȥ֮ǰ�����뽫�õ㣨��λ�ƣ�ֵת�����øö���� OCS ��ʾ�����磬���Ҫ��Բ��� UCS ƫ�� (1,2,3)����ʹ�� MOVE ���������Ҫ����ƫ������ UCS ת����Բ�� OCS��</p> 
+<p class="body">然后就可以将结果传给“起点：”提示。</p>
+<p class="body">相反地，将点值送到 entmod 函数中去之前，必须将该点（或位移）值转换成用该对象的 OCS 表示。例如，如果要将圆相对 UCS 偏移 (1,2,3)（不使用 MOVE 命令），就需要将该偏移量从 UCS 转换成圆的 OCS：</p> 
 <pre class="prog_in_end">(trans '(1 2 3) 1 circle-ename)</pre>
-<p class="body">Ȼ��Ϳ��Խ����ƫ�����ӵ�Բ��Բ����ȥ��</p>
-<p class="body">���磬����û�������һ���㣬����Ҫ�ҳ�һ��ֱ�ߵ���һ���˵㿴������õ���������ȵý��û�����ĵ�� UCS ת���� DCS��</p> 
+<p class="body">然后就可以将结果偏移量加到圆的圆心上去。</p>
+<p class="body">例如，如果用户输入了一个点，且想要找出一条直线的哪一个端点看起来离该点更近，就先得将用户输入的点从 UCS 转换到 DCS：</p> 
 <pre class="prog_in_end">(trans user-point 1 2)</pre>
-<p class="body">Ȼ���ٽ�ֱ�ߵ�ÿһ���˵�� OCS ת���� DCS��</p> 
+<p class="body">然后再将直线的每一个端点从 OCS 转换到 DCS：</p> 
 <pre class="prog_in_end">(trans endpoint line-ename 2)</pre>
-<p class="body">�����Ϳ��Լ�����û�����ĵ���ֱ��ÿһ���˵��ľ��루���� Z ���꣩���Ӷ�ȷ����һ���˵㿴�������û�����ĵ������</p> 
-<p class="body">trans ����Ҳ����ת����ά�㣬����Ҫͨ���� Z ���긳һ���ʵ���ֵ��ʵ�֡���ʹ�õ� Z ����ȡ������ָ���� from ����ϵ���Լ���ֵ����Ϊһ���㻹����Ϊһ��λ�ơ��������Ϊһ��λ�ƣ���ô�� Z ֵ����Ϊ 0.0���������Ϊһ���㣬��ô�� Z ֵ���±�ȷ����</p> 
+<p class="body">这样就可以计算出用户输入的点与直线每一个端点间的距离（忽略 Z 坐标），从而确定哪一个端点看起来距用户输入的点更近。</p> 
+<p class="body">trans 函数也可以转换二维点，这需要通过给 Z 坐标赋一个适当的值来实现。所使用的 Z 分量取决于所指定的 from 坐标系，以及该值是作为一个点还是作为一个位移。如果是作为一个位移，那么其 Z 值总是为 0.0；如果是作为一个点，那么其 Z 值由下表确定。</p> 
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="2">
-<p class="table_heading">ת����ά��ʱ�� Z ����ֵ </p> 
+<p class="table_heading">转换二维点时的 Z 坐标值 </p> 
 </th>
 </tr>
 <tr class="row_0">
 <th>
 <p class="table_heading">From</p>
 </th><th>
-<p class="table_heading">����� Z ����ֵ</p> 
+<p class="table_heading">填入的 Z 坐标值</p> 
 </th>
 </tr>
 </thead>
@@ -112,7 +112,7 @@
 <td class="BasicLeft_CELL">
 <p class="table_body">UCS</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">��ǰ���</p>
+<p class="table_body">当前标高</p>
 </td>
 </tr>
 <tr class="row_1">
@@ -126,21 +126,21 @@
 <td class="BasicLeft_CELL">
 <p class="table_body">DCS</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ͶӰ����ǰ����ƽ�棨UCS XY ƽ�� + ��ǰ��ߣ�</p> 
+<p class="table_body">投影到当前构造平面（UCS XY 平面 + 当前标高）</p> 
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">PSDCS</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ͶӰ����ǰ����ƽ�棨UCS XY ƽ�� + ��ǰ��ߣ�</p> 
+<p class="table_body">投影到当前构造平面（UCS XY 平面 + 当前标高）</p> 
 </td>
 </tr>
 </tbody>
 </table>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlr-type</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">����ͨ�� Visual LISP ����</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� Visual LISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,25 +39,25 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">���ش�����Ӧ�����͵ķ���</p>
+<p id="crleadin" class="cr_leadin">返回代表反应器类型的符号</p>
 <pre class="prog_in_end">(vlr-type reactor)</pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">reactor</p>
-<p class="define_text">VLR ����</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">��ʾ��Ӧ�����͵ķ��š��±��г��� vlr-type ���ܷ��ص����ͣ�</p> 
+<p class="define_text">VLR 对象。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">表示反应器类型的符号。下表列出了 vlr-type 可能返回的类型：</p> 
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="2">
-<p class="table_heading">��Ӧ������ </p>
+<p class="table_heading">反应器类型 </p>
 </th>
 </tr>
 <tr class="row_0">
 <th>
-<p class="table_heading">��Ӧ������</p>
+<p class="table_heading">反应器类型</p>
 </th><th>
-<p class="table_heading">˵��</p>
+<p class="table_heading">说明</p>
 </th>
 </tr>
 </thead>
@@ -66,143 +66,143 @@
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-AcDb-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">���ݿⷴӦ����
+<p class="table_body">数据库反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Command-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ�����¼��ı༭����Ӧ����
+<p class="table_body">通知命令事件的编辑器反应器。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-DeepClone-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ deepclone �¼��ı༭����Ӧ���� 
+<p class="table_body">通知 deepclone 事件的编辑器反应器。 
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-DocManager-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">�ĵ�������Ӧ����
+<p class="table_body">文档管理反应器。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-DWG-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨͼ���¼�����򿪻�ر�ͼ�Σ��ı༭����Ӧ����
+<p class="table_body">通知图形事件（如打开或关闭图形）的编辑器反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-DXF-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ DXF �ļ���д��������¼��ı༭����Ӧ���� 
+<p class="table_body">通知 DXF 文件读写操作相关事件的编辑器反应器。 
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Editor-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">һ��ı༭����Ӧ�������������ݡ�
+<p class="table_body">一般的编辑器反应器。用于向后兼容。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Insert-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ���������¼��ı༭����Ӧ����
+<p class="table_body">通知块插入相关事件的编辑器反应器。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Linker-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">���ӷ�Ӧ����
+<p class="table_body">链接反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Lisp-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ LISP �¼��ı༭����Ӧ���� 
+<p class="table_body">通知 LISP 事件的编辑器反应器。 
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Miscellaneous-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">������������Ӧ�����͵ı༭����Ӧ����
+<p class="table_body">不属于其他反应器类型的编辑器反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Mouse-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ����¼�����˫�����ı༭����Ӧ����
+<p class="table_body">通知鼠标事件（如双击）的编辑器反应器。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Object-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">����Ӧ����
+<p class="table_body">对象反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-SysVar-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨϵͳ�����仯�ı༭����Ӧ����
+<p class="table_body">通知系统变量变化的编辑器反应器。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Toolbar-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ������λͼ�仯�ı༭����Ӧ����
+<p class="table_body">通知工具栏位图变化的编辑器反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Undo-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ���������ı༭����Ӧ����
+<p class="table_body">通知放弃操作的编辑器反应器。
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Wblock-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ��д����صĲ����ı༭����Ӧ����
+<p class="table_body">通知和写块相关的操作的编辑器反应器。
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-Window-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ�ƶ������� AutoCAD �����¼��ı༭����Ӧ���� 
+<p class="table_body">通知移动或缩放 AutoCAD 窗口事件的编辑器反应器。 
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">:VLR-XREF-Reactor</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">֪ͨ�븽�Ż��޸��ⲿ������ص��¼��ı༭����Ӧ����
+<p class="table_body">通知与附着或修改外部参照相关的事件的编辑器反应器。
 </td>
 </tr>
 </tbody>
 </table>
-<p class="Heading-2">ʾ��</p>
+<p class="Heading-2">示例</p>
 <pre class="prog_in">_$ (vlr-type circleReactor)</pre>
 <pre class="prog_in_end">:VLR-Object-Reactor</pre>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-registry-delete</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êı</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜ç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êı&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜ç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›åˆ°ä¸Šä¸€å±‚..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,17 +39,17 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">´Ó Winows ×¢²á±íÖĞÉ¾³ıÖ¸¶¨µÄÖ÷¼ü»òÖµ</p> 
+<p id="crleadin" class="cr_leadin">ä» Winows æ³¨å†Œè¡¨ä¸­åˆ é™¤æŒ‡å®šçš„ä¸»é”®æˆ–å€¼</p> 
 <pre class="prog_in_end">(vl-registry-delete reg-key [val-name])</pre>
-<p class="Heading-2">²ÎÊı</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">reg-key</p>
-<p class="define_text">×Ö·û´®£¬Ö¸¶¨ Windows ×¢²á±íÖ÷¼ü¡£</p> 
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒæŒ‡å®š Windows æ³¨å†Œè¡¨ä¸»é”®ã€‚</p> 
 <p class="define_head">val-name</p>
-<p class="define_text">×Ö·û´®£¬°üº¬ reg-key ÌõÄ¿µÄÖµ¡£</p> 
-<p class="body">Èç¹û¸ø³öÁË val-name ÇÒÆäÖµ²»Îª nil£¬Ôò½«´Ó×¢²á±íÇå³ıÖ¸¶¨Öµ¡£Èç¹ûÃ»ÓĞ val-name »ò¸ÃÖµÎª nil£¬º¯Êı½«É¾³ıÖ¸¶¨Ö÷¼ü¼°ÆäËùÓĞµÄÖµ¡£</p> 
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û³É¹¦Ôò·µ»Ø T£¬·ñÔò·µ»Ø nil¡£</p> 
-<p class="Heading-2">Ê¾Àı</p>
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒåŒ…å« reg-key æ¡ç›®çš„å€¼ã€‚</p> 
+<p class="body">å¦‚æœç»™å‡ºäº† val-name ä¸”å…¶å€¼ä¸ä¸º nilï¼Œåˆ™å°†ä»æ³¨å†Œè¡¨æ¸…é™¤æŒ‡å®šå€¼ã€‚å¦‚æœæ²¡æœ‰ val-name æˆ–è¯¥å€¼ä¸º nilï¼Œå‡½æ•°å°†åˆ é™¤æŒ‡å®šä¸»é”®åŠå…¶æ‰€æœ‰çš„å€¼ã€‚</p> 
+<p class="Heading-2">è¿”å›å€¼</p>
+<p class="body">å¦‚æœæˆåŠŸåˆ™è¿”å› Tï¼Œå¦åˆ™è¿”å› nilã€‚</p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
 <pre class="prog_in">_$ (vl-registry-write &quot;HKEY_CURRENT_USER\\Test&quot; &quot;&quot; &quot;test data&quot;)</pre>
 <pre class="prog_in">&quot;test data&quot;</pre>
 <pre class="prog_in">_$ (vl-registry-read &quot;HKEY_CURRENT_USER\\Test&quot;)</pre>
@@ -57,13 +57,13 @@
 <pre class="prog_in">_$ (vl-registry-delete &quot;HKEY_CURRENT_USER\\Test&quot;)</pre>
 <pre class="prog_in_end">T</pre>
 <p class="note">
-<span class="note_char">×¢Òâ</span>&nbsp;¸Ãº¯Êı²»ÄÜÉ¾³ı°üº¬×ÓÊ÷µÄÖ÷¼ü¡£ÒªÉ¾³ı×ÓÊ÷£¬±ØĞëÊ¹ÓÃ vl-registry-descendents Ã¶¾Ù²¢É¾³ıËùÓĞµÄ×Ó¼ü¡£</p> 
-<p class="see_also">²ÎÔÄ</p>
-<p class="body"> <a href="ALR.default.294.htm">vl-registry-descendents</a>¡¢<a href="ALR.default.295.htm">vl-registry-read</a> 
-ºÍ <a href="ALR.default.296.htm">vl-registry-write</a>  º¯Êı¡£</p>
+<span class="note_char">æ³¨æ„</span>&nbsp;è¯¥å‡½æ•°ä¸èƒ½åˆ é™¤åŒ…å«å­æ ‘çš„ä¸»é”®ã€‚è¦åˆ é™¤å­æ ‘ï¼Œå¿…é¡»ä½¿ç”¨ vl-registry-descendents æšä¸¾å¹¶åˆ é™¤æ‰€æœ‰çš„å­é”®ã€‚</p> 
+<p class="see_also">å‚é˜…</p>
+<p class="body"> <a href="ALR.default.294.htm">vl-registry-descendents</a>ã€<a href="ALR.default.295.htm">vl-registry-read</a> 
+å’Œ <a href="ALR.default.296.htm">vl-registry-write</a>  å‡½æ•°ã€‚</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓĞ Î´¾­Ğí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓĞ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜ç»é€šé“</a> ç‰ˆæƒæ‰€æœ‰ æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>entmod</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,63 +39,63 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">�޸Ķ���ͼԪ���Ķ�������</p>
+<p id="crleadin" class="cr_leadin">修改对象（图元）的定义数据</p>
 <pre class="prog_in_end">(entmod elist)</pre>
-<p class="body">entmod ���������� elist �� -1 ����ָ����ͼԪ�������ݿ���Ϣ��AutoLISP �������ݿ���Ϣ�Ļ��������ǣ����� entget �������ͼԪ�Ķ������ݣ��޸Ķ���ͼԪ�ı���Ȼ���� entmod �������������ݿ��е�ͼԪ��entmod �����ȿ����޸�ͼ�ζ����ֿ����޸ķ�ͼ�ζ���</p> 
-<p class="Heading-2">����</p>
+<p class="body">entmod 函数更新由 elist 的 -1 组中指定的图元名的数据库信息。AutoLISP 更新数据库信息的基本方法是，先用 entget 函数获得图元的定义数据，修改定义图元的表，然后用 entmod 函数来更新数据库中的图元。entmod 函数既可以修改图形对象，又可以修改非图形对象。</p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">elist</p>
-<p class="define_text">�� entget �������ر���ͬ��ʽ�ı�<br> 
+<p class="define_text">与 entget 函数返回表相同格式的表<br> 
 </p>
-<p class="define_text">������Щʹ�ø���ֵ��ͼԪ�����ȣ���entmod �������Խ���������������ת���ɸ�������������ƣ�����ʹ��������ͼԪ������ɫ���룩������ṩ���Ǹ�������entmod �������г���С�����֣�����ת����������</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">����ɹ����� entmod ���� elist����� entmod �����޸�ָ��ͼԪ���������� nil��</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">���������ȡͼԪ�����ԣ�Ȼ���޸�ͼԪ��</p>
-<p class="body">������ en1 ��ֵ����Ϊͼ���е�һ��ͼԪ�����ƣ�</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq en1 (entnext))</span>
+<p class="define_text">对于那些使用浮点值的图元域（如厚度），entmod 函数可以接受整数，并将其转换成浮点数。与此类似，对于使用整数的图元域（如颜色代码），如果提供的是浮点数，entmod 函数会切除其小数部分，将其转换成整数。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功，则 entmod 返回 elist。如果 entmod 不能修改指定图元，则函数返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">下列命令获取图元的特性，然后修改图元。</p>
+<p class="body">将变量 en1 的值设置为图形中的一个图元的名称：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq en1 (entnext))</span>
 </p>
-<p class="prompt_end">&lt;ͼԪ��: 2c90520&gt;</p>
-<p class="body">��ͼԪ en1 ��ͼԪ���ݱ����ڱ��� ed �У�</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq ed (entget
+<p class="prompt_end">&lt;图元名: 2c90520&gt;</p>
+<p class="body">将图元 en1 的图元数据保存在变量 ed 中：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq ed (entget
 en1))</span>
 </p>
 <p class="prompt_end">((-1 . &lt;Entity name:
 2c90520&gt;) (0 . "CIRCLE") (5 . "4C") (100 . "AcDbEntity") (67 . 0)
 (8 . "0") (100 . "AcDbCircle") (10 3.45373 6.21635 0.0) (40 . 2.94827)
 (210 0.0 0.0 1.0))</p>
-<p class="body">�� ed �е�ͼ�����ͼ�� 0 ��Ϊͼ�� 1��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq ed (subst (cons
+<p class="body">将 ed 中的图层组从图层 0 改为图层 1：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq ed (subst (cons
 8 "1") (assoc 8 ed) ed ))</span>
 </p>
 <p class="prompt_end">((-1 . &lt;Entity name:
 2c90520&gt;) (0 . "CIRCLE") (5 . "4C") (100 . "AcDbEntity") (67 . 0)
 (8 . "1") (100 . "AcDbCircle") (10 3.45373 6.21635 0.0) (40 . 2.94827)
 (210 0.0 0.0 1.0))</p>
-<p class="body">�޸�ͼ���� en1 ͼԪ��ͼ�㣺</p> 
-<p class="prompt_end">���<span class="CharSansBold"> (entmod ed)</span>
+<p class="body">修改图形中 en1 图元的图层：</p> 
+<p class="prompt_end">命令：<span class="CharSansBold"> (entmod ed)</span>
 </p>
 <p class="prompt_end">((-1 . &lt;Entity name:
 2c90520&gt;) (0 . "CIRCLE") (5 . "4C") (100 . "AcDbEntity") (67 . 0)
 (8 . "1") (100 . "AcDbCircle") (10 3.45373 6.21635 0.0) (40 . 2.94827)
 (210 0.0 0.0 1.0))</p>
-<p class="Heading-2">entmod ��ʹ������</p> 
-<p class="body">���� entmod �����������޸���һЩ���ƣ�</p> 
+<p class="Heading-2">entmod 的使用限制</p> 
+<p class="body">关于 entmod 函数所作的修改有一些限制：</p> 
 <ul>
-<li class="list_bulleted_begin">���ܸı�һ��ͼԪ�����ͺ;�������һ��Ҫ��������ֻ���ȵ��� entdel ����ɾ������Ȼ����� command �� entmake ����������ͼԪ�� </li> 
-<li class="list_bulleted">entmod ���������޸��ڲ����� SEQEND ͼԪ�� -2 ���е�ͼԪ���������ͼ���������޸ģ����ᱻϵͳ���ԡ�</li> 
-<li class="list_bulleted_end">����ʹ�� entmod �����޸��ӿ�ͼԪ�� </li> 
+<li class="list_bulleted_begin">不能改变一个图元的类型和句柄。如果一定要这样做，只能先调用 entdel 函数删除它，然后调用 command 或 entmake 函数创建新图元。 </li> 
+<li class="list_bulleted">entmod 函数不能修改内部域，如 SEQEND 图元的 -2 组中的图元名，如果试图作这样的修改，将会被系统忽略。</li> 
+<li class="list_bulleted_end">不能使用 entmod 函数修改视口图元。 </li> 
 </ul>
-<p class="body">���Խ�ͼԪ�Ŀռ�ɼ��Ը�Ϊ 0 �� 1���ӿڶ�����⣩������� entmod �����޸��˿鶨���е�ͼԪ�����޸Ļ�Ӱ��ͼ���иÿ������ʵ����</p> 
-<p class="body">���� entmod �����޸Ķ���ͼԪǰ��Ӧ�ȶ�����д�����ߵ�ͷ���������������Ķ����ͼԪ���Ǹö������ڵĶ���ߣ����ܻᶪʧ������Ϣ��40 �� 41 �飩��</p> 
+<p class="body">可以将图元的空间可见性改为 0 或 1（视口对象除外）。如果用 entmod 函数修改了块定义中的图元，该修改会影响图形中该块的所有实例。</p> 
+<p class="body">在用 entmod 函数修改顶点图元前，应先读出或写入多段线的头部。如果最近处理的多段线图元不是该顶点所在的多段线，可能会丢失宽度信息（40 和 41 组）。</p> 
 <p class="warning">
-<span class="warning_char">���棡</span>&nbsp;������ entmod �����޸Ŀ鶨���е�ͼԪ�������������ܻ��������������Ŀ飬���� AutoCAD ϵͳ������</p> 
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.085.htm">entdel</a>�� <a href="ALR.default.086.htm">entget</a>�� <a href="ALR.default.088.htm">entmake</a>��<a href="ALR.default.091.htm">entnext</a> 
-�� <a href="ALR.default.135.htm">handent</a> ������Visual LISP ������Ա�ֲ��е� <a href="ms-its:ACAD_ALG.chm::/ALG.10.018.htm">�޸�ͼԪ</a>  
-�� <a href="ms-its:ACAD_ALG.chm::/ALG.10.023.htm">ͼԪ���ݺ�����ͼ����Ļ</a>��</p>
+<span class="warning_char">警告！</span>&nbsp;可以用 entmod 函数修改块定义中的图元，但这样做可能会生成引用自身的块，导致 AutoCAD 系统崩溃。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.085.htm">entdel</a>、 <a href="ALR.default.086.htm">entget</a>、 <a href="ALR.default.088.htm">entmake</a>、<a href="ALR.default.091.htm">entnext</a> 
+和 <a href="ALR.default.135.htm">handent</a> 函数。Visual LISP 开发人员手册中的 <a href="ms-its:ACAD_ALG.chm::/ALG.10.018.htm">修改图元</a>  
+和 <a href="ms-its:ACAD_ALG.chm::/ALG.10.023.htm">图元数据函数和图形屏幕</a>。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

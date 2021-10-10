@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-list-loaded-vlx</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">����ͨ�� Visual LISP ����</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� Visual LISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,35 +39,35 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">�����뵱ǰ�ĵ�����������ж������ƿռ� VLX �ļ�</p> 
+<p id="crleadin" class="cr_leadin">返回与当前文档相关联的所有独立名称空间 VLX 文件</p> 
 <pre class="prog_in_end">(vl-list-loaded-vlx) </pre>
-<p class="Heading-2">����ֵ</p>
-<p class="body">���ű�����ʾ�뵱ǰ AutoCAD �ĵ�������Ķ������ƿռ� VLX Ӧ�ó������û���뵱ǰ AutoCAD �ĵ�������� VLX Ӧ�ó����򷵻� nil��</p> 
-<p class="body">vl-list-loaded-vlx �������г����ص���ǰ�ĵ����ƿռ��е� VLX Ӧ�ó���</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">�鿴�뵱ǰ AutoCAD �ĵ���������Ѽ��� VLX �ļ���</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">符号表，表示与当前 AutoCAD 文档相关联的独立名称空间 VLX 应用程序。如果没有与当前 AutoCAD 文档相关联的 VLX 应用程序，则返回 nil。</p> 
+<p class="body">vl-list-loaded-vlx 函数不列出加载到当前文档名称空间中的 VLX 应用程序。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">查看与当前 AutoCAD 文档相关联的已加载 VLX 文件：</p> 
 <pre class="prog_in">_$ (vl-list-loaded-vlx)</pre>
 <pre class="prog_in_end">nil</pre>
-<p class="body">û���뵱ǰ�ĵ�������� VLX �ļ���</p> 
-<p class="body">�������� VLX �ļ������� VLX Ӧ�ó�������Ϊ���Լ������ƿռ������У�</p> 
+<p class="body">没有与当前文档相关联的 VLX 文件。</p> 
+<p class="body">加载两个 VLX 文件，两个 VLX 应用程序生成为在自己的名称空间中运行：</p> 
 <pre class="prog_in">_$ (load &quot;c:/my documents/visual lisp/examples/foo1.vlx&quot;)</pre>
 <pre class="prog_in">nil</pre>
 <pre class="prog_in">_$ (load &quot;c:/my documents/visual lisp/examples/foo2.vlx&quot;)</pre>
 <pre class="prog_in_end">nil</pre>
-<p class="body">�鿴�뵱ǰ AutoCAD �ĵ���������Ѽ��� VLX �ļ���</p> 
+<p class="body">查看与当前 AutoCAD 文档相关联的已加载 VLX 文件：</p> 
 <pre class="prog_in">_$ (vl-list-loaded-vlx)</pre>
 <pre class="prog_in_end">(FOO1 FOO2)</pre>
-<p class="body">vl-list-loaded-vlx.�����г������ոռ��ص� VLX ������</p> 
-<p class="body">����һ���ѱ���� VLX�������ĵ����ƿռ������У�</p> 
+<p class="body">vl-list-loaded-vlx.函数列出两个刚刚加载的 VLX 函数。</p> 
+<p class="body">加载一个已编译的 VLX，它在文档名称空间中运行：</p> 
 <pre class="prog_in">_$ (load &quot;c:/my documents/visual lisp/examples/foolocal.vlx&quot;)</pre>
 <pre class="prog_in_end">nil</pre>
-<p class="body">�鿴�Ѽ��ص� VLX �ļ���</p> 
+<p class="body">查看已加载的 VLX 文件：</p> 
 <pre class="prog_in">_$ (vl-list-loaded-vlx)</pre>
 <pre class="prog_in_end">(FOO1 FOO2))</pre>
-<p class="body">vl-list-loaded-vlx ���������һ�μ��ص� VLX (foolocal.vlx)����ΪӦ�ó����Ǽ��ص��ĵ������ƿռ䣬��û���Լ������ƿռ䡣</p> 
+<p class="body">vl-list-loaded-vlx 不返回最后一次加载的 VLX (foolocal.vlx)，因为应用程序是加载到文档的名称空间，而没有自己的名称空间。</p> 
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

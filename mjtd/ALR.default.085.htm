@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>entdel</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,35 +39,35 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">ɾ������ͼԪ����ָ���ǰɾ���Ķ���</p>
+<p id="crleadin" class="cr_leadin">删除对象（图元）或恢复先前删除的对象</p>
 <pre class="prog_in_end">(entdel  ename) </pre>
-<p class="body">����� ename ����ָ����ͼԪ��ǰ��ͼ���У���ɾ����ͼԪ������ڱ��α༭�����и�ͼԪ�ѱ�ɾ����entdel �������ָ���ͼԪ��ֻ����ͼ���˳�ͼ�α༭����ʱ����ɾ����ͼԪ�Ż�������ͼ���������entdel �����ȿ���ɾ��ͼ�ζ����ֿ���ɾ����ͼ�ζ��� </p> 
-<p class="Heading-2">����</p>
+<p class="body">如果由 ename 参数指定的图元当前在图形中，则删除该图元。如果在本次编辑任务中该图元已被删除，entdel 函数将恢复该图元。只有在图形退出图形编辑环境时，被删除的图元才会真正从图形中清除。entdel 函数既可以删除图形对象，又可以删除非图形对象。 </p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">ename</p>
-<p class="define_text">Ҫɾ����ָ���ͼԪ�����ơ�</p>
-<p class="Heading-2">����ֵ</p>
-<p class="body">ͼԪ����</p>
-<p class="body">ʹ��˵��</p>
-<p class="body">entdel �������ܴ�����ͼԪ�����ԺͶ���εĶ��㲻�ܶ��������ǵĸ�ͼԪ����ɾ��������ͨ������ command ����ִ�� ATTEDIT �� PEDIT �������޸���ͼԪ�� </p> 
-<p class="body">����ɾ���鶨���е�ͼԪ�������Ե��� entmake ��������ȫ���¶���һ���飬��ȥ����Ҫɾ����ͼԪ��</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">��ȡͼ���е�һ��ͼԪ�����Ʋ�����ָ�������� e1��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq e1 (entnext))</span>
+<p class="define_text">要删除或恢复的图元的名称。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">图元名。</p>
+<p class="body">使用说明</p>
+<p class="body">entdel 函数仅能处理主图元。属性和多边形的顶点不能独立于它们的父图元而被删除。可以通过调用 command 函数执行 ATTEDIT 或 PEDIT 命令来修改子图元。 </p> 
+<p class="body">不能删除块定义中的图元。但可以调用 entmake 函数来完全重新定义一个块，以去掉想要删除的图元。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">获取图形中第一个图元的名称并将其指定给变量 e1：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq e1 (entnext))</span>
 </p>
-<p class="prompt_end">&lt;ͼԪ��: 2c90520&gt;</p>
-<p class="body">ɾ����Ϊ e1 ��ͼԪ��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(entdel e1)</span>
+<p class="prompt_end">&lt;图元名: 2c90520&gt;</p>
+<p class="body">删除名为 e1 的图元：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(entdel e1)</span>
 </p>
-<p class="prompt_end">&lt;ͼԪ��: 2c90520&gt;</p>
-<p class="body">�ָ���Ϊ e1 ��ͼԪ��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(entdel e1)</span>
+<p class="prompt_end">&lt;图元名: 2c90520&gt;</p>
+<p class="body">恢复名为 e1 的图元：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(entdel e1)</span>
 </p>
-<p class="prompt_end"> &lt;ͼԪ��: 2c90520&gt;</p>
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.135.htm">handent</a>  ������ </p>
+<p class="prompt_end"> &lt;图元名: 2c90520&gt;</p>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.135.htm">handent</a>  函数。 </p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

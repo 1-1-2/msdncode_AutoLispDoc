@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>getdist</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,32 +39,32 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ͣ�Եȴ��û��������</p>
+<p id="crleadin" class="cr_leadin">暂停以等待用户输入距离</p>
 <pre class="prog_in_end">(getdist [pt] [msg]) </pre>
-<p class="body">�û�����ͨ��ѡ����������ָ�����룬����ṩ�˻���Ļ�����ֻ��ѡ��ڶ����㡣�û�������ͨ������һ���� AutoCAD �ĵ�ǰ���뵥λ��ʽ��ʾ������ָ�����롣��Ȼ��ǰ���뵥λ��ʽ��������Ӣ�ߺ�Ӣ�磨������λ�ƣ���ʾ�ģ�getdist&nbsp;<br>
-����������ʵ����ʽ�����������ֵ��</p>
-<p class="body">getdist �����ӵ�һ���㵽��ǰʮ�ֹ��λ����ʾһ�������ߣ��԰����û�ȷ������ֵ��</p> 
-<p class="body">�û�����������һ�� AutoLISP ����ʽ����Ӧ getdist ������</p> 
-<p class="Heading-2">����</p>
+<p class="body">用户可以通过选择两个点来指定距离，如果提供了基点的话，则只需选择第二个点。用户还可以通过输入一个以 AutoCAD 的当前距离单位格式表示的数来指定距离。虽然当前距离单位格式可能是以英尺和英寸（建筑单位制）表示的，getdist&nbsp;<br>
+函数总是以实数形式返回这个距离值。</p>
+<p class="body">getdist 函数从第一个点到当前十字光标位置显示一条拖引线，以帮助用户确定距离值。</p> 
+<p class="body">用户不能输入另一个 AutoLISP 表达式来响应 getdist 的请求。</p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">pt</p>
-<p class="define_text">��ά����ά�㡣������ǰ UCS �еĻ��㡣����Ѿ��ṩ�� pt�������ʾ�û�����ڶ��㡣</p> 
+<p class="define_text">二维或三维点。用作当前 UCS 中的基点。如果已经提供了 pt，则仅提示用户输入第二点。</p> 
 <p class="define_head">msg</p>
-<p class="define_text">������ʾ�û����ַ��������δָ���ò������� AutoCAD ����ʾ��ʾ��Ϣ��</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">ʵ����������ṩ������ά�㣬��ô����ֵΪ��ά���롣Ȼ��������� initget �����ı�־λ����Ϊ 64����ô���ͻ�֪ͨ getdist ����������ά��� Z&nbsp;<br>
-���꣬�����ض�ά���롣</p>
-<p class="Heading-2">ʾ��</p>
+<p class="define_text">用于提示用户的字符串。如果未指定该参数，则 AutoCAD 不显示提示信息。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">实数。如果所提供的是三维点，那么返回值为三维距离。然而，如果将 initget 函数的标志位设置为 64，那么它就会通知 getdist 函数忽略三维点的 Z&nbsp;<br>
+坐标，而返回二维距离。</p>
+<p class="Heading-2">示例</p>
 <pre class="prog_in">(setq dist (getdist)) </pre>
 <pre class="prog_in">(setq dist (getdist '(1.0 3.5))) </pre>
-<pre class="prog_in">(setq dist (getdist &quot;��ѡ����룺&quot;)) </pre>
-<pre class="prog_in_end">(setq dist (getdist '(1.0 3.5) &quot;��ѡ����룺&quot;))</pre>
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.140.htm">initget</a> �����͡�AutoLISP 
-������Ա�ֲᡷ�е� <a href="ms-its:ACAD_ALG.chm::/ALG.09.015.htm">getxxx 
-����</a>��</p>
+<pre class="prog_in">(setq dist (getdist &quot;请选择距离：&quot;)) </pre>
+<pre class="prog_in_end">(setq dist (getdist '(1.0 3.5) &quot;请选择距离：&quot;))</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.140.htm">initget</a> 函数和《AutoLISP 
+开发人员手册》中的 <a href="ms-its:ACAD_ALG.chm::/ALG.09.015.htm">getxxx 
+函数</a>。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

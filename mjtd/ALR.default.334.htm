@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlax-curve-getPointAtParam</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êı</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜ç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êı&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜ç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›åˆ°ä¸Šä¸€å±‚..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,30 +39,30 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">·µ»ØÇúÏßÉÏ¾ßÓĞÖ¸¶¨²ÎÊıÖµµÄµã</p>
+<p id="crleadin" class="cr_leadin">è¿”å›æ›²çº¿ä¸Šå…·æœ‰æŒ‡å®šå‚æ•°å€¼çš„ç‚¹</p>
 <pre class="prog_in_end">(vlax-curve-getPointAtParam curve-obj param)</pre>
-<p class="Heading-2">²ÎÊı</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">curve-obj</p>
-<p class="define_text">Òª²âÁ¿µÄ VLA ¶ÔÏó¡£</p> 
+<p class="define_text">è¦æµ‹é‡çš„ VLA å¯¹è±¡ã€‚</p> 
 <p class="define_head">param</p>
-<p class="define_text">ÊıÖµ£¬Ö¸¶¨ÇúÏßÉÏµÄ²ÎÊı¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û³É¹¦Ôò·µ»Ø±íÊ¾ÇúÏßÉÏÒ»µãµÄÈıÎ¬µã±í£¬·ñÔò·µ»Ø nil¡£</p> 
-<p class="Heading-2">Ê¾Àı</p>
-<p class="body">ÔÚÏÂÀıÖĞ£¬¼Ù¶¨ splineObj Ö¸Ïò <a href="ALR.default.326.htm">vlax-curve-getDistAtParam</a>¡¡ÑùÀıÖĞµÄÑùÌõÇúÏß¡£</p>
-<p class="body">»ñÈ¡ÇúÏßµÄ¿ªÊ¼²ÎÊı£º</p>
+<p class="define_text">æ•°å€¼ï¼ŒæŒ‡å®šæ›²çº¿ä¸Šçš„å‚æ•°ã€‚</p>
+<p class="Heading-2">è¿”å›å€¼</p>
+<p class="body">å¦‚æœæˆåŠŸåˆ™è¿”å›è¡¨ç¤ºæ›²çº¿ä¸Šä¸€ç‚¹çš„ä¸‰ç»´ç‚¹è¡¨ï¼Œå¦åˆ™è¿”å› nilã€‚</p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">åœ¨ä¸‹ä¾‹ä¸­ï¼Œå‡å®š splineObj æŒ‡å‘ <a href="ALR.default.326.htm">vlax-curve-getDistAtParam</a>ã€€æ ·ä¾‹ä¸­çš„æ ·æ¡æ›²çº¿ã€‚</p>
+<p class="body">è·å–æ›²çº¿çš„å¼€å§‹å‚æ•°ï¼š</p>
 <pre class="prog_in">_$ (setq startSpline (vlax-curve-getStartParam splineObj))</pre>
 <pre class="prog_in_end">0.0</pre>
-<p class="body">»ñÈ¡ÇúÏßµÄ½áÊø²ÎÊı£º</p>
+<p class="body">è·å–æ›²çº¿çš„ç»“æŸå‚æ•°ï¼š</p>
 <pre class="prog_in">_$ (setq endSpline (vlax-curve-getEndParam splineObj))</pre>
 <pre class="prog_in_end">17.1546</pre>
-<p class="body">È·¶¨ÇúÏßµÄÖĞµã£º</p>
+<p class="body">ç¡®å®šæ›²çº¿çš„ä¸­ç‚¹ï¼š</p>
 <pre class="prog_in">_$ (vlax-curve-getPointAtParam splineObj </pre>
 <pre class="prog_in">   ( / (- endspline startspline) 2))</pre>
 <pre class="prog_in_end">(6.71386 2.82748 0.0)</pre>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓĞ Î´¾­Ğí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓĞ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜ç»é€šé“</a> ç‰ˆæƒæ‰€æœ‰ æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

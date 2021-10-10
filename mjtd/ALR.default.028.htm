@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>acet-ps-to-ms</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,24 +39,24 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ͼֽ�ռ䵥λת��ʵ��ֵ��ģ�Ϳռ䵥λ</p>
+<p id="crleadin" class="cr_leadin">从图纸空间单位转换实数值到模型空间单位</p>
 <pre class="prog_in_end">(acet-ps-to-ms [value][viewport])</pre>
-<p class="body">���ͬʱָ���� value �� viewport ������ת����ģ�Ϳռ䵥λ��ֵʹ��ָ�����ӿڡ�������Ҫ�û����롣</p>
-<p class="body">���ֻ�ṩ�� 
-value��������ʹ�õ�ǰ�ӿڶ���Ҳ����Ҫ�û����롣Ȼ���������ǰ�ռ�Ϊģ�Ϳռ䣬Ҳ����˵��û�е�ǰ�ӿڣ���ʱ����ʧ��(���� 
-nil)�����ͼֽ�ռ�Ϊ��ǰ�ռ䣬�����ڵ�ǰͼֽ�ռ䲼���д��ڶ���ӿڣ���������ʾѡ���ӿڣ����ͼֽ�ռ���ֻ��һ���ӿڣ���ֱ��ʹ�ò���ʾ��</p>
-<p class="body">�����ָ��������������ʾ����ֵ����ֵ������Ӧת����</p>
-<p class="Heading-2">����</p>
+<p class="body">如果同时指定了 value 和 viewport 参数，转换到模型空间单位的值使用指定的视口。并不需要用户输入。</p>
+<p class="body">如果只提供了 
+value参数，将使用当前视口而且也不需要用户输入。然而，如果当前空间为模型空间，也就是说并没有当前视口，此时函数失败(返回 
+nil)。如果图纸空间为当前空间，而且在当前图纸空间布局中存在多个视口，函数将提示选择视口，如果图纸空间中只有一个视口，则直接使用不提示。</p>
+<p class="body">如果不指定参数，函数提示输入值并对值进行相应转换。</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">value</p>
-<p class="define_text">Ҫת����ʵ��ֵ��</p>
+<p class="define_text">要转换的实数值。</p>
 <p class="define_head">viewport</p>
-<p class="define_text">�ӿ�ͼԪ����(ads_name)��</p>
-<p class="Heading-2">����ֵ</p>
-<p class="body">�ɹ�ʱ����ת���˵�ʵ��ֵ��ʧ��ʱ���� <span class="CharCourier">nil</span>  
-��</p>
+<p class="define_text">视口图元名称(ads_name)。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">成功时返回转换了的实数值；失败时返回 <span class="CharCourier">nil</span>  
+。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-file-copy</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êý</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±‚..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,49 +39,49 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">½«Ò»¸öÎÄ¼þµÄÄÚÈÝ¸´ÖÆ»ò¸½¼Óµ½ÁíÒ»¸öÎÄ¼þ</p>
+<p id="crleadin" class="cr_leadin">å°†ä¸€ä¸ªæ–‡ä»¶çš„å†…å®¹å¤åˆ¶æˆ–é™„åŠ åˆ°å¦ä¸€ä¸ªæ–‡ä»¶</p>
 <pre class="prog_in_end">(vl-file-copy  source-file destination-file [append])</pre>
-<p class="body">½«Ò»¸öÎÄ¼þµÄÄÚÈÝ¸´ÖÆ»ò¸½¼Óµ½ÁíÒ»¸öÎÄ¼þ¡£vl-file-copy º¯Êý²»»á¸²¸ÇÏÖÓÐÎÄ¼þ£¬¶øÊÇ½«ÄÚÈÝ¸½¼ÓÆäºó¡£</p> 
-<p class="Heading-2">²ÎÊý</p>
+<p class="body">å°†ä¸€ä¸ªæ–‡ä»¶çš„å†…å®¹å¤åˆ¶æˆ–é™„åŠ åˆ°å¦ä¸€ä¸ªæ–‡ä»¶ã€‚vl-file-copy å‡½æ•°ä¸ä¼šè¦†ç›–çŽ°æœ‰æ–‡ä»¶ï¼Œè€Œæ˜¯å°†å†…å®¹é™„åŠ å…¶åŽã€‚</p> 
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">source-file</p>
-<p class="define_text">×Ö·û´®£¬Ö¸¶¨Òª±»¸´ÖÆµÄÎÄ¼þ¡£Èç¹ûÎ´Ö¸¶¨ÍêÕûµÄÂ·¾¶Ãû£¬vl-file-copy ½«ÔÚ AutoCAD Æô¶¯Ä¿Â¼ÖÐ²éÕÒ¡£</p> 
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒæŒ‡å®šè¦è¢«å¤åˆ¶çš„æ–‡ä»¶ã€‚å¦‚æžœæœªæŒ‡å®šå®Œæ•´çš„è·¯å¾„åï¼Œvl-file-copy å°†åœ¨ AutoCAD å¯åŠ¨ç›®å½•ä¸­æŸ¥æ‰¾ã€‚</p> 
 <p class="define_head">destination-file</p>
-<p class="define_text">×Ö·û´®£¬Ö¸¶¨Ä¿±êÎÄ¼þ¡£Èç¹ûÎ´Ö¸¶¨ÍêÕûµÄÂ·¾¶Ãû£¬vl-file-copy 
-½«ÄÚÈÝÐ´Èë AutoCAD Æô¶¯Ä¿Â¼ÖÐ¡£</p> 
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒæŒ‡å®šç›®æ ‡æ–‡ä»¶ã€‚å¦‚æžœæœªæŒ‡å®šå®Œæ•´çš„è·¯å¾„åï¼Œvl-file-copy 
+å°†å†…å®¹å†™å…¥ AutoCAD å¯åŠ¨ç›®å½•ä¸­ã€‚</p> 
 <p class="define_head">append</p>
-<p class="define_text">Èç¹ûÖ¸¶¨¸Ã²ÎÊýÇÒÆäÖµ²»Îª nil£¬source-file ½«¸½¼Óµ½ destination-file 
-£¨¼´¸´ÖÆµ½Ä¿±êÎÄ¼þµÄÎ²²¿£©¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û¸´ÖÆ³É¹¦Ôò·µ»ØÕûÊý£¬·ñÔò·µ»Ø nil¡£</p> 
-<p class="body">·µ»Ø nil µÄ¼¸¸öµäÐÍÔ­Òò°üÀ¨£º</p> 
+<p class="define_text">å¦‚æžœæŒ‡å®šè¯¥å‚æ•°ä¸”å…¶å€¼ä¸ä¸º nilï¼Œsource-file å°†é™„åŠ åˆ° destination-file 
+ï¼ˆå³å¤åˆ¶åˆ°ç›®æ ‡æ–‡ä»¶çš„å°¾éƒ¨ï¼‰ã€‚</p>
+<p class="Heading-2">è¿”å›žå€¼</p>
+<p class="body">å¦‚æžœå¤åˆ¶æˆåŠŸåˆ™è¿”å›žæ•´æ•°ï¼Œå¦åˆ™è¿”å›ž nilã€‚</p> 
+<p class="body">è¿”å›ž nil çš„å‡ ä¸ªå…¸åž‹åŽŸå› åŒ…æ‹¬ï¼š</p> 
 <ul>
 <li class="list_bulleted_begin">
-<span class="CharItalic">source-file</span>  ²»¿É¶Á</li>
+<span class="CharItalic">source-file</span>  ä¸å¯è¯»</li>
 <li class="list_bulleted">
-<span class="CharItalic">source-file</span>  ÎªÄ¿Â¼</li>
+<span class="CharItalic">source-file</span>  ä¸ºç›®å½•</li>
 <li class="list_bulleted">
-Î´Ö¸¶¨ append »ò append µÄÖµÎª nil£¬ÇÒ destination-file ÒÑ¾­´æÔÚ¡£</li> 
+æœªæŒ‡å®š append æˆ– append çš„å€¼ä¸º nilï¼Œä¸” destination-file å·²ç»å­˜åœ¨ã€‚</li> 
 <li class="list_bulleted">
-ÎÞ·¨´ò¿ª destination-file£¨¼´£¬ÎÄ¼þÃûÎÞÐ§»òÎÄ¼þÎªÐ´±£»¤£©</li> 
+æ— æ³•æ‰“å¼€ destination-fileï¼ˆå³ï¼Œæ–‡ä»¶åæ— æ•ˆæˆ–æ–‡ä»¶ä¸ºå†™ä¿æŠ¤ï¼‰</li> 
 <li class="list_bulleted_end">
-ource-file Óë destination-file ÏàÍ¬ 
+ource-file ä¸Ž destination-file ç›¸åŒ 
 </li>
 </ul>
-<p class="Heading-2">Ê¾Àý</p>
-<p class="body">½« autoexec.bat ¸´ÖÆµ½ newauto.bat£º</p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">å°† autoexec.bat å¤åˆ¶åˆ° newauto.batï¼š</p> 
 <pre class="prog_in">_$ (vl-file-copy &quot;c:/autoexec.bat&quot; &quot;c:/newauto.bat&quot;)</pre>
 <pre class="prog_in_end">1417</pre>
-<p class="body">½« test.bat ¸´ÖÆµ½ newauto.bat£º</p> 
+<p class="body">å°† test.bat å¤åˆ¶åˆ° newauto.batï¼š</p> 
 <pre class="prog_in">_$ (vl-file-copy &quot;c:/test.bat&quot; &quot;c:/newauto.bat&quot;)</pre>
 <pre class="prog_in_end">nil</pre>
-<p class="body">¸´ÖÆÊ§°Ü£¬ÒòÎª newauto.bat ÒÑ¾­´æÔÚ£¬¶øÓÖÃ»ÓÐÖ¸¶¨ append ²ÎÊý¡£</p> 
-<p class="body">ÖØ¸´ÉÏÊöÃüÁî£¬µ«Ö¸¶¨ append µÄÖµ£º</p> 
+<p class="body">å¤åˆ¶å¤±è´¥ï¼Œå› ä¸º newauto.bat å·²ç»å­˜åœ¨ï¼Œè€Œåˆæ²¡æœ‰æŒ‡å®š append å‚æ•°ã€‚</p> 
+<p class="body">é‡å¤ä¸Šè¿°å‘½ä»¤ï¼Œä½†æŒ‡å®š append çš„å€¼ï¼š</p> 
 <pre class="prog_in">_$ (vl-file-copy &quot;c:/test.bat&quot; &quot;c:/newauto.bat&quot; T)</pre>
 <pre class="prog_in_end">185</pre>
-<p class="body">¸´ÖÆ³É¹¦£¬ÒòÎªÖ¸¶¨ append µÄÖµÎª T¡£</p> 
+<p class="body">å¤åˆ¶æˆåŠŸï¼Œå› ä¸ºæŒ‡å®š append çš„å€¼ä¸º Tã€‚</p> 
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ‰ æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

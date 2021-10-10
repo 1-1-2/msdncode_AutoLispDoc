@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-vlx-loaded-p</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">����ͨ�� Visual LISP ����</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� Visual LISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,36 +39,36 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">ȷ��ĳ�������ƿռ䵱ǰ�Ƿ����</p>
+<p id="crleadin" class="cr_leadin">确定某独立名称空间当前是否加载</p>
 <pre class="prog_in_end">(vl-vlx-loaded-p appname) </pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">appname</p>
-<p class="define_text">�ַ�����ָ�� VLX Ӧ�ó���</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">���Ӧ�ó����Ѿ������򷵻� T�����δ�����򷵻� nil��</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">��� vlxns Ӧ�ó����Ƿ��Ѽ��ص��Լ������ƿռ䣺</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(vl-vlx-loaded-p 
+<p class="define_text">字符串，指定 VLX 应用程序。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果应用程序已经加载则返回 T，如果未加载则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">检查 vlxns 应用程序是否已加载到自己的名称空间：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(vl-vlx-loaded-p 
 "vlxns")</span>
 </p>
 <p class="prompt_end">nil</p>
-<p class="body">Ӧ�ó���δ���ص��Լ������ƿռ䡣</p>
-<p class="body">���ڼ��� vlxns��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(load "vlxns.vlx")</span> 
+<p class="body">应用程序未加载到自己的名称空间。</p>
+<p class="body">现在加载 vlxns：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(load "vlxns.vlx")</span> 
 </p>
 <p class="prompt_end">nil</p>
-<p class="body">��� vlxns Ӧ�ó����Ƿ�ɹ����أ�</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(vl-vlx-loaded-p 
+<p class="body">检查 vlxns 应用程序是否成功加载：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(vl-vlx-loaded-p 
 "vlxns")</span>
 </p>
 <p class="prompt_end">T</p>
-<p class="body">�������мٶ� vlxns ����Ϊ�������Լ������ƿռ��С����û���������壬���������ص���ǰ�ĵ������ƿռ䣬vl-vlx-loaded-p ������ nil��</p> 
-<p class="see_also">����</p>
-<p class="body"> <a href="ALR.default.150.htm">load</a> �� <a href="ALR.default.316.htm">vl-unload-vlx</a>  
-������</p>
+<p class="body">本样例中假定 vlxns 定义为运行在自己的名称空间中。如果没有这样定义，它将被加载到当前文档的名称空间，vl-vlx-loaded-p 将返回 nil。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.150.htm">load</a> 和 <a href="ALR.default.316.htm">vl-unload-vlx</a>  
+函数。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

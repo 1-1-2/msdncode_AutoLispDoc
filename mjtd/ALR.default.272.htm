@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-file-systime</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">����ͨ�� Visual LISP ����</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� Visual LISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,32 +39,32 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">����ָ���ļ�����һ���޸�ʱ��</p>
+<p id="crleadin" class="cr_leadin">返回指定文件的上一次修改时间</p>
 <pre class="prog_in_end">(vl-file-systime filename)</pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">filename</p>
-<p class="define_text">�ַ���ָ��Ҫ����ļ������ơ�</p>
-<p class="Heading-2">����ֵ</p>
-<p class="body">�����޸����ں�ʱ����б������δ�ҵ��ļ��򷵻� nil��</p> 
-<p class="body">���ص��б���������Ԫ�أ�</p>
+<p class="define_text">字符串指定要检查文件的名称。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">包含修改日期和时间的列表。如果未找到文件则返回 nil。</p> 
+<p class="body">返回的列表包含下列元素：</p>
 <ul>
-<li class="list_bulleted_begin">��</li>
-<li class="list_bulleted">��</li>
-<li class="list_bulleted">ÿ�ܵڼ���</li>
-<li class="list_bulleted">ÿ�µڼ���</li>
-<li class="list_bulleted">Сʱ</li>
-<li class="list_bulleted">����</li>
-<li class="list_bulleted_end">��</li>
+<li class="list_bulleted_begin">年</li>
+<li class="list_bulleted">月</li>
+<li class="list_bulleted">每周第几天</li>
+<li class="list_bulleted">每月第几天</li>
+<li class="list_bulleted">小时</li>
+<li class="list_bulleted">分钟</li>
+<li class="list_bulleted_end">秒</li>
 </ul>
-<p class="body">��ע����һ��ÿ�ܵĵ�һ�죬�ܶ��ǵڶ��죬�������ơ�</p>
-<p class="Heading-2">ʾ��</p>
+<p class="body">请注意周一是每周的第一天，周二是第二天，依此类推。</p>
+<p class="Heading-2">示例</p>
 <pre class="prog_in">_$ (vl-file-systime </pre>
 <pre class="prog_in">&quot;c:/program files/&lt;AutoCAD installation directory&gt;/sample/visuallisp/yinyang.lsp&quot;)</pre>
 <pre class="prog_in_end">(1998 4 3 8 10 6 52)</pre>
-<p class="body">����ֵ˵���ļ���һ���޸�ʱ��Ϊ 1998 ��ĵ� 4 ���£����£��ĵ� 10 �죬������ʱ��Ϊ 6:52:0��</p> 
+<p class="body">返回值说明文件上一次修改时间为 1998 年的第 4 个月（四月）的第 10 天，周三，时间为 6:52:0。</p> 
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

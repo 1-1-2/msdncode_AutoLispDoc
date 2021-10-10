@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlisp-compile</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">����ͨ�� Visual LISP ����</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� Visual LISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,49 +39,49 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">�� AutoLISP Դ��������Ϊ FAS �ļ�</p> 
+<p id="crleadin" class="cr_leadin">将 AutoLISP 源代码生成为 FAS 文件</p> 
 <pre class="prog_in_end">(vlisp-compile 'mode filename [out-filename])</pre>
 <p class="note">
-<span class="note_char">ע��</span>&nbsp;����� Visual LISP IDE �Ա�֤ vlisp-compile ���������С�</p> 
-<p class="Heading-2">����</p>
+<span class="note_char">注意</span>&nbsp;必须打开 Visual LISP IDE 以保证 vlisp-compile 能正常运行。</p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">mode</p>
-<p class="define_text">������ģʽ����Ϊ���з���֮һ��</p>
+<p class="define_text">编译器模式，可为下列符号之一：</p>
 <p class="define_text">
-<span class="CharCourierBold">st</span>  ��׼����ģʽ</p>
+<span class="CharCourierBold">st</span>  标准编译模式</p>
 <p class="define_text">
-<span class="CharCourierBold">lsm</span>  �Ż�����ֱ������</p>
+<span class="CharCourierBold">lsm</span>  优化但不直接链接</p>
 <p class="define_text">
-<span class="CharCourierBold">lsa</span>  �Ż���ֱ������</p>
+<span class="CharCourierBold">lsa</span>  优化且直接链接</p>
 <p class="define_head">filename</p>
-<p class="define_text">�ַ�������ʾ AutoLISP Դ�ļ������Դ�ļ�λ�� AutoCAD ֧���ļ�����·���У�����ָ���ļ���ʱ����ʡ��·�������ʡ����չ������ٶ���Ϊ .lsp��</p> 
+<p class="define_text">字符串，表示 AutoLISP 源文件。如果源文件位于 AutoCAD 支持文件搜索路径中，则在指定文件名时可以省略路径。如果省略扩展名，则假定其为 .lsp。</p> 
 <p class="define_head">out-filename</p>
-<p class="define_text">�ַ�������ʾ���ɺ������ļ������û��ָ������ļ���vlisp-compile �趨����ļ���ԭ�Ľ�ͬ����������չ���滻Ϊ .fas��</p> 
-<p class="define_text">��ע�����ָ��������ļ�������û��ָ��I/O�ļ���·������ vlisp-compile ������ļ����� AutoCAD ��װĿ¼�¡�</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">�������ɹ��򷵻� T�����򷵻� nil��</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">�ٶ� yinyang.lsp λ�� AutoCAD ֧���ļ�����·���У���������������ó���</p> 
+<p class="define_text">字符串，表示生成后的输出文件。如果没有指定输出文件，vlisp-compile 设定输出文件与原文将同名，但将扩展名替换为 .fas。</p> 
+<p class="define_text">请注意如果指定了输出文件名，但没有指定I/O文件的路径，则 vlisp-compile 将输出文件置于 AutoCAD 安装目录下。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果编译成功则返回 T，否则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">假定 yinyang.lsp 位于 AutoCAD 支持文件搜索路径中，则下面的命令编译该程序：</p> 
 <pre class="prog_in">_$ <span class="CharCourierBold">(vlisp-compile
 'st &quot;yinyang.lsp&quot;)</span>
 </pre>
 <pre class="prog_in_end">T</pre>
-<p class="body">����ļ���Ϊ yinyang.fas����Դ�ļ�λ��ͬһĿ¼��</p> 
-<p class="body">������������� yinyang.lsp ��������ļ�����Ϊ GoodKarma.fas��</p> 
+<p class="body">输出文件名为 yinyang.fas，与源文件位于同一目录。</p> 
+<p class="body">下面的命令生成 yinyang.lsp 并将输出文件命名为 GoodKarma.fas：</p> 
 <pre class="prog_in_end">(vlisp-compile 'st &quot;yinyang.lsp&quot; &quot;GoodKarma.fas&quot;)</pre>
-<p class="body">��ע����һ�����е�����ļ�λ�� AutoCAD ��װĿ¼�У������� yinyang.lsp ���ڵ�Ŀ¼��������������� yinyang.lsp ��������ļ����� c:\my documents Ŀ¼��</p> 
+<p class="body">请注意上一命令中的输出文件位于 AutoCAD 安装目录中，而不是 yinyang.lsp 所在的目录。下面的命令生成 yinyang.lsp 并将输出文件置于 c:\my documents 目录：</p> 
 <pre class="prog_in_end"><span class="CharCourierBold">(vlisp-compile
 'st </span><span class="CharSansBold">&quot;</span><span class="CharCourierBold">yinyang.lsp</span><span class="CharSansBold">&quot;</span><span class="CharCourierBold"> &quot;c:/my documents/GoodKarma&quot;)</span></pre>
-<p class="body">���һ��������ָ����Դ�ļ�������·����</p>
+<p class="body">最后一个样例中指定了源文件的完整路径：</p>
 <p class="body">
 <span class="CharCourierBold">(vlisp-compile<br>
-��st &quot;c:/program files/&lt;AutoCAD installation directory&gt;/Sample/yinyang.lsp&quot;)</span>
+‘st &quot;c:/program files/&lt;AutoCAD installation directory&gt;/Sample/yinyang.lsp&quot;)</span>
 </p>
-<p class="body">����ļ���Ϊ yinyang.fas���������ļ�λ��ͬһĿ¼��</p> 
-<p class="see_also">����</p>
-<p class="body">��Visual LISP ������Ա�ֲᡷ�е� <a href="ms-its:ACAD_ALG.chm::/ALG.04.004.htm">ͨ���ļ��������</a>��</p>
+<p class="body">输出文件名为 yinyang.fas，与输入文件位于同一目录。</p> 
+<p class="see_also">参阅</p>
+<p class="body">《Visual LISP 开发人员手册》中的 <a href="ms-its:ACAD_ALG.chm::/ALG.04.004.htm">通过文件编译程序</a>。</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

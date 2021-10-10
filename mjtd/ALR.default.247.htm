@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vector_image</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,35 +39,35 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">�ڵ�ǰ����ĶԻ���ͼ��ؼ�����ʾһ��ʸ����</p>
+<p id="crleadin" class="cr_leadin">在当前激活的对话框图像控件上显示一个矢量线</p>
 <pre class="prog_in_end">(vector_image x1 y1 x2 y2 color)</pre>
-<p class="body">�������ڵ�ǰ����ĶԻ���ͼ��ؼ����� start_image �����򿪣��ϴӵ� (x1,y1) ���� (x2,y2) ��ʾһ��ʸ���ߡ�ԭ�� (0,0) 
-��ʾͼ��ؼ������Ͻǣ����Ե��� dimx_tile �� dimy_tile ��������ȡ�����½ǵ����ꡣ</p> 
-<p class="Heading-2">����</p>
+<p class="body">本函数在当前激活的对话框图像控件（由 start_image 函数打开）上从点 (x1,y1) 到点 (x2,y2) 显示一个矢量线。原点 (0,0) 
+表示图像控件的左上角，可以调用 dimx_tile 和 dimy_tile 函数来获取其右下角的坐标。</p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">x1</p>
-<p class="define_text">��һ��� X ���ꡣ</p> 
+<p class="define_text">第一点的 X 坐标。</p> 
 <p class="define_head">y1</p>
-<p class="define_text">��һ��� Y ���ꡣ</p> 
+<p class="define_text">第一点的 Y 坐标。</p> 
 <p class="define_head">x2</p>
-<p class="define_text">�ڶ���� X ���ꡣ</p> 
+<p class="define_text">第二点的 X 坐标。</p> 
 <p class="define_head">y2</p>
-<p class="define_text">�ڶ���� Y ���ꡣ</p> 
+<p class="define_text">第二点的 Y 坐标。</p> 
 <p class="define_head">color</p>
-<p class="define_text">AutoCAD ��ɫ��ֵ�����±����е��߼���ɫ����֮һ��</p> 
+<p class="define_text">AutoCAD 颜色数值，或下表所列的逻辑颜色代码之一：</p> 
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="3">
-<p class="table_heading">��ɫ���Եķ����� </p>
+<p class="table_heading">颜色属性的符号名 </p>
 </th>
 </tr>
 <tr class="row_0">
 <th>
-<p class="table_heading">��ɫ����&nbsp;</p>
+<p class="table_heading">颜色代码&nbsp;</p>
 </th><th>
-<p class="table_heading">ADI ���Ƿ�</p> 
+<p class="table_heading">ADI 助记符</p> 
 </th><th>
-<p class="table_heading">˵��</p>
+<p class="table_heading">说明</p>
 </th>
 </tr>
 </thead>
@@ -78,7 +78,7 @@
 </td><td class="BasicLeft_CELL">
 <p class="table_body">BGLCOLOR</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">AutoCAD ͼ����Ļ�ĵ�ǰ����ɫ 
+<p class="table_body">AutoCAD 图形屏幕的当前背景色 
 </td>
 </tr>
 <tr class="row_2">
@@ -87,7 +87,7 @@
 </td><td class="BasicLeft_CELL">
 <p class="table_body">DBGLCOLOR</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">��ǰ�Ի��򱳾�ɫ
+<p class="table_body">当前对话框背景色
 </td>
 </tr>
 <tr class="row_1">
@@ -96,7 +96,7 @@
 </td><td class="BasicLeft_CELL">
 <p class="table_body">DFGLCOLOR</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">��ǰ�Ի���ǰ��ɫ�����֣�
+<p class="table_body">当前对话框前景色（文字）
 </td>
 </tr>
 <tr class="row_2">
@@ -105,15 +105,15 @@
 </td><td class="BasicLeft_CELL">
 <p class="table_body">LINELCOLOR</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">��ǰ�Ի����ߵ���ɫ
+<p class="table_body">当前对话框线的颜色
 </td>
 </tr>
 </tbody>
 </table>
-<p class="Heading-2">����ֵ</p>
-<p class="body">����ʸ����ɫ��������</p>
-<p class="Heading-2">ʾ��</p>
-<pre class="prog_in">(setq color -2) ;;AutoCAD ������Ļ����ɫ</pre>
+<p class="Heading-2">返回值</p>
+<p class="body">代表矢量颜色的整数。</p>
+<p class="Heading-2">示例</p>
+<pre class="prog_in">(setq color -2) ;;AutoCAD 背景屏幕的颜色</pre>
 <pre class="prog_in">(vector_image</pre>
 <pre class="prog_in">  0</pre>
 <pre class="prog_in">  0</pre>
@@ -124,7 +124,7 @@
 <pre class="prog_in_end">(end_image)</pre>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>
