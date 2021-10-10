@@ -1,0 +1,185 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>vlr-insert-reactor</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlr-insert-reactor</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">构造反应器对象，通知与块插入相关的事件</p>
+<pre class="prog_in_end">(vlr-insert-reactor data callbacks)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">data</p>
+<p class="define_text">任何要与反应器对象相关联的 AutoLISP 数据。如果没有数据则为 nil。</p> 
+<p class="define_head">callbacks</p>
+<p class="define_text">表，其中包含下列格式的点对：</p>
+<p class="define_text">(e<span class="CharItalic">vent-name</span> . <span class="CharItalic">callback_function</span>) </p>
+<p class="define_text">在这里，event-name 是下表 “Insert 
+反应器事件”中的符号之一，callback_function 为符号，代表事件发生时要调用的函数。每个回调函数都接受如下两个参数：</p> 
+<p class="define_text">
+<span class="CharItalic">reactor_object</span>  调用回调函数的 VLR 对象</p> 
+<p class="define_text">
+<span class="CharItalic">list</span>  与特定事件相关联的其他数据元素。该表针对特定事件的内容见表“Insert 
+反应器回调数据”。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">reactor_object 参数。</p> 
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="2">
+<p class="table_heading">Insert 反应器事件 </p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">事件名称&nbsp;</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-beginInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">块即将被插入图形数据库。
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-beginInsertM</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">三维转换矩阵即将被插入图形数据库。
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-otherInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">块或矩阵已被添加到图形数据库。在插入过程中将对象复制到数据库之后，ID 转换或图元转换发生之前，发送该通知。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-endInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">一般表示在图形数据库上的插入操作已经完成。但是，在某些情况下，转换尚未发生，或创建的块尚未附加。这意味着复制的对象还不属于图形，在收到 :vlr-commandEnded 通知之前，不能在选择集中使用它们。 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-abortInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">插入操作被中断，数据库处于不稳定状态。
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body"></p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">Insert 反应器回调数据 </p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">名称</p>
+</th><th>
+<p class="table_heading">表长度&nbsp;</p>
+</th><th>
+<p class="table_heading">参数</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-beginInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">3</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">第一个参数是 VLA 
+对象，指向要插入块的数据库。</p>
+<p class="table_body">第二个参数是字符串，表示要插入的块。</p>
+<p class="table_body">第三个参数是 VLA 对象，表示块的源数据库。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-beginInsertM</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">3</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">第一个参数是 VLA 
+对象，指向要插入三维转换矩阵的数据库。</p>
+<p class="table_body">第二个参数是字符串，表示要插入的三维转换矩阵。</p>
+<p class="table_body">第三个参数是 VLA 对象，表示矩阵的源数据库。 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-otherInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">2</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">第一个参数是 VLA 
+对象，指向要插入块或三维转换矩阵的数据库。</p>
+<p class="table_body">第二个参数是 VLA 对象，表示块或矩阵的源数据库。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-endInsert</p>
+<p class="table_body">:vlr-abortInsert</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	指向目标数据库的 VLA 对象。 
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
