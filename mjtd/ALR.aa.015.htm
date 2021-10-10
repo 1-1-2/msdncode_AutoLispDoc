@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>replay</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.aa.001.htm"><span class="BookTitleLink">����ͨ�� �ⲿ��������</span></a>
+<a href="ALR.aa.001.htm"><span class="BookTitleLink">明经通道 外部定义命令</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� �ⲿ��������&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>
+<td class="InfoLine" id="infoline" align="right">明经通道 外部定义命令&nbsp;</td><td class="NavGif"><a title="回到上一�?.." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>
 </tr>
 </table>
 </td>
@@ -39,28 +39,28 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ʾ BMP��TGA �� TIFF ͼ���ⲿ���壺render ARX Ӧ�ó���</p> 
+<p id="crleadin" class="cr_leadin">显示 BMP、TGA �?TIFF 图像（外部定义：render ARX 应用程序�?/p> 
 <pre class="prog_in_end">(c:replay filename type [xoff yoff xsize ysize])</pre>
-<p class="body">ͨ�� REPLAY ������� AutoCAD ��Ⱦʱ��ʾ BMP��TGA �� TIFF �ļ����ô�����Ĺ���ʹͼ���ڶ���ƫ�ƺͳߴ�����ʾ��</p> 
-<p class="Heading-2">����</p>
+<p class="body">通过 REPLAY 命令，可�?AutoCAD 渲染时显�?BMP、TGA �?TIFF 文件。用此命令的功能使图像在多种偏移和尺寸下显示�?/p> 
+<p class="Heading-2">参数</p>
 <p class="define_head">filename</p>
-<p class="define_text">�ַ�����ָ��ͼ���ļ�����</p>
+<p class="define_text">字符串，指定图像文件名�?/p>
 <p class="define_head">type</p>
-<p class="define_text">�ַ�����ָ���ļ����͡���ЧֵΪ BMP��TGA �� TIFF��</p> 
+<p class="define_text">字符串，指定文件类型。有效值为 BMP、TGA �?TIFF�?/p> 
 <p class="define_head">xoff</p>
-<p class="define_text">������ָ��ͼ��� X ƫ�ƣ������ص�Ϊ��λ����ȱʡΪ 0��</p> 
+<p class="define_text">整数，指定图像的 X 偏移（以像素点为单位）。缺省为 0�?/p> 
 <p class="define_head">yoff</p>
-<p class="define_text">������ָ��ͼ��� Y ƫ�ƣ������ص�Ϊ��λ����ȱʡΪ 0��</p> 
+<p class="define_text">整数，指定图像的 Y 偏移（以像素点为单位）。缺省为 0�?/p> 
 <p class="define_head">xsize</p>
-<p class="define_text">ͼ��� X �ߴ磨�����ص�Ϊ��λ����ȱʡΪʵ�� X �ߴ硣</p> 
+<p class="define_text">图像�?X 尺寸（以像素点为单位）。缺省为实际 X 尺寸�?/p> 
 <p class="define_head">ysize</p>
-<p class="define_text">ͼ��� Y �ߴ磨�����ص�Ϊ��λ����ȱʡΪʵ�� Y �ߴ硣</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">���µ�����ʾ��Ϊ test.tga ��ͼ��ͼ������½ǿ�ʼ��ʾ��������ƫ�ƣ�����Ϊ 500 ���أ��߶�Ϊ 400 ���أ�</p> 
+<p class="define_text">图像�?Y 尺寸（以像素点为单位）。缺省为实际 Y 尺寸�?/p> 
+<p class="Heading-2">示例</p>
+<p class="body">如下调用显示名为 test.tga 的图像，图像从左下角开始显示，具有零偏移，宽度�?500 像素，高度为 400 像素�?/p> 
 <pre class="prog_in_end">(c:replay &quot;TEST&quot; &quot;TGA&quot; 0 0 500 400)</pre>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所�?未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>
