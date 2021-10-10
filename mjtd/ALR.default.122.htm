@@ -1,0 +1,87 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>getkword</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">getkword</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">暂停以等待用户输入一个关键字并返回该关键字</p>
+<pre class="prog_in_end">(getkword [msg]) </pre>
+<p class="body">在调用 getkword 函数之前必须先调用 initget 函数设置有效的关键字。用户不能输入一个 AutoLISP 表达式来响应 getkword 的请求。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">msg</p>
+<p class="define_text">用于提示用户的字符串。如果省略该参数，则 getkword 不显示任何提示信息。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">字符串，表示与用户输入相匹配的关键字。如果用户输入为空（即仅按下 ENTER 键），或者用户没有使用 initget 函数设置一个或多个关键字，则本函数返回 nil。</p> 
+<p class="body">如果用户输入了无效关键字，getkword 将显示警告信息，并提示用户重试。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">下例先调用 initget 函数创建关键字列表（“Yes”和“No”），并且不允许随后的 getkword 接受空输入（将 bits 设为 1），然后调用 getkword 函数：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(initget 1 "Yes No")</span>
+</p>
+<p class="prompt_end">nil</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq x (getkword 
+&quot;是否确定[是(Y)/否(N)]： "))</span> 
+</p>
+<p class="prompt_end">是否确定[是(Y)/否(N)]： <span class="CharSansBold">yes</span> 
+</p>
+<p class="prompt_end">"Yes"</p>
+<p class="body">如果在 getkword 函数的请求下，用户的输入无效，则：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(initget 1 "Yes No")</span>
+</p>
+<p class="prompt_end">nil</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq x (getkword 
+&quot;是否确定[是(Y)/否(N)]："))</span>
+</p>
+<p class="prompt_end">是否确定[是(Y)/否(N)]： <span class="CharSansBold">Maybe</span> 
+</p>
+<p class="prompt_end">无效的选项关键字。</p>
+<p class="prompt_end">是否确定[是(Y)/否(N)]： <span class="CharSansBold">yes</span> 
+</p>
+<p class="prompt_end">"Yes"</p>
+<p class="body">用户的响应和 initget 定义的关键字不匹配，所以 getkword 给出错误信息，然后按 msg 参数指定的内容来提示用户。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.140.htm">initget</a>  
+函数和《AutoLISP 开发人员手册》中的 <a href="ms-its:ACAD_ALG.chm::/ALG.09.015.htm"> getxxx  
+函数</a> 。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
