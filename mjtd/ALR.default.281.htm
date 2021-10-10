@@ -1,0 +1,67 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>vl-list-length</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-list-length</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">计算表的长度</p>
+<pre class="prog_in_end">(vl-list-length  list-or-cons-object)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">list-or-cons-object</p>
+<p class="define_text">表或点对表。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果参数是真正的表，则返回包含表长度的整数。如果 list-or-cons-object 为点对表，则返回 nil。</p> 
+<p class="body">兼容性提示：vl-list-length 函数对点对表参数返回 nil，而相应的普通 LISP 
+函数的参数如果是点对表，将返回错误信息。</p>
+<p class="Heading-2">示例</p>
+<pre class="prog_in">_$ (vl-list-length nil)</pre>
+<pre class="prog_in">0</pre>
+<pre class="prog_in">_$ (vl-list-length '(1 2))</pre>
+<pre class="prog_in">2</pre>
+<pre class="prog_in">_$ (vl-list-length '(1 2 . 3))</pre>
+<pre class="prog_in_end">nil</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.149.htm">listp</a>  函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

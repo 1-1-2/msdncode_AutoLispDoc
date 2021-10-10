@@ -1,0 +1,95 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>menucmd</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">menucmd</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">发出菜单命令，或设置并检索菜单项状态</p>
+<pre class="prog_in_end">(menucmd string) </pre>
+<p class="body">menucmd 函数可以在 AutoCAD 菜单的各个子页间进行切换，还可以强制菜单显示。这样，AutoLISP 程序中就可以使用图像控件菜单，或者显示其他菜单让用户选择。AutoLISP 程序还可以启用或禁用一些菜单项，或给菜单项加上标记。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">string</p>
+<p class="define_text">字符串，指定菜单区和要赋给这个菜单区的值。string 参数有下列参量：</p> 
+<p class="define_text">
+<span class="CharCourier">"menu_area=value"</span>
+</p>
+<p class="define_text">下表中列出了 menu_area 
+的允许值，它们与菜单文件中的子菜单引用格式完全相同。详细信息请参见《自定义手册》中的“下拉菜单和快捷菜单”。</p>
+<p class="define_text">
+<span class="CharSansBold">B1&ndash;B4</span>  BUTTONS 菜单 1 至 4。</p> 
+<p class="define_text">
+<span class="CharSansBold">A1&ndash;A4</span>  AUX 菜单 1 至 4。</p> 
+<p class="define_text">
+<span class="CharSansBold">P0&ndash;P16</span>  下拉式菜单 (POP) 0 至 16。</p> 
+<p class="define_text">
+<span class="CharSansBold">I</span>  图像控件菜单。</p>
+<p class="define_text">
+<span class="CharSansBold">S</span>  SCREEN 菜单。</p> 
+<p class="define_text">
+<span class="CharSansBold">T1&ndash;T4</span>  TABLET 菜单 1 至 4。</p> 
+<p class="define_text">
+<span class="CharSansBold">M</span>  DIESEL 字符串表达式。</p> 
+<p class="define_text">Gmenugroup.nametag  菜单组名称和标志。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">
+<span class="CharCourier">nil</span>
+</p>
+<p class="Heading-2">示例</p>
+<p class="body">下列代码将显示图像控件菜单 MOREICONS。</p> 
+<pre class="prog_in">(menucmd &quot;I=moreicons&quot;)       加载 MOREICONS 图像控件菜单 </pre>
+<pre class="prog_in_end">(menucmd &quot;I=*&quot;)               显示菜单</pre>
+<p class="body">下面的代码检查下拉式菜单 POP11 中第三个菜单项的状态。如果菜单项目前已经启用，则 menucmd 函数将其禁用。</p> 
+<pre class="prog_in">(setq s (menucmd &quot;P11.3=?&quot;))  获取菜单项的状态</pre>
+<pre class="prog_in">(if (= s &quot;&quot;)                  如果状态为空字符串，</pre>
+<pre class="prog_in">  (menucmd &quot;P11.3=~&quot;)         则禁用该菜单项</pre>
+<pre class="prog_in_end">)</pre>
+<p class="body">上述代码不是在任何情况下都能正确运行，因为除了启用或禁用状态外，菜单项还可以接收标记。代码 (menucmd "P11.3=?") 可能会返回 "!."，这说明该菜单项当前已打上了一个复选标记。这种情况下，上述代码会认为该菜单项已经被禁用，而不再禁用它。如果该代码中包含了对 wcmatch 函数的调用，它还可以检查波浪号 (~) 是否在状态字符串中出现，从而执行相应的动作。</p> 
+<p class="body">menucmd 函数还允许 AutoLISP 程序发挥 DIESEL 字符串表达式语言的优越性。某些事情用 DIESEL 来完成可能比用等价的 AutoLISP 代码来完成更容易。下列代码返回一个包含当前日期和时间的字符串：</p> 
+<pre class="prog_in">(menucmd &quot;M=$(edtime,$(getvar,date),DDDD\&quot;,\&quot; D MONTH YYYY)&quot;)</pre>
+<pre class="prog_in_end">返回   &quot;星期日，16 六月 1995&quot;</pre>
+<p class="see_also">参阅</p>
+<p class="body">关于使用 AutoLISP 获取菜单标签状态和使用 DIESEL 
+的详细信息，请参见《自定义手册》。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

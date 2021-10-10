@@ -1,0 +1,408 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>render</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.aa.001.htm"><span class="BookTitleLink">明经通道 外部定义命令</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 外部定义命令&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">render</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">用几何图形、光源和表面修饰信息创建三维线框模型的真实感着色图像（外部定义：render ARX 应用程序）</p> 
+<pre class="prog_in_end">(c:render [filename|point1 point2]) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">filename</p>
+<p class="define_text">字符串，指定渲染文件的名称。</p>
+<p class="define_text">如果 filename 参数存在，则渲染结果被写入该文件。如果没有配置渲染到文件的驱动程序，则 filename 参数被忽略。当前配置必须指定渲染到文件。</p> 
+<p class="define_head">point1</p>
+<p class="define_text">实数表，指定修剪窗口的第一个点。</p>
+<p class="define_head">point1</p>
+<p class="define_text">实数表，指定修剪窗口的第二个点。</p>
+<p class="body">渲染由当前设置控制，这些设置用 c:rpref 函数设置。例如：</p> 
+<pre class="prog_in_end">(c:rpref &quot;Toggle&quot; &quot;CropWindow&quot; &quot;On&quot;)</pre>
+<p class="note">
+<span class="note_char">注意</span>&nbsp;如果当前渲染系统配置指定 Query for Selection 并且打开了 PICKFIRST 系统变量，并且在调用 c:render 时存在当前选择集，则不再显示其他提示，而直接渲染该选择集中的对象。</p> 
+<p class="body">设置“渲染到文件”选项</p>
+<p class="body">设置渲染到文件。</p>
+<pre class="prog_in_end">(c:rfileopt fileformat xres yres aratio colormode &lt;mode-specific options&gt;)</pre>
+<p class="Heading-2">参数</p>
+<p class="body">c:rfileopt 参数的说明如下表：</p> 
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">RFILEOPT 参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">fileformat</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">所需格式的标识符：</p>
+<p class="table_body">TGA&mdash;- Targa 格式</p> 
+<p class="table_body">PCX &mdash; Z-Soft 位图格式</p> 
+<p class="table_body">BMP&mdash;- Microsoft Windows 格式</p> 
+<p class="table_body">PS&mdash;- PostScrip</p>
+<p class="table_body">tTIFF &mdash; 标记图像文件格式</p> 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">xres</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">输出文件的 X 轴分辨率（有效值区间为从 1 到 4096） 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">yres</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">输出文件的 Y 轴分辨率（有效值区间为从 1 到 4096） 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">aratio</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">像素宽高比
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">colormode</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">每种文件格式接受下列值的子集：</p>
+<p class="table_body">MONO&mdash;单色</p>
+<p class="table_body">G8&mdash;256 色灰度</p>
+<p class="table_body">C8&mdash;256 色</p>
+<p class="table_body">C16&mdash;16-位色</p>
+<p class="table_body">C24&mdash;24-位色</p>
+<p class="table_body">C32&mdash;24-位色加 8 位优化</p> 
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body">TGA</p>
+<p class="body">指定 Targa 格式。</p> 
+<pre class="prog_in">(c:rfileopt &quot;TGA&quot; xres yres aratio colormode</pre>
+<pre class="prog_in_end">interlace compress bottomup)</pre>
+<p class="Heading-2">参数</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">TGA 格式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">colormode</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">颜色模式：G8、C8、C24 或 C32 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">interlace</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">隔行模式： </p>
+<p class="table_body">1 &mdash; 不隔行 </p> 
+<p class="table_body">2 &mdash; 2:1 隔行 </p> 
+<p class="table_body">4 &mdash;- 4:1 隔行 </p> 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">compress</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">压缩开关（缺省值=“COMP”）：</p>
+<p class="table_body">COMP &mdash; 压缩</p> 
+<p class="table_body">nil &mdash; 不压缩</p> 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">bottomup</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">上下模式（缺省值 =“UP”）：</p> 
+<p class="table_body">UP &mdash; 由下而上</p> 
+<p class="table_body">nil &mdash; 由上而下 
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<pre class="prog_in_end">(C:RFILEOPT &quot;TGA&quot; 640 480 1.0 &quot;C32&quot; 1 &quot;COMP&quot; &quot;UP&quot;)</pre>
+<p class="body">PCX</p>
+<p class="body">指定 Z-Soft 位图格式。</p> 
+<pre class="prog_in_end">(c:rfileopt &quot;PCX&quot; xresyresaratiocolormode)</pre>
+<p class="Heading-2">参数</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">PCX format arguments</p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">colormode</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">颜色模式：MONO、 G8 或 C8 
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<pre class="prog_in_end">(C:RFILEOPT &quot;PCX&quot; 640 480 1.0 &quot;G8&quot;)</pre>
+<p class="body">BMP</p>
+<p class="body">指定 Microsoft<sup>&reg;</sup> Windows<sup>&reg;</sup> 位图格式。 </p> 
+<pre class="prog_in_end">(c:rfileopt &quot;BMP&quot; xres yres aratio colormode)</pre>
+<p class="Heading-2">参数</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">BMP format arguments</p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">colormode</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">颜色模式：MONO、 G8 或 C8 
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<pre class="prog_in_end">(C:RFILEOPT &quot;BMP&quot; 640 480 1.0 &quot;C8&quot;)</pre>
+<p class="body">PS</p>
+<p class="body">指定 PostScript 格式。</p> 
+<pre class="prog_in_end">(c:rfileopt &quot;PS&quot; xres yres aratio colormode portrait imagesize [size])</pre>
+<p class="Heading-2">参数</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">PS format arguments</p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">colormode</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">颜色模式：MONO、 G8、C8 或 C24 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">portrait</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">横向或纵向（缺省值 =“L”）：&nbsp;</p>
+<p class="table_body"> P &mdash; 纵向</p> 
+<p class="table_body">L &mdash; 横向 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">imagesize</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">类型（缺省值 =“A”）：</p> 
+<p class="table_body">A &mdash; 自动</p> 
+<p class="table_body">I &mdash; 图像</p> 
+<p class="table_body">C &mdash; 自定义</p> 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">size</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">图像尺寸
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<pre class="prog_in_end">(C:RFILEOPT &quot;PS&quot; 640 480 1.0 &quot;C24&quot; &quot;P&quot; &quot;C&quot; 640)</pre>
+<p class="body">TIFF</p>
+<p class="body">指定标记图像文件格式。</p>
+<pre class="prog_in_end">(c:rfileopt &quot;TIFF&quot; xres yres aratio colormode)</pre>
+<p class="Heading-2">参数</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">TIFF format arguments</p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">colormode</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">颜色模式：MONO、G8、C8、C24  或 C32 
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<pre class="prog_in_end">(C:RFILEOPT &quot;TIFF&quot; 640 480 1.0 &quot;C24&quot;)</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

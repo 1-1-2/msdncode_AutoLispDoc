@@ -1,0 +1,71 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>entlast</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">entlast</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">返回图形中最后那个未删除的主对象（图元）名称</p>
+<pre class="prog_in_end">(entlast)</pre>
+<p class="body">entlast 函数经常用于获得刚用 command 函数加入到图形中的新图元的图元名。该函数选择的图元不一定要显示在屏幕上，也不一定要处于解冻状态。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">对象名称。如果当前图形中没有对象，则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">将变量 e1 设为添加到图形中的最后一个图元的名称：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq e1 (entlast))</span>
+</p>
+<p class="prompt_end">&lt;图元名: 2c90538&gt;</p>
+<p class="body">如果应用程序需要最后那个未删除图元（主图元或子图元），可用以下函数代替 entlast。</p> 
+<pre class="prog_in">(defun lastent (/ a b) </pre>
+<pre class="prog_in">  (if (setq a (entlast))         获取最后一个主图元 </pre>
+<pre class="prog_in">    (while (setq b (entnext a))  如果随后有子图元，循环</pre>
+<pre class="prog_in">      (setq a b)                 直至最后一个子图元 </pre>
+<pre class="prog_in">    ) </pre>
+<pre class="prog_in">  ) </pre>
+<pre class="prog_in">  a                              返回最后一个主图元 </pre>
+<pre class="prog_in_end">)                                或子图元</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.085.htm">entdel</a>、 <a href="ALR.default.086.htm">entget</a>、 <a href="ALR.default.090.htm">entmod</a>、 <a href="ALR.default.091.htm">entnext</a>、 <a href="ALR.default.092.htm">entsel</a> 
+和 <a href="ALR.default.135.htm">handent</a>  函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

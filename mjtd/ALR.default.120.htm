@@ -1,0 +1,82 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>getfiled</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">getfiled</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">用标准的 AutoCAD 文件对话框提示用户输入一个文件名，并返回该文件名</p> 
+<pre class="prog_in_end">(getfiled title default ext flags) </pre>
+<p class="body">getfiled 函数显示一个对话框，其中包含指定类型（由扩展名指定）的有效文件名列表。用户可以浏览不同驱动器和目录中的文件，选择现有文件或指定新文件名。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">title</p>
+<p class="define_text">字符串，指定对话框的标签。</p>
+<p class="define_head">default</p>
+<p class="define_text">要使用的缺省文件名；可为空字符串 ("")。</p> 
+<p class="define_head">ext</p>
+<p class="define_text">缺省的文件扩展名。如果 ext 为空字符串 ("")，则缺省值为 *（所有文件类型）。</p> 
+<p class="define_text">如果该参数中包含 dwg 文件类型，则 getfiled 函数在对话框中显示预览图像框。</p> 
+<p class="define_head">flags</p>
+<p class="define_text">整数（按位编码），控制对话框的行为。要一次设置多个条件，可以将几个位值加在一起生成一个 0 和 15 之间的标志值（包括 0 和 15）。getfiled 可识别下列 flags 
+ 参数：</p>
+<p class="define_text"><b>1</b> （位 0）  提示输入新文件的名称。如果输入文件名是为了打开一个已存在的文件，请不要设置该位。因为在后面这种情况下，如果用户输入的是一个不存在的文件名，对话框将会在对话框的底部显示一条错误信息。</p> 
+<p class="define_text">如果设置了该位而用户选择了一个已存在的文件，AutoCAD 会显示警告框，让用户选择继续进行或取消该操作。</p> 
+<p class="define_text"><b>4</b> （位 2）  允许用户输入任意文件扩展名，或者干脆不输入文件扩展名。</p> 
+<p class="define_text">如果不设置该位，则 getfiled 仅接受 ext 参数中指定的扩展名，并在用户没有输入扩展名时自动给文件名加上该扩展名。</p> 
+<p class="define_text"><b>8</b> （位 3）  如果设置了该位而位 0 没有设置，getfiled 函数将在库搜索路径内搜索输入的文件名。如果在库搜索路径下发现了该文件，它将截去路径部分而仅返回文件名（但如果在另一个路径下也发现了同名的文件，它就不会截去路径部分）。</p> 
+<p class="define_text">如果未设置该位， getfiled 返回包括据经在内的文件全名。</p> 
+<p class="define_text">如果要用对话框打开现有文件，并想将其文件名存入图形文件（或其他数据库），就应该设置该位。</p>
+<p class="define_text"><b>16</b> （位 4）  如果设置该位，或 default 参数以路径分割符结束，则该参数仅被解释为路径名。getfiled 寒暑假定不存在缺省文件名，并在“查找范围”框中显示路径，而在“文件名”框中不显示任何内容。</p> 
+<p class="define_text"><b>32</b> （位 5）  如果设置该位，且设置了位 0（已指定了新文件的名称），则如果用户要覆盖现有文件时，不会获得警告信息。即，不再出现提醒框提醒用户已存在同名文件，而是直接覆盖原来的文件。</p> 
+<p class="define_text"><b>64</b> （位 6）  即使如果用户指定了 URL，也不传输远程文件。</p> 
+<p class="define_text"><b>128</b>（位 7）  不允许 URL。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果对话框中包含用户指定的文件名，则 getfiled 返回指定文件名的字符串。否则该函数返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">下例中调用 getfiled 来显示“选择 LISP 文件”对话框：</p> 
+<pre class="prog_in_end">(getfiled &quot;选择 LISP 文件&quot; &quot;c:/program files/ &lt;AutoCAD 安装目录&gt;/support/&quot; &quot;lsp&quot; 8)</pre>
+<p class="body">AutoCAD 显示如下对话框：</p> 
+<p class="figure_margin_0">
+<img align="absbottom" src="online_art/307file.gif"></p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

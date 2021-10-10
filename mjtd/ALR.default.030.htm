@@ -1,0 +1,70 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>add_list</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">add_list</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">在当前激活的对话框的列表框中增加一个字符串或修改其中的一个字符串</p>
+<pre class="prog_in_end">(add_list string)</pre>
+<p class="body">在使用 add_list 函数之前，必须先调用 start_list 函数打开并初始化该列表框。根据 start_list 函数中指定的 operation 参数的不同，参数 string 被加入到当前列表框中或替换列表框的当前项。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">string</p>
+<p class="define_text">字符串型。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则返回加入到列表中的字符串；否则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">假设当前激活的 DCL 文件中有一个名为 longlist 的列表框或弹出式列表框，下列代码将其初始化，并且将 llist 表加入到该列表框或弹出式列表框中。</p> 
+<pre class="prog_in">(setq llist '(&quot;first line&quot; &quot;second line&quot; &quot;third line&quot;))</pre>
+<pre class="prog_in">(start_list &quot;longlist&quot;)</pre>
+<pre class="prog_in">(mapcar 'add_list llist) </pre>
+<pre class="prog_in_end">(end_list)</pre>
+<p class="body">定义该表之后，下列代码将该表第二行的字符串替换为 "2nd line"。</p> 
+<pre class="prog_in">(start_list &quot;longlist&quot; 1 0)</pre>
+<pre class="prog_in">(add_list &quot;2nd line&quot;)</pre>
+<pre class="prog_in_end">(end_list)</pre>
+<p class="see_also">参阅</p>
+<p class="body">&nbsp; <a href="ALR.default.224.htm">start_list</a> 和 <a href="ALR.default.084.htm">end_list</a>  
+函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

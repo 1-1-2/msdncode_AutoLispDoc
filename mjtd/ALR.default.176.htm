@@ -1,0 +1,89 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>open</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">open</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">打开一个文件，供其他 AutoLISP I/O 函数访问</p> 
+<pre class="prog_in_end">(open filename mode) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">filename</p>
+<p class="define_text">字符串，指定要打开文件的名称和扩展名。如果没有指定文件的全部路径，则 open 假定其路径为 AutoCAD 
+启动目录。</p>
+<p class="define_head">mode</p>
+<p class="define_text">指明文件的状态为打开文件用于读、写或追加。字符串可以包含下列字符之一：</p>
+<p class="define_text">
+<span class="CharSansBold">r</span>  打开用于读操作。 </p>
+<p class="define_text">
+<span class="CharSansBold">w</span>  打开用于写操作。如果 filename 不存在，则创建新文件并打开它。如果文件名存在，则覆盖其现有数据。传给一个已打开文件的数据，只有在用 close 函数关闭文件后才会真正被写入文件中。</p> 
+<p class="define_text">
+<span class="CharSansBold">a</span>  打开文件用于追加操作，如果 filename 不存在，则创建一个新文件并打开它；如果 filename 存在，则打开该文件并把文件指针移到现有数据的尾部，用户写入文件的数据追加到现有数据的后面。</p> 
+<p class="define_text">mode 参数可以为大写或小写。在 AutoCAD 2000 以前的版本中，mode 只能使用小写格式。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功，open 返回一个可由其他 I/O 函数使用的文件描述符。如果指定了模式“r”且 filename 不存在，则 open 返回 nil。</p> 
+<p class="note">
+<span class="note_char">注意</span>&nbsp;在 DOS 系统中，某些程序和文本编辑器在写入文本文件时会在文本尾部加上一个文件结束标记（CTRL+Z，十进制 ASCII 码 26）。在读入文件时，当碰到 CTRL+Z 标记时，便返回文件结束状态，而不管其后是否还有其他数据。如果想用 OPEN 函数的 "a"（追加）方式在其他程序所建立的文本文件后面追加数据，则必须保证这些程序没有在其文本文件尾部插入 CTRL+Z 结束标记。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">打开现有文件：</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq a (open "c:/program
+files/ &lt;AutoCAD installation directory&gt;/help/filelist.txt"
+"r"))</span>
+</p>
+<p class="prompt_end">#&lt;file "c:/program
+files/ &lt;AutoCAD installation directory&gt;/help/filelist.txt"&gt;</p>
+<p class="body">假定下面样例中 open 所用的文件不存在：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq f (open "c:\\my
+documents\\new.tst" "w"))</span>
+</p>
+<p class="prompt_end">#&lt;file "c:\\my documents\\new.tst"&gt;</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq f (open "nosuch.fil"
+"r"))</span>
+</p>
+<p class="prompt_end">nil</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq f (open "logfile"
+"a"))</span>
+</p>
+<p class="prompt_end">#&lt;file "logfile"&gt;</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

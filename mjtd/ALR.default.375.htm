@@ -1,0 +1,96 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>vlax-tmatrix</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlax-tmatrix</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">返回 VLA 方法可用的 4x4 转换矩阵的适当表示</p> 
+<pre class="prog_in_end">(vlax-tmatrix list)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">list</p>
+<p class="define_text">由表组成的表，其中每个子表包含 4 个数值，分别表示转换矩阵的各个元素。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">类型为 SafeArray 的变体，表示 4x4 转换矩阵。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">定义转换矩阵并将其值指定为变量 tmatrix：</p> 
+<pre class="prog_in">_$ (setq tmatrix (vlax-tmatrix '((1 1 1 0) (1 2 3 0) (2 3 4 5) (2 9 8 3))))</pre>
+<pre class="prog_in_end">#&lt;variant 8197 ...&gt;</pre>
+<p class="body">使用 vlax-safearray->list 以表的形式查看 tmatrix 的值：</p> 
+<pre class="prog_in">_$ (vlax-safearray-&gt;list (vlax-variant-value tmatrix))</pre>
+<pre class="prog_in_end">((1.0 1.0 1.0 0.0) (1.0 2.0 3.0 0.0) (2.0 3.0 4.0 5.0) (2.0 9.0 8.0 3.0))</pre>
+<p class="body">下面的代码创建一条直线，并使用转换矩阵将其旋转 90 度：</p> 
+<pre class="prog_in">(defun Example_TransformBy () ; / lineObj startPt endPt matList transMat) </pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in">(vl-load-com)      ; 加载 ActiveX 支持</pre>
+<pre class="prog_in">(setq acadObject   (vlax-get-acad-object))</pre>
+<pre class="prog_in">(setq acadDocument (vla-get-ActiveDocument acadObject))</pre>
+<pre class="prog_in">(setq mSpace       (vla-get-ModelSpace acadDocument))</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in">;; 创建直线</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in"> (setq startPt (getpoint &quot;拾取起点：&quot;))</pre>
+<pre class="prog_in"> (setq endPt (vlax-3d-point (getpoint startPt &quot;拾取终点：&quot;)))</pre>
+<pre class="prog_in"> (setq lineObj (vla-addline mSpace (vlax-3d-point startPt) endPt))</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in">;;; 用转换矩阵初始化 transMat 变量</pre>
+<pre class="prog_in">;;; 该矩阵将对象绕点 (0,0,0) 旋转 90 度。</pre>
+<pre class="prog_in">;;; 先创建包含 4 个子表的列表，其中每个子表</pre>
+<pre class="prog_in">;;; 包含 4 个数值，代表转换矩阵的元素</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in"> (setq matList (list '(0 -1 0 0) '(1 0 0 0) '(0 0 1 0) '(0 0 0 1)))</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in">;;; 使用 vlax-tmatrix 将表转换为变体。</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in"> (setq transmat (vlax-tmatrix matlist))</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in">;;;  用定义的转换矩阵转换直线</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in"> (vla-transformby lineObj transMat)</pre>
+<pre class="prog_in"> (vla-zoomall acadObject)</pre>
+<pre class="prog_in"></pre>
+<pre class="prog_in"> (princ &quot;直线已被转换。&quot;)</pre>
+<pre class="prog_in"> (princ)</pre>
+<pre class="prog_in_end">)</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
