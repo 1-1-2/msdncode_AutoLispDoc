@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlax-tmatrix</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êý</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,56 +39,56 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">·µ»Ø VLA ·½·¨¿ÉÓÃµÄ 4x4 ×ª»»¾ØÕóµÄÊÊµ±±íÊ¾</p> 
+<p id="crleadin" class="cr_leadin">è¿”å›ž VLA æ–¹æ³•å¯ç”¨çš?4x4 è½¬æ¢çŸ©é˜µçš„é€‚å½“è¡¨ç¤º</p> 
 <pre class="prog_in_end">(vlax-tmatrix list)</pre>
-<p class="Heading-2">²ÎÊý</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">list</p>
-<p class="define_text">ÓÉ±í×é³ÉµÄ±í£¬ÆäÖÐÃ¿¸ö×Ó±í°üº¬ 4 ¸öÊýÖµ£¬·Ö±ð±íÊ¾×ª»»¾ØÕóµÄ¸÷¸öÔªËØ¡£</p> 
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">ÀàÐÍÎª SafeArray µÄ±äÌå£¬±íÊ¾ 4x4 ×ª»»¾ØÕó¡£</p> 
-<p class="Heading-2">Ê¾Àý</p>
-<p class="body">¶¨Òå×ª»»¾ØÕó²¢½«ÆäÖµÖ¸¶¨Îª±äÁ¿ tmatrix£º</p> 
+<p class="define_text">ç”±è¡¨ç»„æˆçš„è¡¨ï¼Œå…¶ä¸­æ¯ä¸ªå­è¡¨åŒ…å?4 ä¸ªæ•°å€¼ï¼Œåˆ†åˆ«è¡¨ç¤ºè½¬æ¢çŸ©é˜µçš„å„ä¸ªå…ƒç´ ã€?/p> 
+<p class="Heading-2">è¿”å›žå€?/p>
+<p class="body">ç±»åž‹ä¸?SafeArray çš„å˜ä½“ï¼Œè¡¨ç¤º 4x4 è½¬æ¢çŸ©é˜µã€?/p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">å®šä¹‰è½¬æ¢çŸ©é˜µå¹¶å°†å…¶å€¼æŒ‡å®šä¸ºå˜é‡ tmatrixï¼?/p> 
 <pre class="prog_in">_$ (setq tmatrix (vlax-tmatrix '((1 1 1 0) (1 2 3 0) (2 3 4 5) (2 9 8 3))))</pre>
 <pre class="prog_in_end">#&lt;variant 8197 ...&gt;</pre>
-<p class="body">Ê¹ÓÃ vlax-safearray->list ÒÔ±íµÄÐÎÊ½²é¿´ tmatrix µÄÖµ£º</p> 
+<p class="body">ä½¿ç”¨ vlax-safearray->list ä»¥è¡¨çš„å½¢å¼æŸ¥çœ?tmatrix çš„å€¼ï¼š</p> 
 <pre class="prog_in">_$ (vlax-safearray-&gt;list (vlax-variant-value tmatrix))</pre>
 <pre class="prog_in_end">((1.0 1.0 1.0 0.0) (1.0 2.0 3.0 0.0) (2.0 3.0 4.0 5.0) (2.0 9.0 8.0 3.0))</pre>
-<p class="body">ÏÂÃæµÄ´úÂë´´½¨Ò»ÌõÖ±Ïß£¬²¢Ê¹ÓÃ×ª»»¾ØÕó½«ÆäÐý×ª 90 ¶È£º</p> 
+<p class="body">ä¸‹é¢çš„ä»£ç åˆ›å»ºä¸€æ¡ç›´çº¿ï¼Œå¹¶ä½¿ç”¨è½¬æ¢çŸ©é˜µå°†å…¶æ—‹è½?90 åº¦ï¼š</p> 
 <pre class="prog_in">(defun Example_TransformBy () ; / lineObj startPt endPt matList transMat) </pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in">(vl-load-com)      ; ¼ÓÔØ ActiveX Ö§³Ö</pre>
+<pre class="prog_in">(vl-load-com)      ; åŠ è½½ ActiveX æ”¯æŒ</pre>
 <pre class="prog_in">(setq acadObject   (vlax-get-acad-object))</pre>
 <pre class="prog_in">(setq acadDocument (vla-get-ActiveDocument acadObject))</pre>
 <pre class="prog_in">(setq mSpace       (vla-get-ModelSpace acadDocument))</pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in">;; ´´½¨Ö±Ïß</pre>
+<pre class="prog_in">;; åˆ›å»ºç›´çº¿</pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in"> (setq startPt (getpoint &quot;Ê°È¡Æðµã£º&quot;))</pre>
-<pre class="prog_in"> (setq endPt (vlax-3d-point (getpoint startPt &quot;Ê°È¡ÖÕµã£º&quot;)))</pre>
+<pre class="prog_in"> (setq startPt (getpoint &quot;æ‹¾å–èµ·ç‚¹ï¼?quot;))</pre>
+<pre class="prog_in"> (setq endPt (vlax-3d-point (getpoint startPt &quot;æ‹¾å–ç»ˆç‚¹ï¼?quot;)))</pre>
 <pre class="prog_in"> (setq lineObj (vla-addline mSpace (vlax-3d-point startPt) endPt))</pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in">;;; ÓÃ×ª»»¾ØÕó³õÊ¼»¯ transMat ±äÁ¿</pre>
-<pre class="prog_in">;;; ¸Ã¾ØÕó½«¶ÔÏóÈÆµã (0,0,0) Ðý×ª 90 ¶È¡£</pre>
-<pre class="prog_in">;;; ÏÈ´´½¨°üº¬ 4 ¸ö×Ó±íµÄÁÐ±í£¬ÆäÖÐÃ¿¸ö×Ó±í</pre>
-<pre class="prog_in">;;; °üº¬ 4 ¸öÊýÖµ£¬´ú±í×ª»»¾ØÕóµÄÔªËØ</pre>
+<pre class="prog_in">;;; ç”¨è½¬æ¢çŸ©é˜µåˆå§‹åŒ– transMat å˜é‡</pre>
+<pre class="prog_in">;;; è¯¥çŸ©é˜µå°†å¯¹è±¡ç»•ç‚¹ (0,0,0) æ—‹è½¬ 90 åº¦ã€?/pre>
+<pre class="prog_in">;;; å…ˆåˆ›å»ºåŒ…å?4 ä¸ªå­è¡¨çš„åˆ—è¡¨ï¼Œå…¶ä¸­æ¯ä¸ªå­è¡?/pre>
+<pre class="prog_in">;;; åŒ…å« 4 ä¸ªæ•°å€¼ï¼Œä»£è¡¨è½¬æ¢çŸ©é˜µçš„å…ƒç´?/pre>
 <pre class="prog_in"></pre>
 <pre class="prog_in"> (setq matList (list '(0 -1 0 0) '(1 0 0 0) '(0 0 1 0) '(0 0 0 1)))</pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in">;;; Ê¹ÓÃ vlax-tmatrix ½«±í×ª»»Îª±äÌå¡£</pre>
+<pre class="prog_in">;;; ä½¿ç”¨ vlax-tmatrix å°†è¡¨è½¬æ¢ä¸ºå˜ä½“ã€?/pre>
 <pre class="prog_in"></pre>
 <pre class="prog_in"> (setq transmat (vlax-tmatrix matlist))</pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in">;;;  ÓÃ¶¨ÒåµÄ×ª»»¾ØÕó×ª»»Ö±Ïß</pre>
+<pre class="prog_in">;;;  ç”¨å®šä¹‰çš„è½¬æ¢çŸ©é˜µè½¬æ¢ç›´çº¿</pre>
 <pre class="prog_in"></pre>
 <pre class="prog_in"> (vla-transformby lineObj transMat)</pre>
 <pre class="prog_in"> (vla-zoomall acadObject)</pre>
 <pre class="prog_in"></pre>
-<pre class="prog_in"> (princ &quot;Ö±ÏßÒÑ±»×ª»»¡£&quot;)</pre>
+<pre class="prog_in"> (princ &quot;ç›´çº¿å·²è¢«è½¬æ¢ã€?quot;)</pre>
 <pre class="prog_in"> (princ)</pre>
 <pre class="prog_in_end">)</pre>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>
