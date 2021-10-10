@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>initget</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ AutoLISP º¯Êý</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ AutoLISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ AutoLISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>  
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ AutoLISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>  
 </tr>
 </table>
 </td>
@@ -39,86 +39,86 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">ÎªËæºóµÄÓÃ»§ÊäÈëº¯Êýµ÷ÓÃ´´½¨¹Ø¼ü×Ö</p>
+<p id="crleadin" class="cr_leadin">ä¸ºéšåŽçš„ç”¨æˆ·è¾“å…¥å‡½æ•°è°ƒç”¨åˆ›å»ºå…³é”®å­?/p>
 <pre class="prog_in_end">(initget [bits] [string])</pre>
-<p class="body">ÄÜ¹»½ÓÊÜ¹Ø¼ü×ÖÊäÈëµÄº¯ÊýÓÐ getint¡¢getreal¡¢getdist¡¢getangle¡¢getorient¡¢getpoint¡¢getcorner¡¢getkword¡¢entsel¡¢nentsel ºÍ nentselp¡£getstring º¯ÊýÊÇÎ¨Ò»²»½ÓÊÜ¹Ø¼ü×ÖµÄÓÃ»§ÊäÈëº¯Êý¡£</p>  
-<p class="body">ÔÚËæºóµ÷ÓÃÓÃ»§ÊäÈëº¯ÊýÊ±£¬Èç¹ûÓÃ»§ÊäÈëµÄ²»ÊÇÏàÓ¦µÄÊý¾ÝÀàÐÍ£¨ÀýÈçÓë getpoint º¯ÊýÏà¶ÔÓ¦µÄÀàÐÍÊÇÒ»¸öµã£©£¬¸Ãº¯Êý½«¼ìË÷¹Ø¼ü×Ö±íÀ´È·¶¨ÓÃ»§ÊÇ·ñ¼üÈëÁËÒ»¸ö¹Ø¼ü×Ö¡£Èç¹ûÓÃ»§µÄÊäÈëºÍ±íÖÐµÄÒ»¸ö¹Ø¼ü×ÖÏàÆ¥Åä£¬º¯Êý½«ÒÔ×Ö·û´®µÄÐÎÊ½·µ»Ø¸Ã¹Ø¼ü×Ö¡£Ó¦ÓÃ³ÌÐò¿ÉÒÔ¶Ô·µ»ØµÄ¹Ø¼ü×Ö½øÐÐ¼ì²â£¬²¢¶ÔÃ¿Ò»¸ö¹Ø¼ü×ÖÖ´ÐÐÏàÓ¦¶¯×÷¡£Èç¹ûÓÃ»§µÄÊäÈë²»ÊÇÏàÓ¦ÀàÐÍÇÒºÍ±íÖÐÈÎºÎÒ»¸ö¹Ø¼ü×Ö¶¼²»Æ¥Åä£¬AutoCAD ½«ÒªÇóÓÃ»§ÔÙ´ÎÊäÈë¡£initget º¯ÊýµÄÎ»±àÂëÖµÓë¹Ø¼ü×Ö±í½ö¶Ô½ôËæÆäºóµÄÄÇ¸öÓÃ»§ÊäÈëº¯ÊýÓÐÐ§¡£</p>  
-<p class="body">Èç¹û initget º¯ÊýÉèÖÃÁËÒ»¸ö¿ØÖÆÎ»£¬¶ø¸Ã¿ØÖÆÎ»¶ÔÓ¦ÓÃ³ÌÐòËæºóµ÷ÓÃµÄÄÇ¸öÓÃ»§ÊäÈëº¯ÊýÀ´ËµÃ»ÓÐÒâÒå£¬ÔòºöÂÔ¸Ã¿ØÖÆÎ»¡£</p>  
-<p class="body">Èç¹ûÓÃ»§µÄÊäÈë²»Âú×ãÒ»¸ö»ò¶à¸öÖ¸¶¨Ìõ¼þ£¨ÀýÈçÔÚ²»ÔÊÐíÊäÈëÁãÖµÊ±ÊäÈëÁËÁãÖµ£©£¬AutoCAD ½«ÏÔÊ¾ÐÅÏ¢ÒªÇóÓÃ»§ÔÙ´ÎÊäÈë¡£</p>  
-<p class="Heading-2">²ÎÊý</p>
+<p class="body">èƒ½å¤ŸæŽ¥å—å…³é”®å­—è¾“å…¥çš„å‡½æ•°æœ?getintã€getrealã€getdistã€getangleã€getorientã€getpointã€getcornerã€getkwordã€entselã€nentsel å’?nentselpã€‚getstring å‡½æ•°æ˜¯å”¯ä¸€ä¸æŽ¥å—å…³é”®å­—çš„ç”¨æˆ·è¾“å…¥å‡½æ•°ã€?/p>  
+<p class="body">åœ¨éšåŽè°ƒç”¨ç”¨æˆ·è¾“å…¥å‡½æ•°æ—¶ï¼Œå¦‚æžœç”¨æˆ·è¾“å…¥çš„ä¸æ˜¯ç›¸åº”çš„æ•°æ®ç±»åž‹ï¼ˆä¾‹å¦‚ä¸?getpoint å‡½æ•°ç›¸å¯¹åº”çš„ç±»åž‹æ˜¯ä¸€ä¸ªç‚¹ï¼‰ï¼Œè¯¥å‡½æ•°å°†æ£€ç´¢å…³é”®å­—è¡¨æ¥ç¡®å®šç”¨æˆ·æ˜¯å¦é”®å…¥äº†ä¸€ä¸ªå…³é”®å­—ã€‚å¦‚æžœç”¨æˆ·çš„è¾“å…¥å’Œè¡¨ä¸­çš„ä¸€ä¸ªå…³é”®å­—ç›¸åŒ¹é…ï¼Œå‡½æ•°å°†ä»¥å­—ç¬¦ä¸²çš„å½¢å¼è¿”å›žè¯¥å…³é”®å­—ã€‚åº”ç”¨ç¨‹åºå¯ä»¥å¯¹è¿”å›žçš„å…³é”®å­—è¿›è¡Œæ£€æµ‹ï¼Œå¹¶å¯¹æ¯ä¸€ä¸ªå…³é”®å­—æ‰§è¡Œç›¸åº”åŠ¨ä½œã€‚å¦‚æžœç”¨æˆ·çš„è¾“å…¥ä¸æ˜¯ç›¸åº”ç±»åž‹ä¸”å’Œè¡¨ä¸­ä»»ä½•ä¸€ä¸ªå…³é”®å­—éƒ½ä¸åŒ¹é…ï¼ŒAutoCAD å°†è¦æ±‚ç”¨æˆ·å†æ¬¡è¾“å…¥ã€‚initget å‡½æ•°çš„ä½ç¼–ç å€¼ä¸Žå…³é”®å­—è¡¨ä»…å¯¹ç´§éšå…¶åŽçš„é‚£ä¸ªç”¨æˆ·è¾“å…¥å‡½æ•°æœ‰æ•ˆã€?/p>  
+<p class="body">å¦‚æžœ initget å‡½æ•°è®¾ç½®äº†ä¸€ä¸ªæŽ§åˆ¶ä½ï¼Œè€Œè¯¥æŽ§åˆ¶ä½å¯¹åº”ç”¨ç¨‹åºéšåŽè°ƒç”¨çš„é‚£ä¸ªç”¨æˆ·è¾“å…¥å‡½æ•°æ¥è¯´æ²¡æœ‰æ„ä¹‰ï¼Œåˆ™å¿½ç•¥è¯¥æŽ§åˆ¶ä½ã€?/p>  
+<p class="body">å¦‚æžœç”¨æˆ·çš„è¾“å…¥ä¸æ»¡è¶³ä¸€ä¸ªæˆ–å¤šä¸ªæŒ‡å®šæ¡ä»¶ï¼ˆä¾‹å¦‚åœ¨ä¸å…è®¸è¾“å…¥é›¶å€¼æ—¶è¾“å…¥äº†é›¶å€¼ï¼‰ï¼ŒAutoCAD å°†æ˜¾ç¤ºä¿¡æ¯è¦æ±‚ç”¨æˆ·å†æ¬¡è¾“å…¥ã€?/p>  
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">bits</p>
-<p class="define_text">°´Î»±àÂëµÄÕûÊý£¬ÓÃÓÚ¿ØÖÆÊÇ·ñÔÊÐíÄ³Ð©ÀàÐÍµÄÓÃ»§ÊäÈë¡£ÕâÐ©¿ØÖÆÎ»¿ÉÒÔÈÎÒâ×éºÏ£¨¼´°Ñ¸÷Î»¼ÓÆðÀ´£©£¬¹¹³É 0 µ½ 225 Ö®¼äµÄÖµ¡£Èç¹ûÃ»ÓÐÖ¸¶¨ bits ²ÎÊý£¬Ôò¼Ù¶¨ËüÊÇ 0¡£¸÷Î»µÄÖµÈçÏÂ£º</p>  
+<p class="define_text">æŒ‰ä½ç¼–ç çš„æ•´æ•°ï¼Œç”¨äºŽæŽ§åˆ¶æ˜¯å¦å…è®¸æŸäº›ç±»åž‹çš„ç”¨æˆ·è¾“å…¥ã€‚è¿™äº›æŽ§åˆ¶ä½å¯ä»¥ä»»æ„ç»„åˆï¼ˆå³æŠŠå„ä½åŠ èµ·æ¥ï¼‰ï¼Œæž„æˆ 0 åˆ?225 ä¹‹é—´çš„å€¼ã€‚å¦‚æžœæ²¡æœ‰æŒ‡å®?bits å‚æ•°ï¼Œåˆ™å‡å®šå®ƒæ˜¯ 0ã€‚å„ä½çš„å€¼å¦‚ä¸‹ï¼š</p>  
 <p class="define_text">
-<span class="CharSansBold">1</span><span class="CharSans">  £¨Î»0£©  ½ûÖ¹ÓÃ»§½ö°´ ENTER ¼üÀ´ÏìÓ¦ÊäÈëÇëÇó¡£</span> </p>  
+<span class="CharSansBold">1</span><span class="CharSans">  ï¼ˆä½0ï¼? ç¦æ­¢ç”¨æˆ·ä»…æŒ‰ ENTER é”®æ¥å“åº”è¾“å…¥è¯·æ±‚ã€?/span> </p>  
 <p class="define_text">
 <span class="CharSansBold">2</span>
-<span class="CharSansBold"> </span>£¨Î»1£©  ½ûÖ¹ÓÃ»§ÊäÈëÁãÖµÀ´ÏìÓ¦ÊäÈëÇëÇó¡£</p>  
+<span class="CharSansBold"> </span>ï¼ˆä½1ï¼? ç¦æ­¢ç”¨æˆ·è¾“å…¥é›¶å€¼æ¥å“åº”è¾“å…¥è¯·æ±‚ã€?/p>  
 <p class="define_text">
-<span class="CharSansBold">4</span><span class="CharSans">  </span> £¨Î»2£©  ½ûÖ¹ÓÃ»§ÊäÈë¸ºÖµÀ´ÏìÓ¦ÊäÈëÇëÇó¡£</p>  
+<span class="CharSansBold">4</span><span class="CharSans">  </span> ï¼ˆä½2ï¼? ç¦æ­¢ç”¨æˆ·è¾“å…¥è´Ÿå€¼æ¥å“åº”è¾“å…¥è¯·æ±‚ã€?/p>  
 <p class="define_text">
-<span class="CharSansBold">8</span><span class="CharSans">  </span> £¨Î»3£©  ÔÊÐíÓÃ»§ÔÚµ±Ç°Í¼ÐÎ½çÏÞÖ®ÍâÊäÈëÒ»¸öµã£¬¼´Ê¹ AutoCAD  
-µÄÏµÍ³±äÁ¿ LIMCHECK µ±Ç°±»ÉèÖÃÎª¿ª (ON)£¬±¾Ìõ¼þÒ²ÕÕÑù¶ÔËæºóµ÷ÓÃµÄÓÃ»§ÊäÈëº¯ÊýÓÐÐ§¡£</p>  
+<span class="CharSansBold">8</span><span class="CharSans">  </span> ï¼ˆä½3ï¼? å…è®¸ç”¨æˆ·åœ¨å½“å‰å›¾å½¢ç•Œé™ä¹‹å¤–è¾“å…¥ä¸€ä¸ªç‚¹ï¼Œå³ä½?AutoCAD  
+çš„ç³»ç»Ÿå˜é‡?LIMCHECK å½“å‰è¢«è®¾ç½®ä¸ºå¼€ (ON)ï¼Œæœ¬æ¡ä»¶ä¹Ÿç…§æ ·å¯¹éšåŽè°ƒç”¨çš„ç”¨æˆ·è¾“å…¥å‡½æ•°æœ‰æ•ˆã€?/p>  
 <p class="define_text">
-<span class="CharSansBold">16</span><span class="CharSans">  </span> £¨Î»4£©  £¨Ä¿Ç°²»Ê¹ÓÃ£©¡£</p>  
+<span class="CharSansBold">16</span><span class="CharSans">  </span> ï¼ˆä½4ï¼? ï¼ˆç›®å‰ä¸ä½¿ç”¨ï¼‰ã€?/p>  
 <p class="define_text">
-<span class="CharSansBold">32</span><span class="CharSans">  </span> £¨Î»5£©  ÓÃÐéÏß»æÖÆÍÏÒýÏß»òÀ­Éì·½¿ò¡£¶ÔÓÚÄÇÐ©¿ÉÒÔÓÉÓÃ»§ÔÚÍ¼ÐÎÆÁÄ»ÉÏÍ¨¹ýÑ¡ÔñÎ»ÖÃÀ´Ö¸¶¨Ò»¸öµãµÄº¯Êý£¬ÉèÖÃ¸Ã¿ØÖÆÎ»½«Ê¹ÍÏÒýÏßºÍÀ­Éì·½¿òÏÔÊ¾ÎªÐéÏß¶ø²»ÊÇÊµÏß£¨Ä³Ð©ÏÔÊ¾Çý¶¯³ÌÐòÓÃÑÕÉ«ÐÑÄ¿µÄÏßÀ´´úÌæÐéÏß£©¡£Èç¹ûÏµÍ³±äÁ¿ POPUPS ÉèÎª 0£¬AutoCAD ½«ºöÂÔ¸Ã¿ØÖÆÎ»¡£</p>  
+<span class="CharSansBold">32</span><span class="CharSans">  </span> ï¼ˆä½5ï¼? ç”¨è™šçº¿ç»˜åˆ¶æ‹–å¼•çº¿æˆ–æ‹‰ä¼¸æ–¹æ¡†ã€‚å¯¹äºŽé‚£äº›å¯ä»¥ç”±ç”¨æˆ·åœ¨å›¾å½¢å±å¹•ä¸Šé€šè¿‡é€‰æ‹©ä½ç½®æ¥æŒ‡å®šä¸€ä¸ªç‚¹çš„å‡½æ•°ï¼Œè®¾ç½®è¯¥æŽ§åˆ¶ä½å°†ä½¿æ‹–å¼•çº¿å’Œæ‹‰ä¼¸æ–¹æ¡†æ˜¾ç¤ºä¸ºè™šçº¿è€Œä¸æ˜¯å®žçº¿ï¼ˆæŸäº›æ˜¾ç¤ºé©±åŠ¨ç¨‹åºç”¨é¢œè‰²é†’ç›®çš„çº¿æ¥ä»£æ›¿è™šçº¿ï¼‰ã€‚å¦‚æžœç³»ç»Ÿå˜é‡?POPUPS è®¾ä¸º 0ï¼ŒAutoCAD å°†å¿½ç•¥è¯¥æŽ§åˆ¶ä½ã€?/p>  
 <p class="define_text">
-<span class="CharSansBold">64</span><span class="CharSans">  </span> £¨Î»6£©  ½ûÖ¹ÊäÈë Z ×ø±ê£¬ÒÔÊ¹Ó¦ÓÃ³ÌÐòÈ·±£¸Ãº¯Êý·µ»ØµÄÊÇ¶þÎ¬¾àÀë¡£</p>  
+<span class="CharSansBold">64</span><span class="CharSans">  </span> ï¼ˆä½6ï¼? ç¦æ­¢è¾“å…¥ Z åæ ‡ï¼Œä»¥ä½¿åº”ç”¨ç¨‹åºç¡®ä¿è¯¥å‡½æ•°è¿”å›žçš„æ˜¯äºŒç»´è·ç¦»ã€?/p>  
 <p class="define_text">
-<span class="CharSansBold">128</span><span class="CharSans">  </span> £¨Î»7£©  ÔÚ×ðÖØÈÎºÎÆäËûµÄ¿ØÖÆÎ»ºÍËùÁÐ³öµÄ¹Ø¼ü×ÖµÄÇé¿öÏÂ£¬ÔÊÐíÈÎÒâµÄÊäÈë£¬¾ÍºÃÏóËüÊÇÒ»¸ö¹Ø¼ü×ÖÒ»Ñù¡£¸ÃÎ»µÄÓÅÏÈÈ¨¸ßÓÚÎ» 0<br>  
-£ºÈç¹ûÍ¬Ê±ÉèÖÃÁËÎ» 7 ºÍÎ» 0£¬ÄÇÃ´ÓÃ»§½ö¼üÈë ENTER ¼üÊ±£¬½«·µ»Ø¿Õ×Ö·û´®¡£</p>  
+<span class="CharSansBold">128</span><span class="CharSans">  </span> ï¼ˆä½7ï¼? åœ¨å°Šé‡ä»»ä½•å…¶ä»–çš„æŽ§åˆ¶ä½å’Œæ‰€åˆ—å‡ºçš„å…³é”®å­—çš„æƒ…å†µä¸‹ï¼Œå…è®¸ä»»æ„çš„è¾“å…¥ï¼Œå°±å¥½è±¡å®ƒæ˜¯ä¸€ä¸ªå…³é”®å­—ä¸€æ ·ã€‚è¯¥ä½çš„ä¼˜å…ˆæƒé«˜äºŽä½ 0<br>  
+ï¼šå¦‚æžœåŒæ—¶è®¾ç½®äº†ä½?7 å’Œä½ 0ï¼Œé‚£ä¹ˆç”¨æˆ·ä»…é”®å…¥ ENTER é”®æ—¶ï¼Œå°†è¿”å›žç©ºå­—ç¬¦ä¸²ã€?/p>  
 <p class="note">
-<span class="note_char">×¢Òâ</span>&nbsp;AutoLISP µÄºóÐø°æ±¾ÖÐ¿ÉÄÜ»áÊ¹ÓÃÆäËû initget ¿ØÖÆÎ»£¬ËùÒÔ²»ÒªÉèÖÃ´Ë´¦Î´Ìá¼°µÄÎ»¡£</p>  
+<span class="note_char">æ³¨æ„</span>&nbsp;AutoLISP çš„åŽç»­ç‰ˆæœ¬ä¸­å¯èƒ½ä¼šä½¿ç”¨å…¶ä»?initget æŽ§åˆ¶ä½ï¼Œæ‰€ä»¥ä¸è¦è®¾ç½®æ­¤å¤„æœªæåŠçš„ä½ã€?/p>  
 <p class="define_head">string</p>
-<p class="define_text">´ú±í¹Ø¼ü×Ö±íµÄ×Ö·û´®¡£¹ØÓÚ¶¨Òå¹Ø¼ü×ÖµÄÐÅÏ¢£¬Çë²Î¼û¹Ø¼ü×Ö¹æ·¶¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
+<p class="define_text">ä»£è¡¨å…³é”®å­—è¡¨çš„å­—ç¬¦ä¸²ã€‚å…³äºŽå®šä¹‰å…³é”®å­—çš„ä¿¡æ¯ï¼Œè¯·å‚è§å…³é”®å­—è§„èŒƒã€?/p>
+<p class="Heading-2">è¿”å›žå€?/p>
 <p class="body">
 <span class="CharCourier">nil</span>
 </p>
-<p class="body">¿ÉÓÃµÄ¿ØÖÆÎ»</p>
-<p class="body">¶ÔÌØ¶¨µÄ getxxx º¯ÊýÀ´Ëµ£¬Ö»ÓÐÌØ¶¨µÄ¿ØÖÆÎ»²ÅÓÐÒâÒå£¬ÏÂ±í¶Ô´Ë×÷ÁËÈ«ÃæËµÃ÷¡£</p>  
+<p class="body">å¯ç”¨çš„æŽ§åˆ¶ä½</p>
+<p class="body">å¯¹ç‰¹å®šçš„ getxxx å‡½æ•°æ¥è¯´ï¼Œåªæœ‰ç‰¹å®šçš„æŽ§åˆ¶ä½æ‰æœ‰æ„ä¹‰ï¼Œä¸‹è¡¨å¯¹æ­¤ä½œäº†å…¨é¢è¯´æ˜Žã€?/p>  
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="9">
-<p class="table_heading">ÓÃ»§ÊäÈëº¯ÊýºÍ¿ÉÓÃµÄ¿ØÖÆÎ» </p>
+<p class="table_heading">ç”¨æˆ·è¾“å…¥å‡½æ•°å’Œå¯ç”¨çš„æŽ§åˆ¶ä½?</p>
 </th>
 </tr>
 <tr class="row_0">
 <th>
 <p class="table_heading"></p>
-<p class="table_heading">º¯Êý</p>
+<p class="table_heading">å‡½æ•°</p>
 </th><th>
-<p class="table_heading">¹Ø¼ü×Ö<br>
-ÊÇ·ñ¿ÉÓÃ
+<p class="table_heading">å…³é”®å­?br>
+æ˜¯å¦å¯ç”¨
 </th><th colspan="7">
-<p class="table_heading">¿ØÖÆÎ»µÄÖµ</p>
+<p class="table_heading">æŽ§åˆ¶ä½çš„å€?/p>
 </th>
 </tr>
 <tr class="row_0">
 <th>
 </th><th>
 </th><th>
-<p class="table_heading">·Ç¿Õ</p>
+<p class="table_heading">éžç©º</p>
 <p class="table_heading">(1)</p>
 </th><th>
-<p class="table_heading">·ÇÁã</p>
+<p class="table_heading">éžé›¶</p>
 <p class="table_heading">(2)</p>
 </th><th>
-<p class="table_heading">·Ç¸º</p>
+<p class="table_heading">éžè´Ÿ</p>
 <p class="table_heading">(4)</p>
 </th><th>
-<p class="table_heading">·ÇÏÞ</p>
+<p class="table_heading">éžé™</p>
 <p class="table_heading">(8)
 </th><th>
-<p class="table_heading">Ê¹ÓÃÐéÏß</p>
+<p class="table_heading">ä½¿ç”¨è™šçº¿</p>
 <p class="table_heading">(32)</p>
 </th><th>
-<p class="table_heading">¶þÎ¬¾àÀë</p>
+<p class="table_heading">äºŒç»´è·ç¦»</p>
 <p class="table_heading">(64)</p>
 </th>
 <th>
-<p class="table_heading">Ëæ»úÊäÈë</p>
+<p class="table_heading">éšæœºè¾“å…¥</p>
 <p class="table_heading">(128)</p>
 </th>
 
@@ -380,33 +380,33 @@
 </tr>
 </tbody>
 </table>
-<p class="body">¹Ø¼ü×Ö¹æ·¶</p>
-<p class="body">string ²ÎÊý°´ÈçÏÂ¹æÔò½âÊÍ£º</p> 
+<p class="body">å…³é”®å­—è§„èŒ?/p>
+<p class="body">string å‚æ•°æŒ‰å¦‚ä¸‹è§„åˆ™è§£é‡Šï¼š</p> 
 <ol>
-<li class="list_numbered_reset">Ã¿¸ö¹Ø¼ü×ÖÓëËæºóµÄ¹Ø¼ü×ÖÖ®¼äÓÃÒ»¸ö»ò¶à¸ö¿Õ¸ñ·Ö¸ô¡£ÀýÈç£¬¡°Width Height Depth¡±¶¨ÒåÁËÈý¸ö¹Ø¼ü×Ö¡£</li> 
-<li class="list_numbered_end">¹Ø¼ü×ÖÖ»ÄÜÓÉ×ÖÄ¸¡¢ÊýÖµºÍÁ¬×Ö·û (-) ×é³É¡£</li> 
+<li class="list_numbered_reset">æ¯ä¸ªå…³é”®å­—ä¸ŽéšåŽçš„å…³é”®å­—ä¹‹é—´ç”¨ä¸€ä¸ªæˆ–å¤šä¸ªç©ºæ ¼åˆ†éš”ã€‚ä¾‹å¦‚ï¼Œâ€œWidth Height Depthâ€å®šä¹‰äº†ä¸‰ä¸ªå…³é”®å­—ã€?/li> 
+<li class="list_numbered_end">å…³é”®å­—åªèƒ½ç”±å­—æ¯ã€æ•°å€¼å’Œè¿žå­—ç¬?(-) ç»„æˆã€?/li> 
 </ol>
-<p class="body">¹Ø¼ü×ÖÓÐÈçÏÂÁ½ÖÖËõÐ´°ì·¨£º</p>
+<p class="body">å…³é”®å­—æœ‰å¦‚ä¸‹ä¸¤ç§ç¼©å†™åŠžæ³•ï¼?/p>
 <ul>
-<li class="list_bulleted_begin">¹Ø¼ü×ÖµÄ±ØÐè²¿·ÖÓÃ´óÐ´×ÖÄ¸±íÊ¾£¬¶øÆäÓà²¿·ÖÓÃÐ¡Ð´×ÖÄ¸±íÊ¾¡£´óÐ´µÄËõÐ´²¿·Ö¿ÉÒÔÎ»ÓÚ¹Ø¼ü×ÖµÄÈÎºÎÎ»ÖÃ£¨ÀýÈç£¬¡°LType¡±¡¢¡°eXit¡±»ò¡°toP¡±£©¡£</li>
-<li class="list_bulleted_end">Õû¸ö¹Ø¼ü×ÖÓÃ´óÐ´×ÖÄ¸±íÊ¾£¬Æäºó½ô¸úÒ»¸ö¶ººÅ£¬È»ºóÔÙ¸úËæÆä±ØÐè²¿·Ö£¨ÀýÈç£¬¡°LTYPE,LT¡±£©¡£ÕâÖÖÇé¿öÏÂ£¬¹Ø¼ü×ÖµÄ±ØÐè²¿·Ö±ØÐë°üº¬¹Ø¼ü×ÖµÄµÚÒ»¸ö×Ö·û£¬ÕâÒâÎ¶×Å¡°EXIT,X¡±ÊÇÎÞÐ§µÄ¡£</li>
+<li class="list_bulleted_begin">å…³é”®å­—çš„å¿…éœ€éƒ¨åˆ†ç”¨å¤§å†™å­—æ¯è¡¨ç¤ºï¼Œè€Œå…¶ä½™éƒ¨åˆ†ç”¨å°å†™å­—æ¯è¡¨ç¤ºã€‚å¤§å†™çš„ç¼©å†™éƒ¨åˆ†å¯ä»¥ä½äºŽå…³é”®å­—çš„ä»»ä½•ä½ç½®ï¼ˆä¾‹å¦‚ï¼Œâ€œLTypeâ€ã€â€œeXitâ€æˆ–â€œtoPâ€ï¼‰ã€?/li>
+<li class="list_bulleted_end">æ•´ä¸ªå…³é”®å­—ç”¨å¤§å†™å­—æ¯è¡¨ç¤ºï¼Œå…¶åŽç´§è·Ÿä¸€ä¸ªé€—å·ï¼Œç„¶åŽå†è·Ÿéšå…¶å¿…éœ€éƒ¨åˆ†ï¼ˆä¾‹å¦‚ï¼Œâ€œLTYPE,LTâ€ï¼‰ã€‚è¿™ç§æƒ…å†µä¸‹ï¼Œå…³é”®å­—çš„å¿…éœ€éƒ¨åˆ†å¿…é¡»åŒ…å«å…³é”®å­—çš„ç¬¬ä¸€ä¸ªå­—ç¬¦ï¼Œè¿™æ„å‘³ç€â€œEXIT,Xâ€æ˜¯æ— æ•ˆçš„ã€?/li>
 </ul>
-<p class="body">¡°LType¡±ºÍ¡°LTYPE,LT¡±ÕâÁ½ÖÖ¹Ø¼ü×ÖËõÐ´·½Ê½ÊÇµÈ¼ÛµÄ¡£Èç¹ûÓÃ»§¼üÈë LT£¨ÎÞÂÛÊÇ´óÐ¡Ð´£©£¬¶¼¿ÉÒÔ±»Ê¶±ðÎªÕâ¸ö¹Ø¼ü×Ö¡£ÓÃ»§»¹¿ÉÒÔÊäÈë¹Ø¼ü×Ö±ØÐè²¿·ÖÖ®ºóµÄ×Ö·û£¬ÕâÑùËüÃÇ¾Í²»»áÓëËõÐ´¹æÔòÏà³åÍ»ÁË¡£ÔÚ±¾ÀýÖÐ£¬ÓÃ»§¿ÉÒÔÊäÈë LTY »ò LTYP£¬µ«Ö»ÊäÈë L ÊÇ²»¹»µÄ¡£</p> 
-<p class="body">Èç¹û string ²ÎÊýÍêÈ«ÒÔ´óÐ´»òÐ¡Ð´×Ö·û¸ø³ö£¬ÆäºóÃ»ÓÐ¶ººÅ£¬Ò²Ã»ÓÐ¸úËæ±ØÐè²¿·Ö£¬ÔòÖ»ÓÐÓÃ»§ÍêÕûÊäÈëÕâ¸ö¹Ø¼ü×ÖÊ± AutoCAD ²ÅÄÜÊ¶±ð¡£</p> 
-<p class="body">initget º¯ÊýÖ§³Ö±¾µØ»¯µÄ¹Ø¼ü×Ö¡£ÏÂÁÐ¹Ø¼ü×Ö×Ö·û´®Óï·¨ÔÊÐíÊäÈë±¾µØ»¯µÄ¹Ø¼ü×Ö£¬¶ø·µ»ØÓëÓïÑÔÎÞ¹ØµÄ¹Ø¼ü×Ö£º</p> 
+<p class="body">â€œLTypeâ€å’Œâ€œLTYPE,LTâ€è¿™ä¸¤ç§å…³é”®å­—ç¼©å†™æ–¹å¼æ˜¯ç­‰ä»·çš„ã€‚å¦‚æžœç”¨æˆ·é”®å…?LTï¼ˆæ— è®ºæ˜¯å¤§å°å†™ï¼‰ï¼Œéƒ½å¯ä»¥è¢«è¯†åˆ«ä¸ºè¿™ä¸ªå…³é”®å­—ã€‚ç”¨æˆ·è¿˜å¯ä»¥è¾“å…¥å…³é”®å­—å¿…éœ€éƒ¨åˆ†ä¹‹åŽçš„å­—ç¬¦ï¼Œè¿™æ ·å®ƒä»¬å°±ä¸ä¼šä¸Žç¼©å†™è§„åˆ™ç›¸å†²çªäº†ã€‚åœ¨æœ¬ä¾‹ä¸­ï¼Œç”¨æˆ·å¯ä»¥è¾“å…¥ LTY æˆ?LTYPï¼Œä½†åªè¾“å…?L æ˜¯ä¸å¤Ÿçš„ã€?/p> 
+<p class="body">å¦‚æžœ string å‚æ•°å®Œå…¨ä»¥å¤§å†™æˆ–å°å†™å­—ç¬¦ç»™å‡ºï¼Œå…¶åŽæ²¡æœ‰é€—å·ï¼Œä¹Ÿæ²¡æœ‰è·Ÿéšå¿…éœ€éƒ¨åˆ†ï¼Œåˆ™åªæœ‰ç”¨æˆ·å®Œæ•´è¾“å…¥è¿™ä¸ªå…³é”®å­—æ—¶ AutoCAD æ‰èƒ½è¯†åˆ«ã€?/p> 
+<p class="body">initget å‡½æ•°æ”¯æŒæœ¬åœ°åŒ–çš„å…³é”®å­—ã€‚ä¸‹åˆ—å…³é”®å­—å­—ç¬¦ä¸²è¯­æ³•å…è®¸è¾“å…¥æœ¬åœ°åŒ–çš„å…³é”®å­—ï¼Œè€Œè¿”å›žä¸Žè¯­è¨€æ— å…³çš„å…³é”®å­—ï¼?/p> 
 <pre class="prog_in_end">&quot;local1 local2 localn_indep1 indep2 indepn&quot;</pre>
-<p class="body">ÔÚÕâÀï£¬local1 ÖÁ localn ÊÇ±¾µØ»¯µÄ¹Ø¼ü×Ö£¬¶ø´Ó indep1 µ½ indepn ÊÇÓëÓïÑÔÎÞ¹ØµÄ¹Ø¼ü×Ö¡£</p> 
-<p class="body">±¾µØ»¯¹Ø¼ü×ÖºÍÓïÑÔÎÞ¹Ø¹Ø¼ü×ÖµÄÊýÄ¿±ØÐëÏàÍ¬£¬¶øÇÒµÚÒ»¸öÓëÓïÑÔÎÞ¹ØµÄ¹Ø¼ü×ÖµÄÇ°Ãæ±ØÐëÓÐÒ»¸öÏÂ»®Ïß£¬ÈçÏÂÀýËùÊ¾£º</p>
+<p class="body">åœ¨è¿™é‡Œï¼Œlocal1 è‡?localn æ˜¯æœ¬åœ°åŒ–çš„å…³é”®å­—ï¼Œè€Œä»Ž indep1 åˆ?indepn æ˜¯ä¸Žè¯­è¨€æ— å…³çš„å…³é”®å­—ã€?/p> 
+<p class="body">æœ¬åœ°åŒ–å…³é”®å­—å’Œè¯­è¨€æ— å…³å…³é”®å­—çš„æ•°ç›®å¿…é¡»ç›¸åŒï¼Œè€Œä¸”ç¬¬ä¸€ä¸ªä¸Žè¯­è¨€æ— å…³çš„å…³é”®å­—çš„å‰é¢å¿…é¡»æœ‰ä¸€ä¸ªä¸‹åˆ’çº¿ï¼Œå¦‚ä¸‹ä¾‹æ‰€ç¤ºï¼š</p>
 <pre class="prog_in">(initget &quot;Abc Def _Ghi Jkl&quot;)</pre>
-<pre class="prog_in_end">(getkword &quot;\nÊäÈëÑ¡Ïî (Abc/Def): &quot;)</pre>
-<p class="body">ÊäÈë A ·µ»Ø Ghi£¬ÊäÈë _J Ôò·µ»Ø Jkl¡£</p> 
-<p class="see_also">²ÎÔÄ</p>
-<p class="body"> <a href="ALR.default.092.htm">entsel</a>¡¢<a href="ALR.default.114.htm">getangle</a>¡¢<a href="ALR.default.117.htm">getcorner</a>¡¢<a href="ALR.default.118.htm">getdist</a>¡¢ <a href="ALR.default.121.htm">getint</a>¡¢<a href="ALR.default.122.htm">getkword</a>¡¢<a href="ALR.default.123.htm">getorient</a>¡¢<a href="ALR.default.124.htm">getpoint</a>¡¢<a href="ALR.default.125.htm">getreal</a>¡¢<a href="ALR.default.126.htm">getstring</a>¡¢ <a href="ALR.default.168.htm">nentsel</a> 
-ºÍ <a href="ALR.default.169.htm">nentselp</a>  º¯Êý¡£¡¶Visual LISP 
-¿ª·¢ÈËÔ±ÊÖ²á¡·ÖÐµÄ <a href="ms-its:ACAD_ALG.chm::/ALG.09.016.htm">ÓÃ»§ÊäÈëº¯ÊýµÄÌõ¼þ¿ØÖÆ</a>¡£</p>
+<pre class="prog_in_end">(getkword &quot;\nè¾“å…¥é€‰é¡¹ (Abc/Def): &quot;)</pre>
+<p class="body">è¾“å…¥ A è¿”å›ž Ghiï¼Œè¾“å…?_J åˆ™è¿”å›?Jklã€?/p> 
+<p class="see_also">å‚é˜…</p>
+<p class="body"> <a href="ALR.default.092.htm">entsel</a>ã€?a href="ALR.default.114.htm">getangle</a>ã€?a href="ALR.default.117.htm">getcorner</a>ã€?a href="ALR.default.118.htm">getdist</a>ã€?<a href="ALR.default.121.htm">getint</a>ã€?a href="ALR.default.122.htm">getkword</a>ã€?a href="ALR.default.123.htm">getorient</a>ã€?a href="ALR.default.124.htm">getpoint</a>ã€?a href="ALR.default.125.htm">getreal</a>ã€?a href="ALR.default.126.htm">getstring</a>ã€?<a href="ALR.default.168.htm">nentsel</a> 
+å’?<a href="ALR.default.169.htm">nentselp</a>  å‡½æ•°ã€‚ã€ŠVisual LISP 
+å¼€å‘äººå‘˜æ‰‹å†Œã€‹ä¸­çš?<a href="ms-its:ACAD_ALG.chm::/ALG.09.016.htm">ç”¨æˆ·è¾“å…¥å‡½æ•°çš„æ¡ä»¶æŽ§åˆ?/a>ã€?/p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

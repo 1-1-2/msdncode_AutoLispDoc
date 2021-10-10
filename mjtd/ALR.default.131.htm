@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>grread</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ AutoLISP º¯Êý</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ AutoLISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ AutoLISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ AutoLISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,51 +39,51 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">´Ó AutoCAD µÄÈÎºÎÒ»ÖÖÊäÈëÉè±¸ÖÐ¶ÁÈ¡ÊýÖµ</p> 
+<p id="crleadin" class="cr_leadin">ä»?AutoCAD çš„ä»»ä½•ä¸€ç§è¾“å…¥è®¾å¤‡ä¸­è¯»å–æ•°å€?/p> 
 <pre class="prog_in_end">(grread [track] [allkeys [curtype]]) </pre>
-<p class="body">Ö»ÓÐÌØÊâÓÃÍ¾µÄ AutoLISP Ó¦ÓÃ³ÌÐò²ÅÐèµ÷ÓÃ±¾º¯Êý£¬AutoLISP µÄ´ó¶àÊýÊäÈëÓ¦Ê¹ÓÃ¸÷ÖÖ getxxx º¯ÊýÀ´Íê³É¡£</p> 
-<p class="Heading-2">²ÎÊý</p>
+<p class="body">åªæœ‰ç‰¹æ®Šç”¨é€”çš„ AutoLISP åº”ç”¨ç¨‹åºæ‰éœ€è°ƒç”¨æœ¬å‡½æ•°ï¼ŒAutoLISP çš„å¤§å¤šæ•°è¾“å…¥åº”ä½¿ç”¨å„ç§?getxxx å‡½æ•°æ¥å®Œæˆã€?/p> 
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">track</p>
-<p class="define_text">Èç¹ûÌá¹©¸Ã²ÎÊýÇÒÆäÖµ²»Îª nil£¬ÔòÊäÈëÉè±¸ÒÆ¶¯Ê±£¬±¾º¯ÊýÄÜ´Ó¶¨µãÉè±¸ÖÐ·µ»Ø×ø±ê¡£</p> 
+<p class="define_text">å¦‚æžœæä¾›è¯¥å‚æ•°ä¸”å…¶å€¼ä¸ä¸?nilï¼Œåˆ™è¾“å…¥è®¾å¤‡ç§»åŠ¨æ—¶ï¼Œæœ¬å‡½æ•°èƒ½ä»Žå®šç‚¹è®¾å¤‡ä¸­è¿”å›žåæ ‡ã€?/p> 
 <p class="define_head">allkeys</p>
-<p class="define_text">ÕûÊýÐÍ£¬¾ö¶¨ grread ÒªÖ´ÐÐµÄ¹¦ÄÜ¡£allkeys µÄ¼¸¸öÎ»ÖµÏà¼Ó¿ÉÒÔ»ñµÃ×éºÏ¹¦ÄÜ¡£¿ÉÒÔÖ¸¶¨ÈçÏÂÖµ£º</p> 
+<p class="define_text">æ•´æ•°åž‹ï¼Œå†³å®š grread è¦æ‰§è¡Œçš„åŠŸèƒ½ã€‚allkeys çš„å‡ ä¸ªä½å€¼ç›¸åŠ å¯ä»¥èŽ·å¾—ç»„åˆåŠŸèƒ½ã€‚å¯ä»¥æŒ‡å®šå¦‚ä¸‹å€¼ï¼š</p> 
 <p class="define_text">
-<span class="CharSansBold">1 </span> £¨Î»0£©  ·µ»Ø¡°ÍÏ¶¯Ä£Ê½¡±×ø±ê¡£Èç¹ûÉèÖÃÁË¸ÃÎ»£¬¶øÇÒÓÃ»§Ö»ÊÇÒÆ¶¯¶¨µãÉè±¸¶øÃ»ÓÐ°´ÏÂ°´Å¥»ò¼üÅÌ£¬grread º¯Êý¾Í·µ»ØÒ»¸ö±í£¬ÆäµÚÒ»¸ö³ÉÔ±ÊÇÀàÐÍ´úÂë 5£¬µÚ¶þ¸ö³ÉÔ±ÊÇµ±Ç°¶¨µãÉè±¸£¨Êó±ê»òÊý×Ö»¯ÒÇ£©µÄÎ»ÖÃ×ø±ê (X,Y)£¬Õâ¾ÍÊÇ AutoCAD 
-ÊµÏÖÍÏ¶¯µÄ·½·¨¡£</p>
-<p class="define_text"><span class="CharSansBold">2 </span> £¨Î»1£©  ·µ»ØËùÓÐµÄ¼üÖµ£¬°üÀ¨¹¦ÄÜ¼üºÍ¹â±ê¼ü´úÂë£¬ÓÃ»§°´ÏÂ¹â±ê¼üÊ±²¢²»ÒÆ¶¯¹â±ê¡£</p> 
-<p class="define_text"><span class="CharSansBold">4</span> £¨Î»2£©  Ê¹ÓÃ curtype ²ÎÊý´«À´µÄÖµ¿ØÖÆ¹â±êµÄÏÔÊ¾¡£</p> 
-<p class="define_text"><span class="CharSansBold">8 </span> £¨Î»3£©  ÔÚÓÃ»§°´ÏÂ ESC ¼üÊ±²»ÏÔÊ¾ÏàÓ¦´íÎóÐÅÏ¢¡£</p> 
+<span class="CharSansBold">1 </span> ï¼ˆä½0ï¼? è¿”å›žâ€œæ‹–åŠ¨æ¨¡å¼â€åæ ‡ã€‚å¦‚æžœè®¾ç½®äº†è¯¥ä½ï¼Œè€Œä¸”ç”¨æˆ·åªæ˜¯ç§»åŠ¨å®šç‚¹è®¾å¤‡è€Œæ²¡æœ‰æŒ‰ä¸‹æŒ‰é’®æˆ–é”®ç›˜ï¼Œgrread å‡½æ•°å°±è¿”å›žä¸€ä¸ªè¡¨ï¼Œå…¶ç¬¬ä¸€ä¸ªæˆå‘˜æ˜¯ç±»åž‹ä»£ç  5ï¼Œç¬¬äºŒä¸ªæˆå‘˜æ˜¯å½“å‰å®šç‚¹è®¾å¤‡ï¼ˆé¼ æ ‡æˆ–æ•°å­—åŒ–ä»ªï¼‰çš„ä½ç½®åæ ?(X,Y)ï¼Œè¿™å°±æ˜¯ AutoCAD 
+å®žçŽ°æ‹–åŠ¨çš„æ–¹æ³•ã€?/p>
+<p class="define_text"><span class="CharSansBold">2 </span> ï¼ˆä½1ï¼? è¿”å›žæ‰€æœ‰çš„é”®å€¼ï¼ŒåŒ…æ‹¬åŠŸèƒ½é”®å’Œå…‰æ ‡é”®ä»£ç ï¼Œç”¨æˆ·æŒ‰ä¸‹å…‰æ ‡é”®æ—¶å¹¶ä¸ç§»åŠ¨å…‰æ ‡ã€?/p> 
+<p class="define_text"><span class="CharSansBold">4</span> ï¼ˆä½2ï¼? ä½¿ç”¨ curtype å‚æ•°ä¼ æ¥çš„å€¼æŽ§åˆ¶å…‰æ ‡çš„æ˜¾ç¤ºã€?/p> 
+<p class="define_text"><span class="CharSansBold">8 </span> ï¼ˆä½3ï¼? åœ¨ç”¨æˆ·æŒ‰ä¸?ESC é”®æ—¶ä¸æ˜¾ç¤ºç›¸åº”é”™è¯¯ä¿¡æ¯ã€?/p> 
 <p class="define_head">curtype</p>
-<p class="define_text">ÕûÊýÐÍ£¬±íÃ÷ÏÔÊ¾¹â±êµÄÀàÐÍ¡£Ö»ÓÐµ± allkeys ²ÎÊýµÄµÚ¶þÎ»Îª 1 Ê± curtype ²ÎÊý²ÅÓÐÐ§¡£¸Ã²ÎÊýÖ»¿ØÖÆµ±Ç° grread º¯Êýµ÷ÓÃÊ±ÏÔÊ¾µÄ¹â±êÀàÐÍ¡£¿ÉÒÔÖ¸¶¨ÏÂÁÐ curtype Öµ£º</p> 
+<p class="define_text">æ•´æ•°åž‹ï¼Œè¡¨æ˜Žæ˜¾ç¤ºå…‰æ ‡çš„ç±»åž‹ã€‚åªæœ‰å½“ allkeys å‚æ•°çš„ç¬¬äºŒä½ä¸?1 æ—?curtype å‚æ•°æ‰æœ‰æ•ˆã€‚è¯¥å‚æ•°åªæŽ§åˆ¶å½“å‰?grread å‡½æ•°è°ƒç”¨æ—¶æ˜¾ç¤ºçš„å…‰æ ‡ç±»åž‹ã€‚å¯ä»¥æŒ‡å®šä¸‹åˆ?curtype å€¼ï¼š</p> 
 <p class="define_text">
-<span class="CharSansBold">0</span>  ÏÔÊ¾ÆÕÍ¨Ê®×Ö¹â±ê¡£</p>
-<p class="define_text"><span class="CharSansBold">1</span>  ²»ÏÔÊ¾¹â±ê£¨ÎÞÊ®×Ö¹â±ê£©¡£</p>
-<p class="define_text"><span class="CharSansBold">2</span>  ÏÔÊ¾¶ÔÏóÑ¡Ôñ¹â±ê¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">grread º¯Êý·µ»ØÒ»¸ö±í£¬ÆäÖÐµÚÒ»¸öÔªËØËµÃ÷ÊäÈëÀàÐÍµÄ´úÂë£¬µÚ¶þ¸öÔªËØ¼È¿ÉÄÜÊÇÕûÊý£¬ÓÖ¿ÉÄÜÊÇµã£¬ÕâÈ¡¾öÓÚÊäÈëµÄÀàÐÍ¡£Æä·µ»ØÖµÁÐ±íÈçÏÂ£º</p> 
+<span class="CharSansBold">0</span>  æ˜¾ç¤ºæ™®é€šåå­—å…‰æ ‡ã€?/p>
+<p class="define_text"><span class="CharSansBold">1</span>  ä¸æ˜¾ç¤ºå…‰æ ‡ï¼ˆæ— åå­—å…‰æ ‡ï¼‰ã€?/p>
+<p class="define_text"><span class="CharSansBold">2</span>  æ˜¾ç¤ºå¯¹è±¡é€‰æ‹©å…‰æ ‡ã€?/p>
+<p class="Heading-2">è¿”å›žå€?/p>
+<p class="body">grread å‡½æ•°è¿”å›žä¸€ä¸ªè¡¨ï¼Œå…¶ä¸­ç¬¬ä¸€ä¸ªå…ƒç´ è¯´æ˜Žè¾“å…¥ç±»åž‹çš„ä»£ç ï¼Œç¬¬äºŒä¸ªå…ƒç´ æ—¢å¯èƒ½æ˜¯æ•´æ•°ï¼Œåˆå¯èƒ½æ˜¯ç‚¹ï¼Œè¿™å–å†³äºŽè¾“å…¥çš„ç±»åž‹ã€‚å…¶è¿”å›žå€¼åˆ—è¡¨å¦‚ä¸‹ï¼š</p> 
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="4">
-<p class="table_heading">grread º¯ÊýµÄ·µ»ØÖµ </p> 
+<p class="table_heading">grread å‡½æ•°çš„è¿”å›žå€?</p> 
 </th>
 </tr>
 <tr class="row_0">
 <th colspan="2">
-<p class="table_heading">µÚÒ»¸öÔªËØ </p>
+<p class="table_heading">ç¬¬ä¸€ä¸ªå…ƒç´?</p>
 </th><th colspan="2">
-<p class="table_heading">µÚ¶þ¸öÔªËØ</p>
+<p class="table_heading">ç¬¬äºŒä¸ªå…ƒç´?/p>
 </th>
 </tr>
 <tr class="row_0">
 <th>
-<p class="table_heading">Öµ</p>
+<p class="table_heading">å€?/p>
 </th><th>
-<p class="table_heading">ÊäÈëÀàÐÍ&nbsp;</p>
+<p class="table_heading">è¾“å…¥ç±»åž‹&nbsp;</p>
 </th><th>
-<p class="table_heading">Öµ&nbsp;</p>
+<p class="table_heading">å€?nbsp;</p>
 </th><th>
-<p class="table_heading">ËµÃ÷</p>
+<p class="table_heading">è¯´æ˜Ž</p>
 </th>
 </tr>
 </thead>
@@ -92,158 +92,158 @@
 <td class="BasicLeft_CELL">
 <p class="table_body">2</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">¼üÅÌÊäÈë</p>
+<p class="table_body">é”®ç›˜è¾“å…¥</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">¸÷ÖÖ&nbsp;</p>
+<p class="table_body">å„ç§&nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">×Ö·û´úÂë</p>
+<p class="table_body">å­—ç¬¦ä»£ç </p>
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">3</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">Ñ¡¶¨µã</p>
+<p class="table_body">é€‰å®šç‚?/p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ÈýÎ¬µã&nbsp;</p>
+<p class="table_body">ä¸‰ç»´ç‚?nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">µã×ø±ê</p>
+<p class="table_body">ç‚¹åæ ?/p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">4</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ÆÁÄ»/ÏÂÀ­²Ëµ¥Ïî£¨Í¨¹ý¶¨µãÉè±¸Ñ¡È¡£©
+<p class="table_body">å±å¹•/ä¸‹æ‹‰èœå•é¡¹ï¼ˆé€šè¿‡å®šç‚¹è®¾å¤‡é€‰å–ï¼?
 </td><td class="BasicLeft_CELL">
-<p class="table_body">	0 ÖÁ 999<br>
-1001 ÖÁ 1999<br>
-2001 ÖÁ 2999<br>
-3001 ÖÁ 3999<br> 
-Èç´ËÖ±µ½<br>
-16001 ÖÁ 16999&nbsp;<br>
+<p class="table_body">	0 è‡?999<br>
+1001 è‡?1999<br>
+2001 è‡?2999<br>
+3001 è‡?3999<br> 
+å¦‚æ­¤ç›´åˆ°<br>
+16001 è‡?16999&nbsp;<br>
 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ÆÁÄ»²Ëµ¥ÏîºÅ<br>
-POP1 ²Ëµ¥ÏîºÅ<br> 
-POP2 ²Ëµ¥ÏîºÅ<br> 
-POP3 ²Ëµ¥ÏîºÅ<br> 
-....Èç´ËÖ±µ½<br>
-POP16 ²Ëµ¥ÏîºÅ</p> 
+<p class="table_body">å±å¹•èœå•é¡¹å·<br>
+POP1 èœå•é¡¹å·<br> 
+POP2 èœå•é¡¹å·<br> 
+POP3 èœå•é¡¹å·<br> 
+....å¦‚æ­¤ç›´åˆ°<br>
+POP16 èœå•é¡¹å·</p> 
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">5</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">¶¨µãÉè±¸£¨½öÔÚÖ¸¶¨¸ú×ÙÉè±¸Ê±·µ»Ø£©
+<p class="table_body">å®šç‚¹è®¾å¤‡ï¼ˆä»…åœ¨æŒ‡å®šè·Ÿè¸ªè®¾å¤‡æ—¶è¿”å›žï¼?
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ÈýÎ¬µã&nbsp;</p>
+<p class="table_body">ä¸‰ç»´ç‚?nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">	ÍÏ¶¯Ä£Ê½×ø±ê</p>
+<p class="table_body">	æ‹–åŠ¨æ¨¡å¼åæ ‡</p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">6</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">BUTTONS ²Ëµ¥Ïî</p> 
+<p class="table_body">BUTTONS èœå•é¡?/p> 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">0 ÖÁ 999</p>
-<p class="table_body">1000 ÖÁ 1999</p>
-<p class="table_body">2000 ÖÁ 2999</p>
-<p class="table_body">3000 ÖÁ 3999</p>
+<p class="table_body">0 è‡?999</p>
+<p class="table_body">1000 è‡?1999</p>
+<p class="table_body">2000 è‡?2999</p>
+<p class="table_body">3000 è‡?3999</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">BUTTONS1 ²Ëµ¥°´Å¥ºÅ</p>
-<p class="table_body">BUTTONS2 ²Ëµ¥°´Å¥ºÅ</p>
-<p class="table_body">BUTTONS3 ²Ëµ¥°´Å¥ºÅ</p>
-<p class="table_body">BUTTONS4 ²Ëµ¥°´Å¥ºÅ</p>
+<p class="table_body">BUTTONS1 èœå•æŒ‰é’®å?/p>
+<p class="table_body">BUTTONS2 èœå•æŒ‰é’®å?/p>
+<p class="table_body">BUTTONS3 èœå•æŒ‰é’®å?/p>
+<p class="table_body">BUTTONS4 èœå•æŒ‰é’®å?/p>
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">7</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">TABLET1 ²Ëµ¥Ïî</p> 
+<p class="table_body">TABLET1 èœå•é¡?/p> 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">0 ÖÁ 32767&nbsp;</p>
+<p class="table_body">0 è‡?32767&nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">Êý×Ö»¯ÒÇ²Ëµ¥µÄµ¥ÔªºÅ</p>
+<p class="table_body">æ•°å­—åŒ–ä»ªèœå•çš„å•å…ƒå·</p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">8</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">TABLET2 ²Ëµ¥Ïî</p> 
+<p class="table_body">TABLET2 èœå•é¡?/p> 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">0 ÖÁ 32767&nbsp;</p>
+<p class="table_body">0 è‡?32767&nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">Êý×Ö»¯ÒÇ²Ëµ¥µÄµ¥ÔªºÅ</p>
+<p class="table_body">æ•°å­—åŒ–ä»ªèœå•çš„å•å…ƒå·</p>
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">9</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">TABLET3 ²Ëµ¥Ïî</p> 
+<p class="table_body">TABLET3 èœå•é¡?/p> 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">0 ÖÁ 32767&nbsp;</p>
+<p class="table_body">0 è‡?32767&nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">Êý×Ö»¯ÒÇ²Ëµ¥µÄµ¥ÔªºÅ</p>
+<p class="table_body">æ•°å­—åŒ–ä»ªèœå•çš„å•å…ƒå·</p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">10</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">TABLET4 ²Ëµ¥Ïî</p> 
+<p class="table_body">TABLET4 èœå•é¡?/p> 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">0 ÖÁ 32767&nbsp;</p>
+<p class="table_body">0 è‡?32767&nbsp;</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">Êý×Ö»¯ÒÇ²Ëµ¥µÄµ¥ÔªºÅ</p>
+<p class="table_body">æ•°å­—åŒ–ä»ªèœå•çš„å•å…ƒå·</p>
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">11</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">AUX ²Ëµ¥Ïî</p> 
+<p class="table_body">AUX èœå•é¡?/p> 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">0 ÖÁ 999</p>
-<p class="table_body">1000 ÖÁ 1999</p>
-<p class="table_body">2000 ÖÁ 2999</p>
-<p class="table_body">3000 ÖÁ 3999</p>
+<p class="table_body">0 è‡?999</p>
+<p class="table_body">1000 è‡?1999</p>
+<p class="table_body">2000 è‡?2999</p>
+<p class="table_body">3000 è‡?3999</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">AUX1 ²Ëµ¥°´Å¥ºÅ</p>
-<p class="table_body">AUX2 ²Ëµ¥°´Å¥ºÅ</p>
-<p class="table_body">AUX3 ²Ëµ¥°´Å¥ºÅ</p>
-<p class="table_body">AUX4 ²Ëµ¥°´Å¥ºÅ</p>
+<p class="table_body">AUX1 èœå•æŒ‰é’®å?/p>
+<p class="table_body">AUX2 èœå•æŒ‰é’®å?/p>
+<p class="table_body">AUX3 èœå•æŒ‰é’®å?/p>
+<p class="table_body">AUX4 èœå•æŒ‰é’®å?/p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">12</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">¶¨µãÉè±¸°´Å¥£¨ÔÚÀàÐÍ 6»òÀàÐÍ 11 ºó·µ»Ø£© 
+<p class="table_body">å®šç‚¹è®¾å¤‡æŒ‰é’®ï¼ˆåœ¨ç±»åž‹ 6æˆ–ç±»åž?11 åŽè¿”å›žï¼‰ 
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ÈýÎ¬µã</p>
+<p class="table_body">ä¸‰ç»´ç‚?/p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">µã×ø±ê</p>
+<p class="table_body">ç‚¹åæ ?/p>
 </td>
 </tr>
 </tbody>
 </table>
-<p class="body">Ê¹ÓÃ grread ´¦ÀíÓÃ»§ÊäÈë</p> 
-<p>µ± grread º¯Êýµ÷ÓÃ´¦ÓÚ¼¤»î×´Ì¬Ê±£¬°´ÏÂ ESC ¼ü±ã¿ÉÍ¨¹ý¼üÅÌÖÐ¶Ï AutoLISP ³ÌÐòµÄÔËÐÐ£¨³ý·ÇÖ¸¶¨µÄ allkeys ²ÎÊý²»ÔÊÐíÕâÑù×ö£©¡£ÈÎºÎÆäËûµÄÊäÈë¶¼Ö±½Ó´«¸ø grread 
-º¯Êý£¬ÕâÊ¹µÃÓ¦ÓÃ³ÌÐò¿ØÖÆËùÓÐµÄÊäÈëÉè±¸¡£</p>
-<p>Èç¹ûÓÃ»§ÔÚÆÁÄ»²Ëµ¥Ïî»òÏÂÀ­Ê½²Ëµ¥ÏîÉÏ°´ÏÂ¶¨µãÉè±¸°´Å¥£¬grread º¯Êý·µ»ØÒ»¸öÀàÐÍÎª 6 »ò 11 µÄ´úÂë£¬µ«ÔÚËæºóµÄµ÷ÓÃÖÐ£¬Ëü²¢²»·µ»ØÀàÐÍ´úÂë 12¡£ÒòÎªÖ»ÓÐÔÚÆÁÄ»µÄ»æÍ¼ÇøÓòÖÐ°´ÏÂ¶¨µãÉè±¸°´Å¥£¬ÀàÐÍ´úÂë 12 ²Å»á¸úËæÔÚÀàÐÍ´úÂë 6 »ò 11 Ö®ºó·µ»Ø¡£</p> 
-<p>ÔÚÊÔÍ¼ÓÃ¶¨µãÉè±¸°´Å¥»ò¸¨Öú°´Å¥Ö´ÐÐÁíÒ»²Ù×÷Ö®Ç°£¬½«ÀàÐÍ´úÂë 12 µÄÊý¾Ý´Ó»º³åÇøÖÐÇå³ý£¬ÊÇ·Ç³£ÖØÒªµÄ¡£ÎªÁË×öµ½ÕâÒ»µã£¬¿ÉÒÔÖ´ÐÐÈçÏÂÇ¶Ì×µÄ grread º¯Êýµ÷ÓÃ£º</p> 
+<p class="body">ä½¿ç”¨ grread å¤„ç†ç”¨æˆ·è¾“å…¥</p> 
+<p>å½?grread å‡½æ•°è°ƒç”¨å¤„äºŽæ¿€æ´»çŠ¶æ€æ—¶ï¼ŒæŒ‰ä¸?ESC é”®ä¾¿å¯é€šè¿‡é”®ç›˜ä¸­æ–­ AutoLISP ç¨‹åºçš„è¿è¡Œï¼ˆé™¤éžæŒ‡å®šçš?allkeys å‚æ•°ä¸å…è®¸è¿™æ ·åšï¼‰ã€‚ä»»ä½•å…¶ä»–çš„è¾“å…¥éƒ½ç›´æŽ¥ä¼ ç»?grread 
+å‡½æ•°ï¼Œè¿™ä½¿å¾—åº”ç”¨ç¨‹åºæŽ§åˆ¶æ‰€æœ‰çš„è¾“å…¥è®¾å¤‡ã€?/p>
+<p>å¦‚æžœç”¨æˆ·åœ¨å±å¹•èœå•é¡¹æˆ–ä¸‹æ‹‰å¼èœå•é¡¹ä¸ŠæŒ‰ä¸‹å®šç‚¹è®¾å¤‡æŒ‰é’®ï¼Œgrread å‡½æ•°è¿”å›žä¸€ä¸ªç±»åž‹ä¸º 6 æˆ?11 çš„ä»£ç ï¼Œä½†åœ¨éšåŽçš„è°ƒç”¨ä¸­ï¼Œå®ƒå¹¶ä¸è¿”å›žç±»åž‹ä»£ç  12ã€‚å› ä¸ºåªæœ‰åœ¨å±å¹•çš„ç»˜å›¾åŒºåŸŸä¸­æŒ‰ä¸‹å®šç‚¹è®¾å¤‡æŒ‰é’®ï¼Œç±»åž‹ä»£ç ?12 æ‰ä¼šè·Ÿéšåœ¨ç±»åž‹ä»£ç ?6 æˆ?11 ä¹‹åŽè¿”å›žã€?/p> 
+<p>åœ¨è¯•å›¾ç”¨å®šç‚¹è®¾å¤‡æŒ‰é’®æˆ–è¾…åŠ©æŒ‰é’®æ‰§è¡Œå¦ä¸€æ“ä½œä¹‹å‰ï¼Œå°†ç±»åž‹ä»£ç  12 çš„æ•°æ®ä»Žç¼“å†²åŒºä¸­æ¸…é™¤ï¼Œæ˜¯éžå¸¸é‡è¦çš„ã€‚ä¸ºäº†åšåˆ°è¿™ä¸€ç‚¹ï¼Œå¯ä»¥æ‰§è¡Œå¦‚ä¸‹åµŒå¥—çš?grread å‡½æ•°è°ƒç”¨ï¼?/p> 
 <p>(setq code_12 (grread (setq code (grread))))</p>
-<p>ÉÏÊö´úÂë¾ÍÏó´ÓÊäÈëÁ÷Éè±¸ÉÏ»ñÈ¡ÊäÈëÒ»Ñù£¬»ñÈ¡ÀàÐÍ´úÂë 12 µÄÖµ±í¡£</p> 
+<p>ä¸Šè¿°ä»£ç å°±è±¡ä»Žè¾“å…¥æµè®¾å¤‡ä¸ŠèŽ·å–è¾“å…¥ä¸€æ ·ï¼ŒèŽ·å–ç±»åž‹ä»£ç  12 çš„å€¼è¡¨ã€?/p> 
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>
