@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vlax-import-type-library</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êý</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>  
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>  
 </tr>
 </table>
 </td>
@@ -39,51 +39,51 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">´ÓÀàÐÍ¿âÖÐÊä³öÐÅÏ¢</p>
+<p id="crleadin" class="cr_leadin">ä»Žç±»åž‹åº“ä¸­è¾“å‡ºä¿¡æ?/p>
 <pre class="prog_in_end">(vlax-import-type-library :tlb-filename filename [:methods-prefix mprefix  :properties-prefix pprefix :constants-prefix cprefix])</pre>
-<p class="Heading-2">²ÎÊý</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">filename</p>
-<p class="define_text">×Ö·û´®£¬Ö¸¶¨ÀàÐÍ¿â¡£ÎÄ¼þ¿ÉÎªÈçÏÂÀàÐÍ£º</p>
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒæŒ‡å®šç±»åž‹åº“ã€‚æ–‡ä»¶å¯ä¸ºå¦‚ä¸‹ç±»åž‹ï¼š</p>
 <ul>
-<li class="list_bulleted_begin">ÀàÐÍ¿â (.tlb) »ò¶ÔÏó¿â (.olb) ÎÄ¼þ</li>  
-<li class="list_bulleted">¿ÉÖ´ÐÐ (.exe) ÎÄ¼þ </li>  
-<li class="list_bulleted">°üº¬ÀàÐÍ¿â×ÊÔ´µÄ¿â (.dll) ÎÄ¼þ</li>  
-<li class="list_bulleted">ÓµÓÐÀàÐÍ¿âµÄ¸´ºÏÎÄµµ </li>
-<li class="list_bulleted_end">ÆäËû¿É±» LoadTypeLib API Àí½âµÄÎÄ¼þ¸ñÊ½</li>  
+<li class="list_bulleted_begin">ç±»åž‹åº?(.tlb) æˆ–å¯¹è±¡åº“ (.olb) æ–‡ä»¶</li>  
+<li class="list_bulleted">å¯æ‰§è¡?(.exe) æ–‡ä»¶ </li>  
+<li class="list_bulleted">åŒ…å«ç±»åž‹åº“èµ„æºçš„åº?(.dll) æ–‡ä»¶</li>  
+<li class="list_bulleted">æ‹¥æœ‰ç±»åž‹åº“çš„å¤åˆæ–‡æ¡£ </li>
+<li class="list_bulleted_end">å…¶ä»–å¯è¢« LoadTypeLib API ç†è§£çš„æ–‡ä»¶æ ¼å¼?/li>  
 </ul>
-<p class="define_text">Èç¹ûÊ¡ÂÔ tlb-filename ÖÐµÄÂ·¾¶£¬AutoCAD ½«ÔÚÖ§³ÖÎÄ¼þËÑË÷Â·¾¶ÖÐ²éÕÒ¡£</p>  
+<p class="define_text">å¦‚æžœçœç•¥ tlb-filename ä¸­çš„è·¯å¾„ï¼ŒAutoCAD å°†åœ¨æ”¯æŒæ–‡ä»¶æœç´¢è·¯å¾„ä¸­æŸ¥æ‰¾ã€?/p>  
 <p class="define_head">mprefix</p>
-<p class="define_text">ÓÃÓÚ¶ÔÏó·½·¨°üÈÝÆ÷º¯ÊýµÄÇ°×º¡£ÀýÈç£¬Èç¹ûÀàÐÍ¿â°üº¬ Calculate ·½·¨£¬¶ø mprefix ²ÎÊýÉèÖÃÎª cc-£¬Ôò Visual LISP  
-Éú³ÉÃûÎª cc-Calculate µÄ°üÈÝÆ÷º¯Êý¡£¸Ã²ÎÊýµÄÈ±Ê¡ÖµÎª¡°¡±¡£</p>  
+<p class="define_text">ç”¨äºŽå¯¹è±¡æ–¹æ³•åŒ…å®¹å™¨å‡½æ•°çš„å‰ç¼€ã€‚ä¾‹å¦‚ï¼Œå¦‚æžœç±»åž‹åº“åŒ…å?Calculate æ–¹æ³•ï¼Œè€?mprefix å‚æ•°è®¾ç½®ä¸?cc-ï¼Œåˆ™ Visual LISP  
+ç”Ÿæˆåä¸º cc-Calculate çš„åŒ…å®¹å™¨å‡½æ•°ã€‚è¯¥å‚æ•°çš„ç¼ºçœå€¼ä¸ºâ€œâ€ã€?/p>  
 <p class="define_head">pprefix</p>
-<p class="define_text">ÓÃÓÚ¶ÔÏóÌØÐÔ°üÈÝÆ÷º¯ÊýµÄÇ°×º¡£ÀýÈç£¬Èç¹ûÀàÐÍ¿â°üº¬ Width ÌØÐÔ£¬²¢Ìá¹©¶ÁÐ´È¨ÏÞ£¬¶ø pprefix ÉèÖÃÎª cc-£¬Ôò Visual LISP Éú³ÉÃûÎª cc-get-Width ºÍ cc-put-Width µÄ°üÈÝÆ÷º¯Êý¡£¸Ã²ÎÊýµÄÈ±Ê¡ÖµÎª¡°¡±¡£</p>  
+<p class="define_text">ç”¨äºŽå¯¹è±¡ç‰¹æ€§åŒ…å®¹å™¨å‡½æ•°çš„å‰ç¼€ã€‚ä¾‹å¦‚ï¼Œå¦‚æžœç±»åž‹åº“åŒ…å?Width ç‰¹æ€§ï¼Œå¹¶æä¾›è¯»å†™æƒé™ï¼Œè€?pprefix è®¾ç½®ä¸?cc-ï¼Œåˆ™ Visual LISP ç”Ÿæˆåä¸º cc-get-Width å’?cc-put-Width çš„åŒ…å®¹å™¨å‡½æ•°ã€‚è¯¥å‚æ•°çš„ç¼ºçœå€¼ä¸ºâ€œâ€ã€?/p>  
 <p class="define_head">cprefix</p>
-<p class="define_text">ÓÃÓÚÀàÐÍ¿âÖÐ³£Á¿µÄÇ°×º¡£ÀýÈç£¬Èç¹ûÀàÐÍ¿â°üº¬ ccMaxCountOfRecords ÌØÐÔ£¬²¢Ìá¹©¶ÁÐ´È¨ÏÞ£¬¶ø cprefix ÉèÖÃÎª cc-£¬Ôò Visual LISP Éú³ÉÃûÎª cc-ccMaxCountOfRecords. µÄ³£Á¿¡£¸Ã²ÎÊýµÄÈ±Ê¡ÖµÎª¡°¡±¡£</p>  
-<p class="body">Çë×¢ÒâÔÚÏò vlax-import-type-library ´«µÝ²ÎÊýÊ±¹Ø¼ü×ÖµÄÊ¹ÓÃ¡£</p>  
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û³É¹¦Ôò·µ»Ø T¡£</p>  
-<p class="Heading-2">Ê¾Àý</p>
-<p class="body">ÊäÈë Microsoft Word ÀàÐÍ¿â£¬Îª·½·¨ºÍÌØÐÔÖ¸¶¨Ç°×º¡°msw-¡±£¬²¢Îª³£Á¿Ö¸¶¨Ç°×º¡°mswc-¡±£º</p>  
+<p class="define_text">ç”¨äºŽç±»åž‹åº“ä¸­å¸¸é‡çš„å‰ç¼€ã€‚ä¾‹å¦‚ï¼Œå¦‚æžœç±»åž‹åº“åŒ…å?ccMaxCountOfRecords ç‰¹æ€§ï¼Œå¹¶æä¾›è¯»å†™æƒé™ï¼Œè€?cprefix è®¾ç½®ä¸?cc-ï¼Œåˆ™ Visual LISP ç”Ÿæˆåä¸º cc-ccMaxCountOfRecords. çš„å¸¸é‡ã€‚è¯¥å‚æ•°çš„ç¼ºçœå€¼ä¸ºâ€œâ€ã€?/p>  
+<p class="body">è¯·æ³¨æ„åœ¨å?vlax-import-type-library ä¼ é€’å‚æ•°æ—¶å…³é”®å­—çš„ä½¿ç”¨ã€?/p>  
+<p class="Heading-2">è¿”å›žå€?/p>
+<p class="body">å¦‚æžœæˆåŠŸåˆ™è¿”å›?Tã€?/p>  
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">è¾“å…¥ Microsoft Word ç±»åž‹åº“ï¼Œä¸ºæ–¹æ³•å’Œç‰¹æ€§æŒ‡å®šå‰ç¼€â€œmsw-â€ï¼Œå¹¶ä¸ºå¸¸é‡æŒ‡å®šå‰ç¼€â€œmswc-â€ï¼š</p>  
 <pre class="prog_in">_$ (vlax-import-type-library</pre>
 <pre class="prog_in">   :tlb-filename &quot;c:/program files/microsoft office/msword8.olb&quot;</pre>
 <pre class="prog_in">   :methods-prefix &quot;msw-&quot;</pre>
 <pre class="prog_in">   :properties-prefix &quot;msw-&quot;</pre>
 <pre class="prog_in">   :constants-prefix &quot;mswc-&quot;)</pre>
 <pre class="prog_in_end">T</pre>
-<p class="Heading-2">±¸×¢</p>
-<p class="body">ÓÉ vlax-import-type-library ´´½¨µÄ¶ÔÏó°üÈÝÆ÷½öÔÚ·¢³ö vlax-import-type-library µÄÎÄµµ»·¾³ÖÐ¿ÉÓÃ¡£</p>  
-<p class="body">ÔÚµ±Ç°°æ±¾µÄ Visual LISP ÖÐ£¬vlax-import-type-library ÊÇÔÚÔËÐÐÊ±¶ø²»ÊÇÔÚÉú³ÉÊ±Ö´ÐÐµÄ¡£ÔÚºóÐø°æ±¾µÄ Visual LISP ÖÐ£¬ÕâÒ»Çé¿ö¿ÉÄÜ·¢Éú±ä»¯¡£ÔÚÊ¹ÓÃ vlax-import-type-library Ê±£¬½¨ÒéÄú²ÉÈ¡ÈçÏÂ´ëÊ©£º</p> 
+<p class="Heading-2">å¤‡æ³¨</p>
+<p class="body">ç”?vlax-import-type-library åˆ›å»ºçš„å¯¹è±¡åŒ…å®¹å™¨ä»…åœ¨å‘å‡º vlax-import-type-library çš„æ–‡æ¡£çŽ¯å¢ƒä¸­å¯ç”¨ã€?/p>  
+<p class="body">åœ¨å½“å‰ç‰ˆæœ¬çš„ Visual LISP ä¸­ï¼Œvlax-import-type-library æ˜¯åœ¨è¿è¡Œæ—¶è€Œä¸æ˜¯åœ¨ç”Ÿæˆæ—¶æ‰§è¡Œçš„ã€‚åœ¨åŽç»­ç‰ˆæœ¬çš?Visual LISP ä¸­ï¼Œè¿™ä¸€æƒ…å†µå¯èƒ½å‘ç”Ÿå˜åŒ–ã€‚åœ¨ä½¿ç”¨ vlax-import-type-library æ—¶ï¼Œå»ºè®®æ‚¨é‡‡å–å¦‚ä¸‹æŽªæ–½ï¼š</p> 
 <ul>
-<li class="list_bulleted_begin">Èç¹ûÄúÏ£ÍûÔÚ²»Í¬µÄ¼ÆËã»úÉÏÔËÐÐÍ¬Ò»´úÂë£¬Ôò²»ÒªÔÚ tlb-file-name ²ÎÊýÖÐÖ¸¶¨¾ø¶ÔÂ·¾¶¡£ </li> 
-<li class="list_bulleted">¿ÉÄÜµÄ»°£¬²»Òª´ÓÈÎºÎ AutoLISP ±í´ïÊ½µÄÄÚ²¿ÔËÐÐ vlax-import-type-library£¨¼´£¬¾¡Á¿´Ó¶¥²ã±í´ïÊ½Î»ÖÃµ÷ÓÃ¸Ãº¯Êý£©¡£</li> 
-<li class="list_bulleted_end">ÔÚ AutoLISP Ô´ÎÄ¼þÖÐ£¬ÏÈµ÷ÓÃ vlax-import-type-library£¬È»ºóÔÙÊ¹ÓÃÀàÐÍ¿âÖÐ¶¨ÒåµÄ·½·¨°üÈÝÆ÷¡¢ÌØÐÔ°üÈÝÆ÷»ò³£Á¿¡£</li> 
+<li class="list_bulleted_begin">å¦‚æžœæ‚¨å¸Œæœ›åœ¨ä¸åŒçš„è®¡ç®—æœºä¸Šè¿è¡ŒåŒä¸€ä»£ç ï¼Œåˆ™ä¸è¦åœ?tlb-file-name å‚æ•°ä¸­æŒ‡å®šç»å¯¹è·¯å¾„ã€?</li> 
+<li class="list_bulleted">å¯èƒ½çš„è¯ï¼Œä¸è¦ä»Žä»»ä½• AutoLISP è¡¨è¾¾å¼çš„å†…éƒ¨è¿è¡Œ vlax-import-type-libraryï¼ˆå³ï¼Œå°½é‡ä»Žé¡¶å±‚è¡¨è¾¾å¼ä½ç½®è°ƒç”¨è¯¥å‡½æ•°ï¼‰ã€?/li> 
+<li class="list_bulleted_end">åœ?AutoLISP æºæ–‡ä»¶ä¸­ï¼Œå…ˆè°ƒç”¨ vlax-import-type-libraryï¼Œç„¶åŽå†ä½¿ç”¨ç±»åž‹åº“ä¸­å®šä¹‰çš„æ–¹æ³•åŒ…å®¹å™¨ã€ç‰¹æ€§åŒ…å®¹å™¨æˆ–å¸¸é‡ã€?/li> 
 </ul>
-<p class="see_also">²ÎÔÄ</p>
+<p class="see_also">å‚é˜…</p>
 <p class="body"> <a href="ALR.default.376.htm">vlax-typeinfo-available-p</a>  
-º¯Êý¡£</p>
+å‡½æ•°ã€?/p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

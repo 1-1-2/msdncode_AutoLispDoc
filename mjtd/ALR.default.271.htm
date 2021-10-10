@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-file-size</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êý</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,22 +39,22 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">È·¶¨ÎÄ¼þµÄ´óÐ¡£¨×Ö½Ú£©</p>
+<p id="crleadin" class="cr_leadin">ç¡®å®šæ–‡ä»¶çš„å¤§å°ï¼ˆå­—èŠ‚ï¼?/p>
 <pre class="prog_in_end">(vl-file-size  filename)</pre>
-<p class="Heading-2">²ÎÊý</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">filename</p>
-<p class="define_text">×Ö·û´®£¬°üº¬ÒªÈ·¶¨´óÐ¡µÄÎÄ¼þ¡£Èç¹ûÎ´Ö¸¶¨ÍêÕûÂ·¾¶Ãû£¬vl-file-size ÔÚ AutoCAD Æô¶¯Ä¿Â¼ÖÐ²éÕÒ¡£</p> 
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û³É¹¦Ôò vl-file-size ·µ»Ø±íÊ¾ filename ´óÐ¡µÄÕûÊý¡£Èç¹ûÎÄ¼þ²»¿É¶Á£¬vl-file-size ·µ»Ø nil¡£Èç¹û filename ÎªÄ¿Â¼Ãû»ò¿ÕÎÄ¼þ£¬vl-file-size ·µ»Ø 0¡£</p> 
-<p class="Heading-2">Ê¾Àý</p>
+<p class="define_text">å­—ç¬¦ä¸²ï¼ŒåŒ…å«è¦ç¡®å®šå¤§å°çš„æ–‡ä»¶ã€‚å¦‚æžœæœªæŒ‡å®šå®Œæ•´è·¯å¾„åï¼Œvl-file-size åœ?AutoCAD å¯åŠ¨ç›®å½•ä¸­æŸ¥æ‰¾ã€?/p> 
+<p class="Heading-2">è¿”å›žå€?/p>
+<p class="body">å¦‚æžœæˆåŠŸåˆ?vl-file-size è¿”å›žè¡¨ç¤º filename å¤§å°çš„æ•´æ•°ã€‚å¦‚æžœæ–‡ä»¶ä¸å¯è¯»ï¼Œvl-file-size è¿”å›ž nilã€‚å¦‚æž?filename ä¸ºç›®å½•åæˆ–ç©ºæ–‡ä»¶ï¼Œvl-file-size è¿”å›ž 0ã€?/p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
 <pre class="prog_in">_$ (vl-file-size &quot;c:/autoexec.bat&quot;)</pre>
 <pre class="prog_in">1417</pre>
 <pre class="prog_in">_$ (vl-file-size &quot;c:/&quot;)</pre>
 <pre class="prog_in_end">0</pre>
-<p class="body">ÔÚÉÏÃæµÄÑùÀýÖÐ£¬ÒòÎª c:/ ÎªÄ¿Â¼£¬ËùÒÔ vl-file-size ·µ»Ø 0¡£</p> 
+<p class="body">åœ¨ä¸Šé¢çš„æ ·ä¾‹ä¸­ï¼Œå› ä¸º c:/ ä¸ºç›®å½•ï¼Œæ‰€ä»?vl-file-size è¿”å›ž 0ã€?/p> 
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>
