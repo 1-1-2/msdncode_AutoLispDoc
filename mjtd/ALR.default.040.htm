@@ -1,0 +1,70 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>arxload</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">arxload</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">加载 ObjectARX 应用程序</p> 
+<pre class="prog_in_end">(arxload application [onfailure]) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">application</p>
+<p class="define_text">用双引号引起来的字符串，或包含可执行文件名的变量。可以省略文件名中的后缀 .arx。</p> 
+<p class="define_text">必须提供 ObjectARX 可执行文件的全路径名，除非该文件是在 AutoCAD 支持文件搜索路径中。</p> 
+<p class="define_head">onfailure</p>
+<p class="define_text">加载失败时要执行的表达式。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则返回应用程序名。如果不成功，若提供了 onfailure 参数，函数返回该参数的值，否则返回相应的错误信息。</p> 
+<p class="body">如果试图加载一个已经加载的 ObjectARX 应用程序，arxload 将发出一条错误信息。在使用 arxload 加载一个应用程序之前，可以调用&nbsp;<br>
+arx 函数检查已加载的 ARX 应用程序。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">加载 AutoCAD 安装路径下的文件 <span class="CharItalic">acbrowse.arx</span>：</p> 
+<p class="prompt_end">命令: <span class="CharSansBold">(arxload "c:/program 
+files/ &lt;AutoCAD installation directory&gt;/acbrowse.arx")</span>
+</p>
+<p class="prompt_end">"c:/program files/
+&lt;AutoCAD installation directory&gt;/acbrowse.arx"</p>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.041.htm">arxunload</a>  函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
