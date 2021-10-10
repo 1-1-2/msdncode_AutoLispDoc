@@ -1,0 +1,296 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>VL- 函数</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>  
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>   
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">VL- 函数</div>  
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<hr class="jumplist_intro_overline">
+<p class="jumplist_intro">本节内容包括:</p>
+<ul>
+<li class="jumplist_nonav">
+<a title="vl-acad-defun" href="ALR.default.249.htm">vl-acad-defun</a>&nbsp; 将 AutoLISP 函数符号定义为外部子例程  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-acad-undefun" href="ALR.default.250.htm">vl-acad-undefun</a>&nbsp; 取消对 AutoLISP 函数符号的定义，使 ObjectARX 应用程序不能再使用它。  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-arx-import" href="ALR.default.251.htm">vl-arx-import</a>&nbsp; 将 ObjectARX/ADSRX 函数输入到独立名称空间 VLX  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-bb-ref" href="ALR.default.252.htm">vl-bb-ref</a>&nbsp; 返回黑板名称空间中变量的值 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-bb-set" href="ALR.default.253.htm">vl-bb-set</a>&nbsp; 设置黑板名称空间中的变量 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-catch-all-apply" href="ALR.default.254.htm">vl-catch-all-apply</a>&nbsp;  
+将参数表传递给指定函数并截取错误
+</li>
+<li class="jumplist_nonav">
+<a title="vl-catch-all-error-message" href="ALR.default.255.htm">vl-catch-all-error-message</a>&nbsp;  
+从错误对象返回字符串
+</li>
+<li class="jumplist_nonav">
+<a title="vl-catch-all-error-p" href="ALR.default.256.htm">vl-catch-all-error-p</a>&nbsp;  
+确定参数是否是 vl-catch-all-apply 返回的错误对象  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-cmdf" href="ALR.default.257.htm">vl-cmdf</a>&nbsp; 执行 AutoCAD 命令  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-consp" href="ALR.default.258.htm">vl-consp</a>&nbsp; 确定表是否为 nil  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-directory-files" href="ALR.default.259.htm">vl-directory-files</a>&nbsp;  
+列出给定目录中的所有文件
+</li>
+<li class="jumplist_nonav">
+<a title="vl-doc-export" href="ALR.default.260.htm">vl-doc-export</a>&nbsp; 使函数在当前文档中可用 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-doc-import" href="ALR.default.261.htm">vl-doc-import</a>&nbsp; 将早先输出的函数输入到 VLX 名称空间  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-doc-ref" href="ALR.default.262.htm">vl-doc-ref</a>&nbsp; 从当前文档名称空间中获取变量的值 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-doc-set" href="ALR.default.263.htm">vl-doc-set</a>&nbsp; 设置当前文档名称空间中变量的 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-every" href="ALR.default.264.htm">vl-every </a>&nbsp; 检查论断结合每个元素后是否均为 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-exit-with-error" href="ALR.default.265.htm">vl-exit-with-error</a>&nbsp;  
+将控制从 VLX 错误处理器传递给调用它的名称空间的 *error* 函数  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-exit-with-value" href="ALR.default.266.htm">vl-exit-with-value</a>&nbsp;  
+将值返回到从其他名称空间调用 VLX 的函数  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-file-copy" href="ALR.default.267.htm">vl-file-copy</a>&nbsp; 将一个文件的内容复制或附加到另一个文件 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-file-delete" href="ALR.default.268.htm">vl-file-delete</a>&nbsp; 删除文件 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-file-directory-p" href="ALR.default.269.htm">vl-file-directory-p</a>&nbsp;  
+确定文件名是否为路径名
+</li>
+<li class="jumplist_nonav">
+<a title="vl-file-rename" href="ALR.default.270.htm">vl-file-rename</a>&nbsp; 重命名文件 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-file-size" href="ALR.default.271.htm">vl-file-size</a>&nbsp; 确定文件的大小（字节） 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-file-systime" href="ALR.default.272.htm">vl-file-systime</a>&nbsp; 返回指定文件的上一次修改时间 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-filename-base" href="ALR.default.273.htm">vl-filename-base</a>&nbsp;  
+去掉文件的路径和扩展名，返回文件的名称
+</li>
+<li class="jumplist_nonav">
+<a title="vl-filename-directory" href="ALR.default.274.htm">vl-filename-directory</a>&nbsp;  
+去掉文件的名称和扩展名，返回文件的路径
+</li>
+<li class="jumplist_nonav">
+<a title="vl-filename-extension" href="ALR.default.275.htm">vl-filename-extension</a>&nbsp;  
+返回文件的扩展名，而去掉文件名中的其他部分&nbsp;&nbsp;
+</li>
+<li class="jumplist_nonav">
+<a title="vl-filename-mktemp" href="ALR.default.276.htm">vl-filename-mktemp</a>&nbsp;  
+为临时文件计算唯一的文件名
+</li>
+<li class="jumplist_nonav">
+<a title="vl-get-resource" href="ALR.default.277.htm">vl-get-resource</a>&nbsp; 返回 VLX 中保存的 .txt 文件中的文字  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-list*" href="ALR.default.278.htm">vl-list*</a>&nbsp; 构造并返回表 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-list->string" href="ALR.default.279.htm">vl-list-&gt;string</a>&nbsp;  
+将一系列与整数表相关联的字符组合成字符串
+</li>
+<li class="jumplist_nonav">
+<a title="vl-list-exported-functions" href="ALR.default.280.htm">vl-list-exported-functions</a>&nbsp;  
+列出输出的函数
+</li>
+<li class="jumplist_nonav">
+<a title="vl-list-length" href="ALR.default.281.htm">vl-list-length</a>&nbsp; 计算表的长度 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-list-loaded-vlx" href="ALR.default.282.htm">vl-list-loaded-vlx</a>&nbsp;  
+返回与当前文档相关联的所有独立名称空间 VLX 文件  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-load-all" href="ALR.default.283.htm">vl-load-all</a>&nbsp; 将文件加载到所有打开的 AutoCAD 文档中,以及在当前 AutoCAD 任务中后续打开的任何文档中  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-load-com" href="ALR.default.284.htm">vl-load-com</a>&nbsp; 将 Visual LISP 扩展功能加载到 AutoLISP  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-load-reactors" href="ALR.default.285.htm">vl-load-reactors</a>&nbsp;  
+加载反应器支持函数
+</li>
+<li class="jumplist_nonav">
+<a title="vl-mkdir" href="ALR.default.286.htm">vl-mkdir</a>&nbsp; 创建目录 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-member-if" href="ALR.default.287.htm">vl-member-if</a>&nbsp; 确定论断是否对每一个表成员都正确 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-member-if-not" href="ALR.default.288.htm">vl-member-if-not</a>&nbsp;  
+确定论断是否对表成员中的一个为 nil  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-position" href="ALR.default.289.htm">vl-position</a>&nbsp; 返回指定表项目的索引 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-prin1-to-string" href="ALR.default.290.htm">vl-prin1-to-string</a>&nbsp;  
+返回 LISP 数据的字符串表示，就象它是由 prin1 函数输出的一样  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-princ-to-string" href="ALR.default.291.htm">vl-princ-to-string</a>&nbsp;  
+返回 LISP 数据的字符串表示，就象它是由 princ 函数输出的一样  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-propagate" href="ALR.default.292.htm">vl-propagate</a>&nbsp; 将变量的值复制到所有打开的文档名称空间（并在当前 AutoCAD 任务中打开的所有后续图形中设置它的值）  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-registry-delete" href="ALR.default.293.htm">vl-registry-delete</a>&nbsp;  
+从 Winows 注册表中删除指定的主键或值  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-registry-descendents" href="ALR.default.294.htm">vl-registry-descendents</a>&nbsp;  
+返回指定注册表键的子键或值名称的列表
+</li>
+<li class="jumplist_nonav">
+<a title="vl-registry-read" href="ALR.default.295.htm">vl-registry-read</a>&nbsp;  
+对于指定的主键/值对，返回 Winodws 注册表存储的数据  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-registry-write" href="ALR.default.296.htm">vl-registry-write</a>&nbsp;  
+在 Windows 注册表中创建主键  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-remove" href="ALR.default.297.htm">vl-remove</a>&nbsp; 删除表中的元素 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-remove-if" href="ALR.default.298.htm">vl-remove-if </a>&nbsp; 返回由所提供表中的所有不满足测试函数的元素组成的表 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-remove-if-not" href="ALR.default.299.htm">vl-remove-if-not</a>&nbsp;  
+返回由所提供表中的所有能通过测试函数的元素组成的表
+</li>
+<li class="jumplist_nonav">
+<a title="vl-some" href="ALR.default.300.htm">vl-some</a>&nbsp; 检查论断是否对某个元素组合不为 nil  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-sort" href="ALR.default.301.htm">vl-sort</a>&nbsp; 根据给定的比较函数来对表中的元素排序 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-sort-i" href="ALR.default.302.htm">vl-sort-i</a>&nbsp; 根据给定的比较函数对表中的元素排序，并返回元素的索引号 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string->list" href="ALR.default.303.htm">vl-string-&gt;list</a>&nbsp;  
+将字符串转换为字符代码表
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-elt" href="ALR.default.304.htm">vl-string-elt</a>&nbsp; 返回字符串中指定位置字符的 ASCII 表示  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-left-trim" href="ALR.default.305.htm">vl-string-left-trim</a>&nbsp;  
+从字符串的开始删除指定字符
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-mismatch" href="ALR.default.306.htm">vl-string-mismatch</a>&nbsp;  
+返回两个字符串中从指定位置开始，最长的共同前缀的长度
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-position" href="ALR.default.307.htm">vl-string-position</a>&nbsp;  
+在字符串中查找具有指定 ASCII 码的字符  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-right-trim" href="ALR.default.308.htm">vl-string-right-trim</a>&nbsp;  
+从字符串结尾删除指定字符
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-search" href="ALR.default.309.htm">vl-string-search</a>&nbsp;  
+在字符串中搜索指定子串
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-subst" href="ALR.default.310.htm">vl-string-subst</a>&nbsp; 在字符串中进行字符串替换 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-translate" href="ALR.default.311.htm">vl-string-translate</a>&nbsp;  
+在字符串中替换字符
+</li>
+<li class="jumplist_nonav">
+<a title="vl-string-trim" href="ALR.default.312.htm">vl-string-trim</a>&nbsp; 从字符串的开始和结束删除指定字符 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-symbol-name" href="ALR.default.313.htm">vl-symbol-name</a>&nbsp; 返回包含某符号名的字符串 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-symbol-value" href="ALR.default.314.htm">vl-symbol-value</a>&nbsp; 返回当前绑定到符号的值 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-symbolp" href="ALR.default.315.htm">vl-symbolp</a>&nbsp; 确定指定对象是否为符号 
+</li>
+<li class="jumplist_nonav">
+<a title="vl-unload-vlx" href="ALR.default.316.htm">vl-unload-vlx</a>&nbsp; 卸载已经加载到自己的名称空间的 VLX 应用程序  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-vbaload" href="ALR.default.317.htm">vl-vbaload</a>&nbsp; 加载 Visual Basic 工程  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-vbarun" href="ALR.default.318.htm">vl-vbarun</a>&nbsp; 运行 Visual Basic 宏  
+</li>
+<li class="jumplist_nonav">
+<a title="vl-vlx-loaded-p" href="ALR.default.319.htm">vl-vlx-loaded-p</a>&nbsp; 确定某独立名称空间当前是否加载
+</li>
+</ul>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

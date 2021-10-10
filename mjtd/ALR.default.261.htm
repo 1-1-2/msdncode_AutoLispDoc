@@ -1,0 +1,65 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vl-doc-import</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-doc-import</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">将早先输出的函数输入到 VLX 名称空间</p> 
+<pre class="prog_in_end">(vl-doc-import application [’function...]) </pre>
+<p class="body">该函数可以在独立名称空间 VLX 中使用，用于输入早先从同一文档加载的其他 VLX 中输出的函数。</p> 
+<p class="body">应在文件的顶层表达式位置使用 vl-doc-export 函数，而不能在其他位置（如，defun 内）调用该函数。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">application</p>
+<p class="define_text">字符串，指定要输入函数所在的 VLX 应用程序。在名称中不要包含 .vlx 
+扩展名。</p>
+<p class="define_head">function</p>
+<p class="define_text">一个或多个符号，指定要输入的函数。如果未指定函数，则所有被 application 输出的函数都将被输入。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">未确定。</p>
+<p class="Heading-2">示例</p>
+<p class="body">从 ldatatest 应用程序输入 ldataget：</p> 
+<pre class="prog_in">(vl-doc-import &quot;ldatatest&quot; 'ldataget)</pre>
+<pre class="prog_in_end">nil</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

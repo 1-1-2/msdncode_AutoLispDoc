@@ -1,0 +1,289 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>setuv</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.aa.001.htm"><span class="BookTitleLink">明经通道 外部定义命令</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 外部定义命令&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">setuv</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">向选定对象指定材质贴图坐标，此函数有两种模式，由字符串参数指定（外部定义：render ARX 应用程序）</p> 
+<pre class="prog_in_end">(c:setuv modeoptions)</pre>
+<p class="body">SETUV 命令用于向选定对象指定材质贴图坐标。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">mode</p>
+<p class="define_text">有效值为：</p>
+<p class="define_text">
+<span class="CharSansBold">A</span>  向选择集指定 UV 贴图</p> 
+<p class="define_text">
+<span class="CharSansBold">D</span>  从选择集拆离 UV 贴图</p> 
+<p class="define_head">options</p>
+<p class="define_text">有效值取决于指定的 mode。</p> 
+<p class="body">A&mdash;指定</p>
+<p class="body">“A”（指定）模式用于指定贴图的坐标。</p>
+<p class="Heading-2">参数</p>
+<p class="body">此模式所需的参数取决于贴图的类型：投影贴图或实体贴图。投影贴图的参数说明如下表：</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">SETUV&mdash;“A”投影贴图模式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th><th>
+<p class="table_heading">缺省值</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">ssname</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">PICKSET</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">包括要指定贴图坐标的图元的选择集
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">mapping</span><span class="CharItalic">type</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	投影贴图的类型：</p>
+<p class="table_body">P - 平面投影</p> 
+<p class="table_body">D - 圆柱面投影</p> 
+<p class="table_body">F - 球面投影	无 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">pt1, pt2, pt3</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">定义贴图几何图形的三点：</p>
+<p class="table_body">平面投影 - 左下角、右下角和左上角</p>
+<p class="table_body">圆柱面投影 - 
+底面圆心、顶面圆心和接缝方向</p>
+<p class="table_body">球面投影 - 球心、半径和接缝方向 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">rep</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">是否平铺：</p>
+<p class="table_body">0 - 不平铺（修剪）</p> 
+<p class="table_body">1 - 平铺（重复图案） 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">scale</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+<p class="table_body">(of reals)</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	U 和 V 比例因子&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">(1.0 1.0)</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">offset</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+<p class="table_body">(of reals)</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">U 和 V 偏移 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">(0.0 0.0)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body">对于实体贴图，选项参数仅用于指定贴图点坐标，此坐标隐含了 UVW 方向的比例因子。实体贴图的参数说明如下表：</p> 
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">SETUV&mdash;“A”实体贴图模式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th><th>
+<p class="table_heading">缺省值</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">ssname</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">PICKSET</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">包括要指定贴图坐标的图元的选择集&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">mapping</span><span class="CharItalic">type</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">R&mdash;实体</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">pt1</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">原点坐标&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">pt1</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">定义 U 轴的点的坐标&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">pt1</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">定义 V 轴的点的坐标&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">pt1</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">定义 W 轴的点的坐标&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<p class="body">如下函数调用向用户选择的对象指定圆柱面贴图坐标，并使用平铺以及缺省的缩放比例和偏移：</p>
+<pre class="prog_in">(c:setuv &quot;A&quot; (ssget) &quot;C&quot; ’(5.0 5.0 5.0) ’(5.0 5.0 10.0) </pre>
+<pre class="prog_in_end">’(10.0 0.0 0.0) 1)</pre>
+<p class="body">D&mdash;拆离</p>
+<p class="body">“D”（拆离）模式从选择集中的对象上拆离 UV 贴图。这些对象将使用缺省的贴图坐标，直到指定新的贴图坐标为止。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">ssname</p>
+<p class="define_text">选择集，包含要拆离贴图坐标的对象</p>
+<p class="Heading-2">示例</p>
+<p class="body">如下调用提示用户指定要拆离贴图坐标的图元：</p>
+<pre class="prog_in_end">(c:setuv &quot;D&quot; (ssget))</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

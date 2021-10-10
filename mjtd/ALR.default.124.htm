@@ -1,0 +1,69 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>getpoint</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">getpoint</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">暂停以等待用户输入点，并返回该点</p>
+<pre class="prog_in_end">(getpoint [pt] [msg]) </pre>
+<p class="body">用户既可以通过拾取点来指定点，又可以通过输入以当前单位格式表示的坐标来指定点。如果提供了 pt 参数，那么 AutoCAD 会从该点到当前十字光标位置画一条拖引线。该函数的返回值是当前 UCS 中的一个三维点。</p> 
+<p class="body">用户不能输入一个 AutoLISP 表达式来响应 getpoint 的请求。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">pt</p>
+<p class="define_text">当前 UCS 中的二维或三维基点。</p> 
+<p class="define_text">请注意 getpoint 函数还可以接受一个整数或实数作为 pt 参数，并使用直接距离输入法来指定点。这种方法以 LASTPOINT 系统变量的值作为起点，将 pt 作为距离，根据当前光标相对于 lastpoint 的位置确定方向。其结果是在当前光标位置的方向上和上一点之间的距离为指定值的点。</p> 
+<p class="define_head">msg</p>
+<p class="define_text">用于提示用户的字符串。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">当前 UCS 中的三维点。</p> 
+<p class="Heading-2">示例</p>
+<pre class="prog_in">(setq p (getpoint)) </pre>
+<pre class="prog_in">(setq p (getpoint &quot;选取点位置：&quot;)) </pre>
+<pre class="prog_in_end">(setq p (getpoint '(1.5 2.0) &quot;选取第二个点：&quot;)) </pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.117.htm">getcorner</a>  和 <a href="ALR.default.140.htm">initget</a> 
+函数和《AutoLISP 开发人员手册》中的 <a href="ms-its:ACAD_ALG.chm::/ALG.09.015.htm"> getxxx 
+函数</a>  。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

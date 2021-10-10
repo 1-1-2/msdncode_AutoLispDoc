@@ -1,0 +1,1057 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>light</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.aa.001.htm"><span class="BookTitleLink">外部定义命令</a>
+</div>	
+									&nbsp;</span>
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 外部定义命令&nbsp;</td><td class="NavGif"><a title="?&#1589;??&#1211;?&#15278;." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">light</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">创建、修改和删除光源和照明效果（外部定义：render ARX 应用程序）   
+</p>
+<pre class="prog_in_end">(c:light mode [options])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">mode</p>
+<p class="define_text">字符串，指定要执行的操作。mode 的有效值为：</p>   
+<p class="define_text">
+<span class="CharSansBold">A</span>  设置和检索环境光强度</p>  
+<p class="define_text">
+<span class="CharSansBold">D</span>  删除现有的光源</p>  
+<p class="define_text">
+<span class="CharSansBold">L</span>  列出图形中的所有光源，或返回指定光源的定义</p>  
+<p class="define_text">
+<span class="CharSansBold">M</span>  修改现有的光源</p>  
+<p class="define_text">
+<span class="CharSansBold">ND</span>  创建新的平行光</p>  
+<p class="define_text">
+<span class="CharSansBold">NP</span>  创建新的点光源</p>  
+<p class="define_text">
+<span class="CharSansBold">NS</span>  创建新的聚光灯</p>  
+<p class="define_text">
+<span class="CharSansBold">R</span>  重命名现有的光源</p>  
+<p class="define_head">options</p>
+<p class="define_text">options 参数的有效值决定于 mode，因此对每种模式单独列出。</p>   
+<p class="note">
+<span class="note_char">注意</span>&nbsp;此命令不允许在图纸空间中执行。</p>
+<p class="body">A&mdash;环境光</p>
+<p class="body">设置或检索环境光强度。</p>
+<pre class="prog_in_end">(c:light &quot;A&quot; [intensity [color ]])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">intensity</p>
+<p class="define_text">实数，值在 0.0 到 1.0 之间。如果 intensity 被忽略，则缺省为 1.0。</p>   
+<p class="define_head">color</p>
+<p class="define_text">表，指定 RGB 颜色值。如果忽略，则缺省为 (1.0 1.0 1.0)。</p>   
+<p class="Heading-2">示例</p>
+<p class="body">如下命令将环境光强度设置为 0.6：</p>   
+<pre class="prog_in">命令： (c:light &quot;A&quot; 0.6)</pre>
+<pre class="prog_in_end">1</pre>
+<p class="body">忽略 intensity 参数可检索当前环境光的强度：</p>   
+<pre class="prog_in">命令： (c:light &quot;A&quot;)</pre>
+<pre class="prog_in_end">(0.6 (1.0 1.0 1.0))</pre>
+<p class="body">返回的强度为 0.6，颜色为 1.0 1.0 1.0。</p>   
+<p class="body">D&mdash;删除光源</p>
+<p class="body">删除现有的光源。</p>
+<pre class="prog_in_end">(c:light &quot;D&quot; name)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定要删除的光源的名称。</p>
+<p class="Heading-2">示例</p>
+<p class="body">如下函数调用将删除名为“OLDLGT”的光源：</p>
+<pre class="prog_in_end">(c:light &quot;D&quot; &quot;OLDLGT&quot;)</pre>
+<p class="body">L&mdash;列出光源</p>
+<p class="body">列出图形中的所有光源，或返回指定光源的定义。</p>
+<pre class="prog_in_end">(c:light &quot;L&quot; [name])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定要列出的光源的名称。如果忽略 name 参数，则 c:light 列出图形中定义的所有光源。</p>   
+<p class="Heading-2">示例</p>
+<p class="body">如下命令列出当前图形中定义的所有光源：</p>
+<pre class="prog_in">命令： (c:light &quot;L&quot;)</pre>
+<pre class="prog_in_end">(&quot;BUDLIGHT&quot; &quot;LIGHT01&quot;)</pre>
+<p class="body">如下命令列出名为“LIGHT01”的光源的特性：</p>
+<pre class="prog_in">命令： (c:light &quot;L&quot; &quot;LIGHT01&quot;)</pre>
+<pre class="prog_in">(&quot;P&quot; &lt;Entity name: 4cf3ae8&gt;1.0(26.560943.42348.6995)(0.0 0.0 0.0)</pre>
+<pre class="prog_in_end">(0.705882 0.705882 0.705882) 512 nil nil 3.0 &quot;OFF&quot; 0 nil)</pre>
+<p class="body">M&mdash;修改光源</p>
+<p class="body">修改现有的光源。</p>  
+<pre class="prog_in_end">(c:light &quot;M&quot; name [intensity [from [to [color [shadowmapsize [hotspot [falloff [shadowsoftness [shadow [shadowobjects [month [day [hour [minute [daylight [latitude [longitude [attenuation]]]]]]]]]]]]]]]]]])</pre>
+<p class="Heading-2">参数</p>
+<p class="body">“修改”模式的参数说明如下表：</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">LIGHT-“M”模式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数&nbsp;</p>
+</th><th>
+<p class="table_heading">数据类型&nbsp;</p>
+</th><th>
+<p class="table_heading">说明&nbsp;</p>
+</th><th>
+<p class="table_heading">缺省值</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">name</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">唯一的光源名&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">intensity</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">在 0.0 到缺省最大值之间的实数。   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	由衰减模式决定 </p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">from</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源位置&nbsp; </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线起点</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">to</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源目标&nbsp; </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">color</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">RGB 颜色值&nbsp;  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1.0, 1.0, 1.0</p>  
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowmapsize</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 4096 之间的整数（阴影贴图边的尺寸，单位是像素）</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">hotspot</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">太阳光光束角度（必须在 1-160 区间中）。	44.0</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">44.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">falloff</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光束强度衰减区的角度（必须在1-160 区间中且大于太阳光光束角度）</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">45.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowsoftness</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0-10.0 区间中的实数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadow</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影开关，有效值：</p>
+<p class="table_body">“off” 无阴影</p>   
+<p class="table_body">“on” 投射阴影&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowobjects</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">ENAME</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影贴图约束对象的选择</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">month</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 到  12 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">9</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">day</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 到 31 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">21</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">hour</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 24 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">15</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">minute</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 59 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">daylight</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">夏令时开关，有效值：</p>
+<p class="table_body">“off” 非夏令时</p>   
+<p class="table_body">“on” 夏令时</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">&ldquo;off&rdquo; </p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">latitude</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">090 区间中的实数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">37.62</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">longitude</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0?80 区间中的实数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">122.37</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">timezone</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">12 到 12 之间的整数，表示当地时间与格林尼治标准时间 (GMT) 的时差。</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">8 (PST)</p>  
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">attenuation</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 = 无衰减</p>   
+<p class="table_body">1 = 线性衰减</p>   
+<p class="table_body">2 = 平方衰减&nbsp;  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 </p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body">hotspot 和 falloff 参数仅适用于聚光灯。新建平行光时，它们必须设置为 nil。</p>   
+<p class="body">如果某个参数不适用于当前修改的光源类型，或者希望该属性不受参数影响而保留当前值，则可以将该参数指定为 nil。参数列表末尾的可选参数都可以被忽略（例如，attenuation，或者 attenuation 和 timezone，或者 attenuation、timezone 和 longitude...）。</p>   
+<p class="Heading-2">示例</p>
+<p class="body">如下代码将平行光“D1”的颜色改为蓝色：</p>
+<pre class="prog_in_end">(c:light &quot;M&quot; &quot;D1&quot; nil nil nil '(0.0 0.0 1.0))</pre>
+<p class="body">ND&mdash;新建平行光</p>
+<p class="body">创建新的平行光。</p>
+<pre class="prog_in_end">(c:light &quot;ND&quot; name [intensity [from [to [color [shadowmapsize [ nil [ nil [shadowsoftness [shadow [month [day [hour [minute [daylightsavings [latitude [longitude [timezone [attenuation [shadowobjects]]]]]]]]]]]]]]]]]]])</pre>
+<p class="Heading-2">参数</p>
+<p class="body">“新建平行光”模式的参数说明如下表：</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">LIGHT-“ND”模式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数&nbsp;</p>
+</th><th>
+<p class="table_heading">数据类型&nbsp;</p>
+</th><th>
+<p class="table_heading">说明&nbsp;</p>
+</th><th>
+<p class="table_heading">缺省值</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">name</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">唯一的光源名&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">intensity</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0 到缺省最大值之间的实数 </p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">由衰减模式决定 </p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">from</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源位置&nbsp; </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线起点</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">to</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源目标&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">color</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">RGB 颜色值&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1.0, 1.0, 1.0</p>  
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowmapsize</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 4096 之间的整数（以像素点表示尺寸）   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">hotspot</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">太阳光光束角度（必须在1-160 区间中）</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">44.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">falloff</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光束衰减区的角度（必须在 1-160 区间中且大于太阳光光束角度）</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">45.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowsoftness</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0-10.0 区间中的实数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadow</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影开关，有效值：</p>
+<p class="table_body">“off” 无阴影</p>   
+<p class="table_body">“on” 投射阴影</p>   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">month</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 到 12 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">9</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">day</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 到 31 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">21</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">hour</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 24 之间的整数&nbsp;</p>  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">15</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">minute</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 59 之间的整数&nbsp;  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">daylight</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">夏令时开关，有效值：</p>
+<p class="table_body">“off” 非夏令时</p>   
+<p class="table_body">“on” 夏令时   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">&ldquo;off&rdquo; </p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">latitude</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0-90 区间中的实数&nbsp;  
+</td><td class="BasicLeft_CELL">
+<p class="table_body">37.62</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">longitude</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0-180 区间中的实数   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">122.37</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">timezone</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">12 到 12 之间的整数，表示当地时间与格林尼治标准时间 (GMT) 的时差   
+</td><td class="BasicLeft_CELL">
+<p class="table_body">8 (PST)</p>  
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowobjects</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">ENAME</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影贴图对象的选择&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body">NP&mdash;新建点光源</p>
+<p class="body">创建新的点光源。</p>
+<pre class="prog_in">(c:light &quot;NP&quot; name [intensity [from [nil [color</pre>
+<pre class="prog_in">[shadowmapsize [nil [nil [shadowsoftness [shadow</pre>
+<pre class="prog_in_end">[attenuation[shadowobjects ]]]]]]]]]]])</pre>
+<p class="Heading-2">参数</p>
+<p class="body">“新建点光源”模式的参数说明如下表：</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">LIGHT-“NP”模式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th><th>
+<p class="table_heading">缺省值</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">name</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">唯一的光源名
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">intensity</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0 到缺省最大值之间的实数 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	由衰减模式决定
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">from</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源位置&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线起点
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">color</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST </p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">RGB 颜色值 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1.0, 1.0, 1.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowmapsize</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body"> 到 4096 之间的整数（阴影贴图边的尺寸，以像素为单位） 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowsoftness</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0-10.0 区间中的实数 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadow</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影开关，有效值：</p>
+<p class="table_body">“off” 无阴影</p> 
+<p class="table_body">“on” 投射阴影 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">attenuation</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 = 无衰减</p> 
+<p class="table_body">1 = 线性衰减</p> 
+<p class="table_body">2 = 平方衰减 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 </p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowobjects</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">ENAME</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影贴图对象的选择&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body">有三个参数不适用于点光源：to（在 from 之后）、hotspot 和 falloff（在 shadowmapsize 
+之后）。新建点光源时，它们必须设置为 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">例如，如下代码新建名为 NEWPT1 的点光源。</p> 
+<pre class="prog_in_end">(c:light &quot;NP&quot; &quot;NEWPT1&quot;)</pre>
+<p class="body">NEWPT1 具有缺省强度、当前衰减设置、缺省光源位置（当前观察点）和缺省颜色（白色）。</p> 
+<p class="note">
+<span class="note_char">注意</span>&nbsp;点光源强度的最大缺省值由此光源的衰减设置决定。无衰减时，缺省最大强度为 1.00；线性衰减时，缺省最大强度位图形最大范围长度的两被；平方衰减时，缺省最大强度为最大范围长度两被的平方。</p>   
+<p class="body">NS&mdash;新建聚光灯</p>
+<p class="body">创建新的聚光灯。</p>
+<pre class="prog_in_end">(c:light &quot;NS&quot; name [intensity [from [to [color [shadowmapsize [hotspot [falloff [shadowsoftness [shadow [attenuation [shadowobjects]]]]]]]]]]])</pre>
+<p class="Heading-2">参数</p>
+<p class="body">“新建聚光灯”模式的参数说明如下表：</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">LIGHT&mdash; &ldquo;NS&rdquo; 模式参数</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">参数</p>
+</th><th>
+<p class="table_heading">数据类型</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th><th>
+<p class="table_heading">缺省值</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">name</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">唯一的光源名&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">无
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">intensity</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0 到缺省最大值之间的实数 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	由衰减模式决定
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">from</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源位置&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线起点
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">to</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光源目标&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前视线终点
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">color</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">LIST</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">RGB 颜色值&nbsp;
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1.0, 1.0, 1.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowmapsize</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 到 4096 之间的整数（阴影贴图边的尺寸，以像素为单位） 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">hotspot</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">太阳光光束角度（必须在 1-160 区间中） 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">44.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">falloff</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">光束衰减区的角度（必须在 1-160 区间中且大于太阳光光束角度） 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">45.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowsoftness</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">REAL</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0-10.0 区间中的实数 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadow</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">STR</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影开关，有效值：</p>
+<p class="table_body">“off” 无阴影</p> 
+<p class="table_body">“on” 投射阴影 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">attenuation</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">INT</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 = 无衰减</p> 
+<p class="table_body">1 = 线性衰减</p> 
+<p class="table_body">2 = 平方衰减 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1 </p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharItalic">shadowobjects</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">ENAME</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">阴影贴图对象的选择
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0.0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">示例</p>
+<p class="body">如下代码新建名为“GSPOT”的聚光灯。</p>
+<pre class="prog_in">命令： (c:light &quot;NS&quot; &quot;GSPOT&quot; 43.82 '(12.0 6.0 24.0) '(78.0 78.0 24.0) nil nil 30.0 32.0)</pre>
+<pre class="prog_in_end">1</pre>
+<p class="body">聚光灯 GSPOT 的强度为 43.82，颜色为缺省值（白色），光源位置为 (12,6,24)，目标位置为 (78,78,24)，收缩角为 32 
+度，聚光角为 30 度。</p> 
+<p class="note">
+<span class="note_char">注意</span>&nbsp;聚光灯强度的最大缺省值由此光源的衰减设置决定。无衰减时，缺省最大强度为 1.00；线性衰减时，缺省最大强度为图形最大范围长度的两倍；平方衰减时，缺省最大强度为最大范围长度两倍的平方。</p>   
+<p class="body">R&mdash;重命名光源</p>
+<p class="body">重命名现有的光源。</p>
+<pre class="prog_in_end">(c:light &quot;R&quot; old_name new_name)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">old_name</p>
+<p class="define_text">字符串，指定要重命名的光源的名称。</p>
+<p class="define_head">new_name</p>
+<p class="define_text">字符串，指定光源的新名称。</p>
+<p class="body">如下函数调用将光源“GSPOT”重命名为“HOTSPOT”：</p>
+<p class="Heading-2">示例</p>
+<pre class="prog_in">命令： (c:light &quot;R&quot; &quot;GSPOT&quot; &quot;HOTSPOT&quot;)</pre>
+<pre class="prog_in_end">1</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

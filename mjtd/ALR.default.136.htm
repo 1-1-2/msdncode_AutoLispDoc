@@ -1,0 +1,88 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>help</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>  
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">help </div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">调用帮助工具</p>
+<pre class="prog_in_end">(help [helpfile [topic [command]]]) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">helpfile</p>
+<p class="define_text">指定帮助文件的字符串。helpfile 参数不需要指定文件扩展名。如果指定文件扩展名，则 AutoCAD  
+仅查找该文件。</p>
+<p class="define_text">如果 helpfile 参数为空字符串 ("") 或被省略，则 AutoCAD 使用缺省 AutoCAD 帮助文件。</p>  
+<p class="define_text">如果不指定扩展名，则 AutoCAD 查找带 .chm  
+扩展名的 helpfile，如果找不到该名称的文件，AutoCAD 查找带 .hlp  
+扩展名的文件。</p>
+<p class="define_head">topic</p>
+<p class="define_text">关键字，指定帮助显示的主题 ID。如果 topic 参数是空字符串 ("")，则会显示帮助文件的默认页面。如果在调用  
+CHM 文件中的主题，提供的文件名不需要扩展名， AutoCAD  
+会自动添加 .htm扩展名。</p> 
+<p class="define_head">command</p>
+<p class="define_text">字符串，指定帮助窗口的初始状态，command  
+参数是 HtmlHelp() 和 WinHelp() 函数的 uCommand(在 HTML 帮助中)或  
+fucommand(在 WinHelp 中)参数所使用的一个字符串，HtmlHelp() 和  
+WinHelp() 函数的定义可参见 Microsoft Windows SDK 中的 WinHelp API。</p>  
+<p class="define_text">对于 HTML 帮助文件，<span class="CharItalic">command</span>   
+参数可以是 HH_ALINK_LOOKUP 或 HH_DISPLAY_TOPIC 值，对于 Windows  
+帮助文件，<span class="CharItalic">command</span> 可以是 HELP_CONTENTS,  
+HELP_HELPONHELP, 或 HELP_PARTIALKEY。</p> 
+<p class="define_text"><b> HH_ALINK_LOOKUP</b> 
+显示帮助文件的“索引”项。</p> 
+<p class="define_text"><b>HH_DISPLAY_TOPIC</b> 
+显示帮助文件的“目录”项。</p> 
+<p class="define_text"><b>HELP_CONTENTS</b>  显示帮助文件的第一个主题。</p>  
+<p class="define_text"><b>HELP_HELPONHELP</b>  显示“如何使用帮助”的帮助。</p>  
+<p class="define_text"><b>HELP_PARTIALKEY</b>  显示搜索对话框，将传送的字符串作为初始搜索文本。<br> 
+</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果调用成功则返回 helpfile 字符串，否则返回 nil。如果不带参数调用 help，则在成功时返回空字符串 ("")，不成功时返回 nil。<br>  
+help 函数返回给应用程序的唯一错误条件是由参数 helpfile 指定的文件不存在。所有其他的错误条件都通过对话框报告用户。</p>  
+<p class="Heading-2">示例</p>
+<p class="body">下列代码调用 help 显示 achelp.hlp 中 MYCOMMAND 主题的信息：</p>  
+<pre class="prog_in_end">(help &quot;achelp.chm&quot; &quot;mycommand&quot;)</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.204.htm">setfunhelp</a>  函数用于将上下文相关帮助函数（用户按 F1 时得到的帮助）与用户自定义命令关联起来。</p>  
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

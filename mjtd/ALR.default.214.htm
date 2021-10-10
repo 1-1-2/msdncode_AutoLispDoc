@@ -1,0 +1,156 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>ssget</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>  
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">ssget</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">根据选定对象创建选择集</p>
+<pre class="prog_in_end">(ssget [sel-method] [pt1 [pt2]] [pt-list] [filter-list])</pre>
+<p class="body">选择集中可以包含图纸空间和模型空间两个空间中的对象，但该选择集用于某操作时，那些在当前无效的空间中的对象会被 ssget 过滤掉。由 ssget 函数返回的选择集中仅包含主图元（不包含属性和多段线顶点）。</p>  
+<p class="Heading-2">参数</p>
+<p class="define_head">sel-method</p>
+<p class="define_text">字符串，指定对象选择方法。有效选择方法包括：</p>
+<p class="define_text">
+<span class="CharSansBold">C</span>  窗交。</p> 
+<p class="define_text">
+<span class="CharSansBold">CP</span>  圈交（指定多段线内和与该多段线相交的所有对象）。</p> 
+<p class="define_text">
+<span class="CharSansBold">F</span>  栏选。</p> 
+<p class="define_text">
+<span class="CharSansBold">I</span>  隐含窗口选择（在执行 PICKFIRST 期间选择的对象）。</p>  
+<p class="define_text">
+<span class="CharSansBold">L</span>  添加到数据库的最后一个可见对象。</p> 
+<p class="define_text">
+<span class="CharSansBold">P</span>  最后一个创建的选择集。</p> 
+<p class="define_text">
+<span class="CharSansBold">W</span>  窗口选择。</p> 
+<p class="define_text">
+<span class="CharSansBold">WP</span>  圈围（指定多边形内的所有对象）。</p> 
+<p class="define_text">
+<span class="CharSansBold">X</span>  整个数据库。如果指定了 X 选择方法，而又没有提供 filter-list 参数，则 ssget 选择数据库中的所有图元，包括关闭、冻结图层中的图元和可见屏幕外的图元。</p>  
+<p class="define_text">
+<span class="CharSansBold">:E</span>  光标的对象选择拾取框中的所有对象。</p> 
+<p class="define_text">
+<span class="CharSansBold">:N</span>  在执行 ssget 操作的过程中，为选定图元调用 ssnamex 获得容器块和转换矩阵的附加信息。只有通过窗口、窗交点拾取等图形选择方法选定的图元，这一附加信息才可以使用。</p>  
+<p class="define_text">与其他对象选择方法不同，:N 可能会返回选择集中的多个同名图元。例如，如果用户选择了一个复杂图元（如 BlockReference、PolygonMesh 或老式多段线）的子图元，那么 ssget 将查看该子图元是否已被选中。不过，ssget 实际上会将主图元（如 BlockReference 和 PolygonMesh）添加到选择集中。这样就会在选择集中出现多个同名图元，而 ssnamex 获得的每个图元的子图元信息各不相同。</p>  
+<p class="define_text">
+<span class="CharSansBold">:S</span> 
+ 仅允许单一选择集。</p> 
+<p class="define_head">pt1</p>
+<p class="define_text">与选择相关的点。</p>
+<p class="define_head">pt2</p>
+<p class="define_text">与选择相关的点。</p>
+<p class="define_head">pt-list</p>
+<p class="define_text">点表。</p>
+<p class="define_head">filter-list</p>
+<p class="define_text">关联表，指定对象的特性。与 filter-list 相匹配的对象将被添加到选择集。</p>  
+<p class="body">如果省略所有参数，则 ssget 函数给出“选择对象”提示，允许用户交互式地构造选择集。</p>  
+<p class="body">如果仅提供了一个点，而没有提供对象选择方法，AutoCAD 假定用户拾取单个点来选择对象。</p>  
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则返回创建选择集的名称。如果没有选定对象则返回 nil。</p>  
+<p class="body">对象选择方法说明</p>
+<ul>
+<li class="list_bulleted_begin">在使用 :N 选择方法时，如果用户选择了一个复杂图元（如 BlockReference、PolygonMesh 或老式多段线）的子图元，那么 ssget  
+  将查看该子图元是否已被选中。不过，ssget 实际上会将主图元（如 BlockReference 和 PolygonMesh）添加到选择集中。这样就很可能会在选择集中出现多个同名图元，而 ssnamex 获得的每个图元的子图元信息各不相同。由于 :N 方法不能保证每个图元的唯一性，所以不应对由该选项创建的选择集应用需要保证唯一性的代码。</li>  
+<li class="list_bulleted_end">在 MDI 环境中使用 L 选择方法时，最后一个绘制的对象并不一定就是可见的。例如，如果绘制了一条直线，然后将 AutoCAD 绘图窗口最小化或层叠放置，这条直线可能就看不见了。这时，使用 L 选项的 ssget 将返回 nil。</li>  
+</ul>
+<p class="Heading-2">示例</p>
+<p class="body">提示用户选择要加入选择集的对象：</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget)</span> 
+</p>
+<p class="prompt_end">&lt;Selection set:
+2&gt;</p>
+<p class="body">创建通过点 (2,2) 的对象的选择集：</p>  
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget '(2 2))</span> 
+</p>
+<p class="prompt_end">nil</p>
+<p class="body">创建一个选择集，该选择集由最近所选择的对象组成：</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget "_P")</span> 
+</p>
+<p class="prompt_end">&lt;Selection set:
+4&gt;</p>
+<p class="body">创建一个选择集，该选择集由交叉窗选而成，交叉窗口的对角顶点是 (0,0) 和 (1,1)：</p>  
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget "_C" '(0 0) 
+'(1 1))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+b&gt;</p>
+<p class="body">创建一个选择集，该选择集由从 (0,0) 到 (5,5) 的窗口中包含的所有对象组成：</p>  
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget "_W" '(0 0) 
+'(5 5))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+d&gt;</p>
+<p class="body">通过指定过滤器，可以获得由指定类型、图层或颜色的所有对象构成的选择集。下例返回的选择集仅包含隐含选择集中的蓝色直线（这些对象是在 PICKFIRST 有效时选取的）：</p>  
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget "_I" '((0 
+. "LINE") (62 . 5)))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+4&gt;</p>
+<p class="body">下例中需要将点表传递给 ssget 函数。pt_list 变量不能包含定义零长度线段的点。</p>  
+<p class="body">创建点表：</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq pt_list '((1 
+1)(3 1)(5 2)(2 4)))</span>
+</p>
+<p class="prompt_end">((1 1) (3 1) (5 2)
+(2 4))</p>
+<p class="body">创建一个选择集，该选择集由 pt_list 所定义的多边形包含或与之相交的所有图元组成：</p>  
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget "_CP" pt_list)</span> 
+</p>
+<p class="prompt_end">&lt;Selection set:
+13&gt;</p>
+<p class="body">创建一个选择集，该选择集由 pt_list 所定义的多边形包含的所有蓝色线段组成：</p>  
+<p class="prompt_end">命令： <span class="CharSansBold">(ssget "_WP" pt_list 
+'((0 . "LINE") (62 . 5)))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+8&gt;</p>
+<p class="body">只有在不带参数调用 ssget 函数时，才会亮显被选取的对象。选择集会消耗 AutoCAD 的临时文件存储区，所以 AutoLISP 不允许同时打开多于 128 个选择集。如果选择集的数目达到了这个极限，AutoCAD 会拒绝再创建新的选择集，以后调用 ssget 函数只会返回 nil。可以通过将选择集设为 nil 来关闭不再需要的选择集。</p>  
+<p class="body">在任何可以用 Last 选择方式来响应 AutoCAD“选择对象”提示的地方，都可以通过向 AutoCAD 传递一个选择集变量来响应。这样将选择该选择集变量中的所有对象。</p>  
+<p class="body">ssget 函数忽略对象捕捉模式的当前设置，除非在调用本函数时专门指定它。</p>  
+<p class="see_also">参阅</p> 
+<p class="body">《Visual LISP 开发人员手册》中的 
+<a href="ms-its:ACAD_ALG.chm::/ALG.10.002.htm">处理选择集</a>  和 <a href="ms-its:ACAD_ALG.chm::/ALG.10.003.htm">选择集过滤器表</a>。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>replay</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.aa.001.htm"><span class="BookTitleLink">明经通道 外部定义命令</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 外部定义命令&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">replay</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">显示 BMP、TGA 或 TIFF 图像（外部定义：render ARX 应用程序）</p> 
+<pre class="prog_in_end">(c:replay filename type [xoff yoff xsize ysize])</pre>
+<p class="body">通过 REPLAY 命令，可在 AutoCAD 渲染时显示 BMP、TGA 或 TIFF 文件。用此命令的功能使图像在多种偏移和尺寸下显示。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">filename</p>
+<p class="define_text">字符串，指定图像文件名。</p>
+<p class="define_head">type</p>
+<p class="define_text">字符串，指定文件类型。有效值为 BMP、TGA 或 TIFF。</p> 
+<p class="define_head">xoff</p>
+<p class="define_text">整数，指定图像的 X 偏移（以像素点为单位）。缺省为 0。</p> 
+<p class="define_head">yoff</p>
+<p class="define_text">整数，指定图像的 Y 偏移（以像素点为单位）。缺省为 0。</p> 
+<p class="define_head">xsize</p>
+<p class="define_text">图像的 X 尺寸（以像素点为单位）。缺省为实际 X 尺寸。</p> 
+<p class="define_head">ysize</p>
+<p class="define_text">图像的 Y 尺寸（以像素点为单位）。缺省为实际 Y 尺寸。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">如下调用显示名为 test.tga 的图像，图像从左下角开始显示，具有零偏移，宽度为 500 像素，高度为 400 像素：</p> 
+<pre class="prog_in_end">(c:replay &quot;TEST&quot; &quot;TGA&quot; 0 0 500 400)</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>equal</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">equal</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">确定两个表达式的值是否相等</p>
+<pre class="prog_in_end">(equal expr1 expr2 [fuzz]) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">expr1</p>
+<p class="define_text">用于比较的表达式。</p>
+<p class="define_head">expr2</p>
+<p class="define_text">与 expr1 进行比较的表达式。</p> 
+<p class="define_head">fuzz</p>
+<p class="define_text">实数，定义 expr1 和 expr2 之间的最大允许误差。误差在此范围内时，仍然认为二者相等。</p> 
+<p class="body">当比较两个实数（或由实数组成的表，如点表）时，即使是恒等的两个数，如果采用不同的计算方法，结果也有可能稍有差别。可以指定 fuzz 值，以避免由于计算方法不同而导致的误差。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果两个表达式相等（等于同一个数值）则返回 T,否则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">给定如下指令：</p>
+<pre class="prog_in">(setq f1 '(a b c)) </pre>
+<pre class="prog_in">(setq f2 '(a b c)) </pre>
+<pre class="prog_in">(setq f3 f2)</pre>
+<pre class="prog_in">(setq a 1.123456) </pre>
+<pre class="prog_in_end">(setq b 1.123457)</pre>
+<p class="body">将 f1 与 f3 比较：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(equal f1 f3)</span>
+</p>
+<p class="prompt_end">T</p>
+<p class="body">将 f3 与 f2 比较：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(equal f3 f2)</span>
+</p>
+<p class="prompt_end">T</p>
+<p class="body">将 a 与 b 比较：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(equal a b)</span>
+</p>
+<p class="prompt_end">nil</p>
+<p class="body">a 和 b 变量之间的差值为 .000001。</p> 
+<p class="body">将 a 与 b 比较，其中 fuzz 参数设为 .000001：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(equal a b 0.000001)</span>
+</p>
+<p class="prompt_end">T</p>
+<p class="body">由于 a 和 b 变量之间的差值等于指定的 fuzz 值，所以 equal 认为两个变量相等。</p> 
+<p class="body">比较 eq 和 equal 函数</p> 
+<p class="body">eq 函数认为相等的两个表或原子，equal 函数一定也认为它们相等。</p> 
+<p class="body">equal 认为相等的两个原子，eq 一定也认为它们相等。但 equal 认为相等的两个表 eq 不一定认为它们相等。</p> 
+<p class="see_also">参阅</p>
+<p class="body"><a href="ALR.default.007.htm">= (等于)</a>和 <a href="ALR.default.094.htm">eq</a>  
+函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

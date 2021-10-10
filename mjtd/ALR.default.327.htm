@@ -1,0 +1,66 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vlax-curve-getDistAtPoint</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlax-curve-getDistAtPoint</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">返回曲线从开始点到指定点的曲线段的长度</p>
+<pre class="prog_in_end">(vlax-curve-getDistAtPoint curve-obj point)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">curve-obj</p>
+<p class="define_text">要测量的 VLA 对象。</p> 
+<p class="define_head">point</p>
+<p class="define_text">curve-obj 上的三维点表（在 WCS 中）。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则返回实数，否则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">在下例中，假定 splineObj 指向 <a href="ALR.default.326.htm">vlax-curve-getDistAtParam</a> 样例中的样条曲线。</p> 
+<p class="body">设置 OSNAP 为“切点”并选择直线与曲线相切的点：</p> 
+<pre class="prog_in">_$ (setq selPt (getpoint))</pre>
+<pre class="prog_in_end">(4.91438 6.04738 0.0)</pre>
+<p class="body">确定从曲线开始点到选定点的距离：</p>
+<pre class="prog_in">_$ (vlax-curve-getDistAtPoint splineObj selpt)</pre>
+<pre class="prog_in_end">5.17769</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

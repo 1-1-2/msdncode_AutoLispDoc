@@ -1,0 +1,199 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vlr-undo-reactor</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlr-undo-reactor</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">构造通知放弃操作的编辑器反应器</p>
+<pre class="prog_in_end">(vlr-undo-reactor data callbacks)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">data</p>
+<p class="define_text">任意要与反应器对象关联的 AutoLISP 数据。如果没有数据则为 nil。</p> 
+<p class="define_head">callbacks</p>
+<p class="define_text">表，其中包含下列格式的点对：</p>
+<p class="define_text">(e<span class="CharItalic">vent-name</span> . <span class="CharItalic">callback_function</span>) </p> 
+<p class="define_text">这里，event-name 是表“Undo 
+反应器事件”中的符号之一，callback_function 为符号，代表事件发生时要调用的函数。每个回调函数都接受如下两个参数：</p> 
+<p class="define_text">
+<span class="CharItalic">reactor_object</span> 调用回调函数的 VLR 对象。</p> 
+<p class="define_text">
+<span class="CharItalic">list</span>  与特定事件相关联的其他数据元素。该表针对特定事件的内容见表 
+“Undo 反应器回调数据”。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">reactor_object 参数。</p> 
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="2">
+<p class="table_heading">Undo 反应器事件 </p> 
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">事件名称</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandAuto</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">UNDO 命令的“自动”选项已被执行。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandControl</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">UNDO 命令的“控制”选项已被执行。 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandBegin</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">UNDO 命令的“开始”选项已被执行。“开始”将标记可一次放弃的一系列命令的开始位置。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandEnd</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">UNDO 命令的“结束”选项已被执行。“结束”将标记可一次放弃的一系列命令的结束位置。 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandMark</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">UNDO 命令的“标记”选项已被执行。“标记”在放弃文件中做一个标记，以便“后退”选项可放弃到该标记位置处（即放弃设置标记后的所有操作）。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandBack</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">UNDO 命令的“后退”选项已被执行。“后退”向前放弃所有操作，直到遇到最近一个由“标记”选项做出的标记为止。如果没有标记，就放弃所有操作。 
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandNumber</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">即将执行指定放弃数目的 UNDO 命令（UNDO 命令的缺省操作）。 
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body"></p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">Undo reactor callback data </p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">名称</p>
+</th><th>
+<p class="table_heading">表长度</p>
+</th><th>
+<p class="table_heading">参数</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandAuto</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">2</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">第一个参数为表示行动的整数。该值始终为 4，表示在执行操作后发出通知。</p>
+<p class="table_body">第二个参数为表示“自动”模式状态的符号。如果“自动”模式打开，则该值为 T，否则该值为 nil。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandControl</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">2</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">第一个参数为表示行动的整数。该值始终为 4，表示在执行操作后发出通知。</p>
+<p class="table_body">第二个参数为表示“控制”选项选择的整数。该参数可以为以下值：&nbsp;</p>
+<p class="table_body">0&mdash;选择“无”</p>
+<p class="table_body">1&mdash;选择“一个”</p>
+<p class="table_body">2&mdash;选择“全部”</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandBegin</p>
+<p class="table_body">:vlr-undoSubcommandEnd</p>
+<p class="table_body">:vlr-undoSubcommandMark</p>
+<p class="table_body">:vlr-undoSubcommandBack</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">1</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	值为 0 的整数，表示在执行实际操作之前发出通知。 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">:vlr-undoSubcommandNumber</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">2</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">第一个参数为表示行动的整数。该值始终为 0，表示在执行实际操作前发出通知。</p>
+<p class="table_body">第二个参数为整数，表示要放弃的操作数目。
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

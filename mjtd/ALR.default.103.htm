@@ -1,0 +1,141 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>fill_image</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">fill_image</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">在当前激活的对话框图像控件中画一个填充矩形</p>
+<pre class="prog_in_end">(fill_image x1 y1 width height color)</pre>
+<p class="body">(x1,y1) 坐标指定填充矩形第一个角（左上角）的位置，该填充矩形的第二个角（右下角）由从第一个角的相对距离 (width,height)&nbsp;<br>
+确定。原点 (0,0) 表示图像控件的左上角，可以调用 dimx_tile 和 dimy_tile 函数来获取其右下角的坐标。</p> 
+<p class="body">fill_image 函数必须在 start_image 和 end_image 两个函数调用之间调用。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">x1</p>
+<p class="define_text">矩形左上角的 X 坐标。必须为正数。</p> 
+<p class="define_head">y1</p>
+<p class="define_text">矩形左上角的 Y 坐标。必须为正数。</p> 
+<p class="define_head">width</p>
+<p class="define_text">矩形填充区域相对于 x1 的宽度（以像素为单位）。</p> 
+<p class="define_head">height</p>
+<p class="define_text">矩形填充区域相对于 y1 的宽度（以像素为单位）。</p> 
+<p class="define_head">color</p>
+<p class="define_text">AutoCAD 颜色代码或下表中的逻辑颜色数值之一：&nbsp;</p>
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="3">
+<p class="table_heading">颜色属性所用的符号名称 </p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">颜色代码</p>
+</th><th>
+<p class="table_heading">ADI 助记符&nbsp;</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">&ndash;2</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharSans">BGLCOLOR</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">AutoCAD 图形屏幕的当前颜色</p> 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">&ndash;15</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharSans">DBGLCOLOR</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前对话框背景色</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">&ndash;16</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharSans">DFGLCOLOR</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前对话框（文本）的前景色 </p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">&ndash;18</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">
+<span class="CharSans">LINELCOLOR</span>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">当前对话框线的颜色</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Heading-2">返回值</p>
+<p class="body">代表填充颜色的整数。</p>
+<p class="Heading-2">示例</p>
+<pre class="prog_in">(setq color -2) ;; AutoCAD 背景屏幕的颜色</pre>
+<pre class="prog_in">(fill_image</pre>
+<pre class="prog_in">  0</pre>
+<pre class="prog_in">  0</pre>
+<pre class="prog_in">  (dimx_tile &quot;slide_tile&quot;)</pre>
+<pre class="prog_in">  (dimy_tile &quot;slide_tile&quot;)</pre>
+<pre class="prog_in">  color</pre>
+<pre class="prog_in">)</pre>
+<pre class="prog_in_end">(end_image)</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

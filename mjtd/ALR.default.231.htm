@@ -1,0 +1,74 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>tablet</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">tablet</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">获取和设置数字化仪校准</p>
+<pre class="prog_in_end">(tablet code [row1 row2 row3 direction]) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">code</p>
+<p class="define_text">整数，可为下列值之一：</p>
+<p class="define_text">
+<span class="CharSansBold">0</span>  返回函数返回当前校准，这种情况下，必须省略其余参数。</p>
+<p class="define_text">
+<span class="CharSansBold">1</span>  根据后面提供的参数设置校准，这种情况下，必须提供新的校准设置 (row1, row2, row3 和 direction)。&nbsp;</p>
+<p class="define_head">row1, row2, row3</p>
+<p class="define_text">三个三维点。这三个参数指定数字化仪转换矩阵的三行。</p>
+<p class="define_text">在 row3 中的第三个元素 (Z) 应该始终为 1，如果在 row3 中的第三个元素处指定了一个不为 1 的数，tablet 函数会在返回时将其值设为 1。</p> 
+<p class="define_head">direction</p>
+<p class="define_text">一个三维点。这是矢量（以世界坐标系 (WCS) 表示），垂直于代表数字化仪表面的平面。</p> 
+<p class="define_text">如果指定的 direction 没有被规格化，tablet 函数会修正它，所以设置校准后返回的 direction 可能与传入该函数的 direction 不同。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果 tablet 函数调用失败，它返回 nil，并设置系统变量 ERRNO 以指出失败原因。（请参见 
+《Visual LISP 开发人员手册》中的附录 <a href="ms-its:ACAD_ALG.chm::/ALG.ac.001.htm">AutoLISP 错误代码</a>）。</p>
+<p class="Heading-2">示例</p>
+<p class="body">用 tablet 函数建立的最简单的变换是恒等变换：</p> 
+<pre class="prog_in_end">(tablet 1 '(1 0 0) '(0 1 0) '(0 0 1) '(0 0 1))</pre>
+<p class="body">随着这个变换的生效，AutoCAD 将有效地接受来自数字化仪的原始数字化仪坐标。例如，如果拾取了数字化仪的坐标点 (5000,15000)，那么，在用户的图形中 AutoCAD 仍用该坐标显示这个点。</p> 
+<p class="body">TABMODE 系统变量使 AutoLISP 例程可以将数字化仪设置为开或关。</p> 
+<p class="see_also">参阅</p>
+<p class="body">《Visual LISP 开发人员手册》中的 <a href="ms-its:ACAD_ALG.chm::/ALG.09.039.htm">校准数字化仪</a>。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

@@ -1,0 +1,79 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vl-string-subst</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-string-subst</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">在字符串中进行字符串替换</p>
+<pre class="prog_in_end">(vl-string-subst new-str pattern string [start-pos])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">new-str</p>
+<p class="define_text">字符串，用它来替换 pattern。</p> 
+<p class="define_head">pattern</p>
+<p class="define_text">字符串，包含要被替换的字符串。</p>
+<p class="define_head">string</p>
+<p class="define_text">字符串，在其中查找 pattern。</p> 
+<p class="define_head">start-pos</p>
+<p class="define_text">整数型，标志开始搜索的位置。缺省值为 0。</p> 
+<p class="body">请注意搜索是区分大小写的。vl-string-subst 仅替换字符串中第一次出现的子串。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">完成替换后 string 的值。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">用“Obi-wan”替换“Ben”：</p>
+<pre class="prog_in">_$ (vl-string-subst &quot;Obi-wan&quot; &quot;Ben&quot; &quot;Ben Kenobi&quot;)</pre>
+<pre class="prog_in_end">&quot;Obi-wan Kenobi&quot;</pre>
+<p class="body">用“Obi-wan”替换“Ben”：</p>
+<pre class="prog_in">_$ (vl-string-subst &quot;Obi-wan&quot; &quot;Ben&quot; &quot;ben Kenobi&quot;)</pre>
+<pre class="prog_in_end">&quot;ben Kenobi&quot;</pre>
+<p class="body">没有进行替换，因为 vl-string-subst 没有找到“Ben”。字符串中的“ben”是以小写的“b”开始的。</p> 
+<p class="body">用“Obi-wan”替换“Ben”：</p>
+<pre class="prog_in">_$ (vl-string-subst &quot;Obi-wan&quot; &quot;Ben&quot; &quot;Ben Kenobi Ben&quot;)</pre>
+<pre class="prog_in_end">&quot;Obi-wan Kenobi Ben&quot;</pre>
+<p class="body">请注意字符串中出现了两处“Ben”，但 vl-string-subst 仅替换第一次出现的那个。</p> 
+<p class="body">用“Obi-wan”替换“Ben”，但从字符串中的第四个字符开始：</p>
+<pre class="prog_in">_$ (vl-string-subst &quot;Obi-wan&quot; &quot;Ben&quot; &quot;Ben \&quot;Ben\&quot; Kenobi&quot; 3)</pre>
+<pre class="prog_in_end">&quot;Ben \&quot;Obi-wan\&quot; Kenobi&quot;</pre>
+<p class="body">字符串中“Ben”出现了两次，但因为 vl-string-subst 是从第四个字符开始搜索的，所以仅替换第二个，而非第一个。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

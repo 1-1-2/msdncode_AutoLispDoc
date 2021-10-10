@@ -1,0 +1,104 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vlax-add-cmd</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlax-add-cmd</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">将命令添加到 AutoCAD 内置命令集中</p> 
+<pre class="prog_in_end">(vlax-add-cmd global-name func-sym [local-name cmd-flags])</pre>
+<p class="body">使用 vlax-add-cmd 可以将函数定义为 AutoCAD 命令，而无需在函数名中使用 c: 前缀。用它也可以定义透明 AutoLISP 命令，而对于 c: 函数，这是不可能的。 </p> 
+<p class="warning">
+<span class="warning_char">警告!</span>&nbsp;不能使用 command 
+函数透明调用那些由 <span class="CharCourierBold">vlax-add-cmd 函数定义的</span>命令。这样做会造成 
+AutoCAD 意外关闭。</p>
+<p class="body">vlax-add-cmd 函数使某个 明经通道 Visual LISP 函数在当前 AutoCAD 
+任务中作为 ObjectARX 类型的命令，在 AutoCAD 
+命令行提示中使用。vlax-add-cmd 函数提供了对 ObjectARX acedRegCmds 
+宏的访问，从而提供了一个到 ObjectARX 系统 AcEdCommandStack 
+对象的指针。</p>
+<p class="body">vlax-add-cmd 
+函数自动将命令指定到命令组。从文档名称空间发出命令时，vlax-add-cmd 
+将命令添加到组 doc-ID。doc-ID 
+是标识文档的十六进制值。从独立名称空间 VLX 发出命令时，vlax-add-cmd 
+将命令添加到组 VLC-Ddoc-ID:VLX-name。这里 VLX-name 是发出 
+vlax-add-cmd.的应用程序名。</p>
+<p class="body">推荐从独立名称空间 VLX 使用 <span class="CharCourierBold">vlax-add-cmd</span> 
+函数。然后使用 APPLOAD 命令明确加载 VLX，这样比将 LISP 
+文件放到启动组好。</p>
+<p class="note">
+<span class="note_char">注意</span>&nbsp;不能使用 vlax-add-cmd 显露创建反应器对象的函数，也不能用它来显露反应器的回调函数。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">global-name</p>
+<p class="define_text">字符串。</p>
+<p class="define_head">func-sym</p>
+<p class="define_text">符号，指定不带参数的 明经通道 Visual LISP 函数。</p> 
+<p class="define_head">local-name</p>
+<p class="define_text">字符串（缺省值为 global-name）。</p> 
+<p class="define_head">cmd-flags</p>
+<p class="define_text">整数型（缺省值为 ACRX_CMD_MODAL + ACRX_CMD_REDRAW）。</p> 
+<p class="define_text">主要标志有：</p>
+<p class="define_text">
+<span class="CharSansBold">ACRX_CMD_MODAL</span> (0) 在使用其他命令时不能调用该命令。</p>
+<p class="define_text">
+<span class="CharSansBold">ACRX_CMD_TRANSPARENT </span>(1) 在使用其他命令时可以调用该命令。</p>
+<p class="define_text">二级标志有：</p>
+<p class="define_text">
+<span class="CharSansBold">ACRX_CMD_USEPICKSET </span>(2) 检索选择优先集时，在 AutoCAD 中清除设置。命令能够获取优先集，但不能检索或设置夹点。</p> 
+<p class="define_text">
+<span class="CharSansBold">ACRX_CMD_REDRAW </span>(4) 检索选择优先集或夹点集时，不将它们从 AutoCAD 中清除。命令可获取优先集和夹点集。</p> 
+<p class="body">如果同时设置了 ACRX_CMD_USEPICKSET 和 ACRX_CMD_REDRAW，则效果和仅设置 ACRX_CMD_REDRAW 一样。关于标志的详细信息，请参见 
+《ObjectARX 参考手册》中的“Command Stack”。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果成功则返回 global-name 参数。如果 acedRegCmds->addCommand(...) 返回错误条件，则函数返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">下例中的 hello-autocad 函数没有 c: 前缀，但 vlax-add-cmd 将其作为 ObjectARX 
+类型的命令显示在 AutoCAD 命令行提示：</p> 
+<pre class="prog_in">_$ (defun hello-autocad () (princ &quot;hello Visual LISP&quot;))</pre>
+<pre class="prog_in">HELLO-AUTOCAD</pre>
+<pre class="prog_in">_$ (vlax-add-cmd &quot;hello-autocad&quot; 'hello-autocad)</pre>
+<pre class="prog_in_end">&quot;hello-autocad&quot;</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.366.htm">vlax-remove-cmd</a>  函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

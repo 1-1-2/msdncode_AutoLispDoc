@@ -1,0 +1,76 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vl-string-position</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-string-position</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">在字符串中查找具有指定 ASCII 码的字符</p> 
+<pre class="prog_in_end">(vl-string-position char-codestr [start-pos [from鈥慹nd鈥憄]])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">char-code</p>
+<p class="define_text">整数型，表示要查找的字符的代码。</p>
+<p class="define_head">str</p>
+<p class="define_text">要在其中搜索的字符串。</p>
+<p class="define_head">start-pos</p>
+<p class="define_text">字符串中开始搜索的位置（第一个字符的位置为 0）。缺省值为 0。</p> 
+<p class="define_head">from-end-p</p>
+<p class="define_text">如果该参数为 T，则搜索从字符串的结尾开始，到 pos 结束。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">整数，表示从字符串的开始，找到 char-code 的位置。如果未找到字符，则返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<pre class="prog_in">_$ (vl-string-position (ascii &quot;z&quot;) &quot;azbdc&quot;)</pre>
+<pre class="prog_in">1</pre>
+<pre class="prog_in">_$ (vl-string-position 122 &quot;azbzc&quot;)</pre>
+<pre class="prog_in">1</pre>
+<pre class="prog_in">_$ (vl-string-position (ascii &quot;x&quot;) &quot;azbzc&quot;)</pre>
+<pre class="prog_in_end">nil</pre>
+<p class="body">下例中的搜索字符串包含两个“z”字符，从左到右读取，第一个字符的位移为 0。在位移 1 处有一个 z，另一个 z 则在位移 3 
+处：</p>
+<pre class="prog_in">_$ (vl-string-position (ascii &quot;z&quot;) &quot;azbzlmnqc&quot;)</pre>
+<pre class="prog_in_end">1</pre>
+<p class="body">从左到右搜索（缺省情况），vl-string-position 首先遇到位移 1 处的“z”，但如果从右到左搜索，如下例所示，则首先遇到位移 3 处的“z”：</p> 
+<pre class="prog_in">_$ (vl-string-position (ascii &quot;z&quot;) &quot;azbzlmnqc&quot; nil t)</pre>
+<pre class="prog_in_end">3</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

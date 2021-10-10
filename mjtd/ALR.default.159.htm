@@ -1,0 +1,98 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>mem</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">mem</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">显示 AutoLISP 内存的当前状态</p> 
+<pre class="prog_in_end">(mem)</pre>
+<p class="body">mem 函数显示内存的使用状况统计。统计报告的第一行包含下列信息：</p> 
+<p class="define_head">GC calls</p>
+<p class="define_text">AutoLISP 开始以来清理节点表调用的次数。</p> 
+<p class="define_head">GC run time</p>
+<p class="define_text">清理节点表花费的总时间（微秒）。</p>
+<p class="body">LISP 对象在动态内存中进行分配。动态内存按段组织并划分为页。内存说明的开头是一行文字：“Dynamic memory segments statistics:”</p> 
+<p class="define_head">PgSz </p>
+<p class="define_text">动态内存页的大小 (KB)</p> 
+<p class="define_head">Used</p>
+<p class="define_text">已使用的页数。</p>
+<p class="define_head">Free</p>
+<p class="define_text">自由页（空页）的数目。</p>
+<p class="define_head">FMCL</p>
+<p class="define_text">自由页的最大连续区域。</p>
+<p class="define_head">Segs </p>
+<p class="define_text">已分配的段数。</p>
+<p class="define_head">Type</p>
+<p class="define_text">该段中已分配的对象类型的内部说明，包括：</p>
+<p class="define_text">LISP 堆栈：LISP 内部堆栈</p> 
+<p class="define_text">字节代码区域：生成的函数模块</p>
+<p class="define_text">CONS 内存：CONS 对象</p> 
+<p class="define_text">::new：要求使用该段的未分类内存请求</p>
+<p class="define_text">DM Str：动态字符串体</p> 
+<p class="define_text">DMxx 内存：所有其他 LISP 节点</p> 
+<p class="define_text">bstack 体：用于 IO 操作的内部结构</p> 
+<p class="body">报告的最后一行列出了最小段大小和已分配段的数目。AutoLISP 保留不超过三个自由段以便保存内存请求的系统调用。</p> 
+<p class="body">所有堆内存都是全局的，即所有 AutoCAD 文档共享同一个堆。这一特性在后续版本的 AutoCAD 中可能会有所变化。</p> 
+<p class="body">请注意，mem 函数不会列出所有来自操作系统的内存请求，而只列出向 AutoLISP DM 子系统发出的请求。有些 AutoLISP 类不使用 DM 进行内存分配。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">
+<span class="CharCourier">nil</span>
+</p>
+<p class="Heading-2">示例</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(mem)</span> 
+</p>
+<pre class="prog_in">; GC calls: 23; GC run time: 298 ms</pre>
+<pre class="prog_in">Dynamic memory segments statistic:</pre>
+<pre class="prog_in">PgSz  Used  Free  FMCL  Segs  Type</pre>
+<pre class="prog_in"> 512    79    48    48     1  lisp stacks</pre>
+<pre class="prog_in"> 256  3706   423   142    16  bytecode area</pre>
+<pre class="prog_in">4096   320    10    10    22  CONS memory</pre>
+<pre class="prog_in">  32   769  1213  1089     1  ::new</pre>
+<pre class="prog_in">4096   168    12    10    12  DM Str</pre>
+<pre class="prog_in">4096   222     4     4    15  DMxx memory</pre>
+<pre class="prog_in"> 128     4   507   507     1  bstack body</pre>
+<pre class="prog_in">Segment size: 65536, total used: 68, free: 0</pre>
+<pre class="prog_in_end">nil</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

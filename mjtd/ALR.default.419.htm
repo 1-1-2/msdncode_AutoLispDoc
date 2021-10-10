@@ -1,0 +1,61 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vlr-trace-reaction</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlr-trace-reaction</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">预定义回调函数，在“跟踪”窗口显示一个或多个回调参数</p>
+<pre class="prog_in_end">(vlr-trace-reaction)</pre>
+<p class="body">该函数可以作为调试工具来验证是否已被触发反应器。</p>
+<p class="Heading-2">示例</p>
+<p class="body">定义命令反应器，并将 vlr-trace-reaction 指定为回调函数：</p> 
+<pre class="prog_in">_$  (VLR-Reaction-Set (VLR-Command-Reactor) :VLR-commandWillStart 'VLR-trace-reaction)</pre>
+<pre class="prog_in_end">VLR-trace-reaction</pre>
+<p class="body">在 AutoCAD 命令行中输入下列命令：</p> 
+<pre class="prog_in_end">_.LINE</pre>
+<p class="body">响应命令提示。然后，激活 VLISP 窗口并打开“跟踪”窗口。在“跟踪”窗口中可以见到：</p> 
+<pre class="prog_in_end">; &quot;Reaction&quot;: :VLR-commandWillStart; &quot;argument list&quot;: (#&lt;VLR-COMMAND-REACTOR&gt; (&quot;LINE&quot;))</pre>
+<p class="body">vlr-trace-reaction 的输出代表触发反应器的事件类型、反应器类型和触发反应器的命令。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

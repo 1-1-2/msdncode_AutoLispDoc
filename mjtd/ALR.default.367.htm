@@ -1,0 +1,94 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vlax-safearray-fill</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlax-safearray-fill</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">在 SafeArray 的元素中存储数据</p> 
+<pre class="prog_in_end">(vlax-safearray-fill var 'element-values)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">var</p>
+<p class="define_text">变量，其数据类型为 SafeArray。</p> 
+<p class="define_head">&rsquo;element-values</p>
+<p class="define_text">要存储在数组中的值表。指定的值的数目可以和数组元素的数目一样多。如果指定的值的数目少于数组中元素的个数，剩余的元素将保持当前值。</p>
+<p class="define_text">对于多维数组，element-values 必须为表的列表，其中每个表对应于数组中的一维。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">
+<span class="CharItalic">var</span>
+</p>
+<p class="Heading-2">示例</p>
+<p class="body">创建一个一维双精度数组：</p>
+<pre class="prog_in">_$ (setq sa (vlax-make-safearray vlax-vbdouble '(0 . 2)))</pre>
+<pre class="prog_in_end">#&lt;safearray...&gt;</pre>
+<p class="body">使用 vlax-safearray-fill 填满数组：</p> 
+<pre class="prog_in">_$ (vlax-safearray-fill sa '(1 2 3))</pre>
+<pre class="prog_in_end">#&lt;safearray...&gt;</pre>
+<p class="body">列出数组的内容：</p>
+<pre class="prog_in">_$ (vlax-safearray-&gt;list sa)</pre>
+<pre class="prog_in_end">(1.0 2.0 3.0)</pre>
+<p class="body">用 vlax-safearray-fill 设置数组中的第一个元素：</p> 
+<pre class="prog_in">_$ (vlax-safearray-fill sa '(-66))</pre>
+<pre class="prog_in_end">#&lt;safearray...&gt;</pre>
+<p class="body">列出数组的内容：</p>
+<pre class="prog_in">_$ (vlax-safearray-&gt;list sa)</pre>
+<pre class="prog_in_end">(-66.0 2.0 3.0)</pre>
+<p class="body">请注意只有数组中的第一个元素被修改了，而其他元素的值没有被改变。如果需要改变第二个或第三个元素，而保留第一个元素的值，可以使用 vlax-put-element 函数。</p> 
+<p class="body">用 vlax-safearray-fill 设置数组中的四个元素，而该数组中仅包含三个元素：</p> 
+<pre class="prog_in">_$ (vlax-safearray-fill sa '(1 2 3 4))</pre>
+<p>错误：声明失败：safearray-fill 失败。元素太多。</p> 
+<p>如果指定的元素个数大于数组中包含的元素个数，vlax-safearray-fill 函数返回错误信息。</p> 
+<p>要指定多维数组的值，可以为 vlax-safearray-fill 指定一个由表组成的表，该表中的每个子表对应于数组的一维。下面的命令创建一个二维字符串数组，其中每维都包含三个元素：</p> 
+<pre class="prog_in">_$ (setq mat2 (vlax-make-safearray vlax-vbString '(0 . 1) '(1 . 3)))</pre>
+<pre class="prog_in_end">#&lt;safearray...&gt;</pre>
+<p class="body">使用 vlax-safearray-fill 填满数组：</p> 
+<pre class="prog_in">_$ (vlax-safearray-fill mat2 '((&quot;a&quot; &quot;b&quot; &quot;c&quot;) (&quot;d&quot; &quot;e&quot; &quot;f&quot;)))</pre>
+<pre class="prog_in_end">#&lt;safearray...&gt;</pre>
+<p class="body">调用 vlax-safearray->list 函数确认 mat2 的内容：</p> 
+<pre class="prog_in">_$ (vlax-safearray-&gt;list mat2)</pre>
+<pre class="prog_in_end">((&quot;a&quot; &quot;b&quot; &quot;c&quot;) (&quot;d&quot; &quot;e&quot; &quot;f&quot;))</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.356.htm">vlax-make-safearray</a>、 <a href="ALR.default.368.htm">vlax-safearray-get-dim</a>、 <a href="ALR.default.369.htm">vlax-safearray-get-element</a>、<a href="ALR.default.370.htm">vlax-safearray-get-l-bound</a>、 <a href="ALR.default.371.htm">vlax-safearray-get-u-bound</a>、 <a href="ALR.default.372.htm">vlax-safearray-put-element</a>、 <a href="ALR.default.373.htm">vlax-safearray-type</a>、 <a href="ALR.default.374.htm">vlax-safearray-&gt;list</a> 
+和&nbsp; <a href="ALR.default.379.htm">vlax-variant-value</a>  函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

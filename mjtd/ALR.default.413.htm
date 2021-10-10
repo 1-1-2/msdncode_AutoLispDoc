@@ -1,0 +1,94 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>vlr-reactors</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vlr-reactors</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">返回由现有反应器组成的表</p>
+<pre class="prog_in_end">(vlr-reactors [reactor-type...])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">reactor-type</p>
+<p class="define_text">下列参数中的一个或多个：</p>
+<p class="define_text">:VLR-AcDb-Reactor</p>
+<p class="define_text">:VLR-Command-Reactor</p>
+<p class="define_text">:VLR-DeepClone-Reactor</p>
+<p class="define_text">:VLR-DocManager-Reactor</p>
+<p class="define_text">:VLR-DWG-Reactor</p>
+<p class="define_text">:VLR-DXF-Reactor</p>
+<p class="define_text">:VLR-Editor-Reactor</p>
+<p class="define_text">:VLR-Insert-Reactor</p>
+<p class="define_text">:VLR-Linker-Reactor</p>
+<p class="define_text">:VLR-Lisp-Reactor</p>
+<p class="define_text">:VLR-Miscellaneous-Reactor</p>
+<p class="define_text">:VLR-Mouse-Reactor</p>
+<p class="define_text">:VLR-Object-Reactor</p>
+<p class="define_text">:VLR-SysVar-Reactor</p>
+<p class="define_text">:VLR-Toolbar-Reactor</p>
+<p class="define_text">:VLR-Undo-Reactor</p>
+<p class="define_text">:VLR-Wblock-Reactor</p>
+<p class="define_text">:VLR-Window-Reactor</p>
+<p class="define_text">:VLR-XREF-Reactor</p>
+<p class="body">如果指定了 reactor-type 参数，vlr-reactors 返回由指定类型反应器组成的表。如果省略 reactor-type，vlr-reactors 返回所有现有的反应器。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">由反应器表组成的表。如果没有指定任何反应器类型，则返回 nil。每个反应器表的开始部分是一个表示反应器类型的符号，后面是指向每个该类型反应器的指针。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">列出图形中的所有反应器：</p>
+<pre class="prog_in">_$ (vlr-reactors)</pre>
+<pre class="prog_in_end">((:VLR-Object-Reactor #&lt;VLR-Object-Reactor&gt;) (:VLR-Editor-Reactor #&lt;VLR-Editor-Reactor&gt;))</pre>
+<p class="body">列出所有的对象反应器：</p>
+<pre class="prog_in">_$ (vlr-reactors :vlr-object-reactor)</pre>
+<pre class="prog_in_end">((:VLR-Object-Reactor #&lt;VLR-Object-Reactor&gt;))</pre>
+<p class="body">vlr-reactors 返回一个由反应器表组成的表。</p> 
+<p class="body">列出所有数据库反应器：</p>
+<pre class="prog_in">_$ (vlr-reactors :vlr-acdb-reactor)</pre>
+<pre class="prog_in_end">nil</pre>
+<p class="body">没有定义数据库反应器。</p>
+<p class="body">列出所有 DWG 反应器：</p> 
+<pre class="prog_in">_$ <span class="CharCourierBold">(vlr-reactors
+:vlr-dwg-reactor)</span>
+</pre>
+<pre class="prog_in_end">((:VLR-DWG-Reactor #&lt;VLR-DWG-Reactor&gt; #&lt;VLR-DWG-Reactor&gt;))</pre>
+<p class="body">vlr-reactors 返回由 DWG 反应器表组成的表。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

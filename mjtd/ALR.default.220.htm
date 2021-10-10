@@ -1,0 +1,157 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>sssetfirst</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">sssetfirst </div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">设置哪些对象既是被选取的又是被夹取的</p>
+<pre class="prog_in_end">(sssetfirst gripset[pickset]) </pre>
+<p class="body">gripset 参数指定的选择集中的对象是被夹取的，而 pickset 参数指定的选择集中的对象是既被夹取的又被选取的。如果两个选择集有公共部分（即某些对象同时属于这两个选择集）， sssetfirst 函数将只选择和夹取 pickset 指定的选择集（而不夹取 gripset 选择集）。</p> 
+<p class="body">在使用该函数时，需要由用户构建有效的选择集。例如，可能需要确认在选择集中不包含背景图纸空间视口（DXF 组码为 69），或者确定选定的对象属于当前布局，如下述代码所示：</p> 
+<pre class="prog_in_end">(setq ss (ssget (list (cons 410 (getvar &quot;ctab&quot;)))))</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">gripset</p>
+<p class="define_text">要夹取的选择集。如果 gripset 为 nil 且已指定 pickset，则 sssetfirst 夹取并选择 pickset。如果 gripset 为 nil 
+且未指定 pickset，则 sssetfirst 关闭原来打开的夹点句柄和选择集。</p> 
+<p class="define_head">pickset</p>
+<p class="define_text">将被选择的选择集。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">选择集或指定的集。</p>
+<p class="Heading-2">示例</p>
+<p class="body">首先，绘制一个正方形并建立三个选择集。开始实现绘制边 1，并创建一个包含该线的选择集：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(entmake (list (cons
+0 "line") '(10 0.0 0.0 0.0)'(11 0.0 10.0 0.0)))</span>
+</p>
+<p class="prompt_end">((0 . "line") (10 0.0
+0.0 0.0) (11 0.0 10.0 0.0))</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(setq gripset (ssget
+"_l"))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+a5&gt;</p>
+<p class="body">变量 gripset 指向创建的选择集。</p> 
+<p class="body">绘制边 2 并将其添加到 gripset 选择集：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(entmake (list (cons
+0 "line") '(10 0.0 10.0 0.0)'(11 10.0 10.0 0.0)))</span>
+</p>
+<p class="prompt_end">((0 . "line") (10 0.0
+10.0 0.0) (11 10.0 10.0 0.0))</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(ssadd (entlast)
+gripset)</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+a5&gt;</p>
+<p class="body">创建另一个选择集，使之仅包含边 2：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq 2onlyset (ssget
+"_l"))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+a8&gt;</p>
+<p class="body">绘制边 3 并将其添加到 gripset 选择集：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(entmake (list (cons
+0 "line") '(10 10.0 10.0 0.0)'(11 10.0 0.0 0.0)))</span>
+</p>
+<p class="prompt_end">((0 . "line") (10 10.0
+10.0 0.0) (11 10.0 0.0 0.0))</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(ssadd (entlast)
+gripset)</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+a5&gt;</p>
+<p class="body">创建另一个选择集，使之仅包含边 3：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(setq pickset (ssget
+"_l"))</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+ab&gt;</p>
+<p class="body">变量 pickset 指向新的选择集。</p> 
+<p class="body">绘制边 4 并将其添加到 gripset 和 pickset 选择集：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(entmake (list (cons
+0 "line") '(10 10.0 0.0 0.0)'(11 0.0 0.0 0.0)))</span>
+</p>
+<p class="prompt_end">((0 . "line") (10 10.0
+0.0 0.0) (11 0.0 0.0 0.0))</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(ssadd (entlast)
+gripset)</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+a5&gt;</p>
+<p class="prompt_end">命令： <span class="CharSansBold">(ssadd (entlast)
+pickset)</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+ab&gt;</p>
+<p class="body">这时，gripset 包含边 1-4，pickset 包含边 3 和 4，2onlyset 仅包含边 2。</p> 
+<p class="body">打开 gripset 选择集中所有对象的夹点句柄：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(sssetfirst gripset)</span>
+</p>
+<p class="prompt_end">(&lt;Selection set:
+a5&gt;)</p>
+<p class="body">关闭 gripset 中所有对象的夹点句柄：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(sssetfirst nil)</span>
+</p>
+<p class="prompt_end">(nil)</p>
+<p class="body">打开夹点句柄并选择 pickset 中的所有对象：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(sssetfirst nil pickset)</span>
+</p>
+<p class="prompt_end">(nil &lt;Selection
+set: ab&gt;)</p>
+<p class="body">打开 2onlyset 中所有对象的夹点句柄，并选择 pickset 中的所有对象：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(sssetfirst 2onlyset
+pickset)</span>
+</p>
+<p class="prompt_end">(&lt;Selection set:
+a8&gt; &lt;Selection set: ab&gt;)</p>
+<p class="body">每次调用 sssetfirst 都替换了上一次调用 sssetfirst 夹取和选择的选择集。例如，在执行下述命令后，2onlyset 中的夹点打开，而没有选定选择集：</p> 
+<p class="prompt_end">命令： <span class="CharSansBold">(sssetfirst 2onlyset</span>
+</p>
+<p class="prompt_end">(&lt;Selection set:
+a8&gt;)</p>
+<p class="note">
+<span class="note_char">注意</span>&nbsp;不要在 AutoCAD 执行命令的过程中调用 sssetfirst。</p> 
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.214.htm">ssget</a> 和 <a href="ALR.default.215.htm">ssgetfirst</a>  
+函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

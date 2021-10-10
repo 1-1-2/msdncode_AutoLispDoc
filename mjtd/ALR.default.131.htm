@@ -1,0 +1,251 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>grread</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">grread</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">从 AutoCAD 的任何一种输入设备中读取数值</p> 
+<pre class="prog_in_end">(grread [track] [allkeys [curtype]]) </pre>
+<p class="body">只有特殊用途的 AutoLISP 应用程序才需调用本函数，AutoLISP 的大多数输入应使用各种 getxxx 函数来完成。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">track</p>
+<p class="define_text">如果提供该参数且其值不为 nil，则输入设备移动时，本函数能从定点设备中返回坐标。</p> 
+<p class="define_head">allkeys</p>
+<p class="define_text">整数型，决定 grread 要执行的功能。allkeys 的几个位值相加可以获得组合功能。可以指定如下值：</p> 
+<p class="define_text">
+<span class="CharSansBold">1 </span> （位0）  返回“拖动模式”坐标。如果设置了该位，而且用户只是移动定点设备而没有按下按钮或键盘，grread 函数就返回一个表，其第一个成员是类型代码 5，第二个成员是当前定点设备（鼠标或数字化仪）的位置坐标 (X,Y)，这就是 AutoCAD 
+实现拖动的方法。</p>
+<p class="define_text"><span class="CharSansBold">2 </span> （位1）  返回所有的键值，包括功能键和光标键代码，用户按下光标键时并不移动光标。</p> 
+<p class="define_text"><span class="CharSansBold">4</span> （位2）  使用 curtype 参数传来的值控制光标的显示。</p> 
+<p class="define_text"><span class="CharSansBold">8 </span> （位3）  在用户按下 ESC 键时不显示相应错误信息。</p> 
+<p class="define_head">curtype</p>
+<p class="define_text">整数型，表明显示光标的类型。只有当 allkeys 参数的第二位为 1 时 curtype 参数才有效。该参数只控制当前 grread 函数调用时显示的光标类型。可以指定下列 curtype 值：</p> 
+<p class="define_text">
+<span class="CharSansBold">0</span>  显示普通十字光标。</p>
+<p class="define_text"><span class="CharSansBold">1</span>  不显示光标（无十字光标）。</p>
+<p class="define_text"><span class="CharSansBold">2</span>  显示对象选择光标。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">grread 函数返回一个表，其中第一个元素说明输入类型的代码，第二个元素既可能是整数，又可能是点，这取决于输入的类型。其返回值列表如下：</p> 
+<table class="BasicLeft" rules="cols" cellspacing="0">
+<thead>
+<tr class="row_0">
+<th colspan="4">
+<p class="table_heading">grread 函数的返回值 </p> 
+</th>
+</tr>
+<tr class="row_0">
+<th colspan="2">
+<p class="table_heading">第一个元素 </p>
+</th><th colspan="2">
+<p class="table_heading">第二个元素</p>
+</th>
+</tr>
+<tr class="row_0">
+<th>
+<p class="table_heading">值</p>
+</th><th>
+<p class="table_heading">输入类型&nbsp;</p>
+</th><th>
+<p class="table_heading">值&nbsp;</p>
+</th><th>
+<p class="table_heading">说明</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">2</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">键盘输入</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">各种&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">字符代码</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">3</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">选定点</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">三维点&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">点坐标</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">4</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">屏幕/下拉菜单项（通过定点设备选取）
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	0 至 999<br>
+1001 至 1999<br>
+2001 至 2999<br>
+3001 至 3999<br> 
+如此直到<br>
+16001 至 16999&nbsp;<br>
+</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">屏幕菜单项号<br>
+POP1 菜单项号<br> 
+POP2 菜单项号<br> 
+POP3 菜单项号<br> 
+....如此直到<br>
+POP16 菜单项号</p> 
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">5</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">定点设备（仅在指定跟踪设备时返回）
+</td><td class="BasicLeft_CELL">
+<p class="table_body">三维点&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">	拖动模式坐标</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">6</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">BUTTONS 菜单项</p> 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 至 999</p>
+<p class="table_body">1000 至 1999</p>
+<p class="table_body">2000 至 2999</p>
+<p class="table_body">3000 至 3999</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">BUTTONS1 菜单按钮号</p>
+<p class="table_body">BUTTONS2 菜单按钮号</p>
+<p class="table_body">BUTTONS3 菜单按钮号</p>
+<p class="table_body">BUTTONS4 菜单按钮号</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">7</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">TABLET1 菜单项</p> 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 至 32767&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">数字化仪菜单的单元号</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">8</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">TABLET2 菜单项</p> 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 至 32767&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">数字化仪菜单的单元号</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">9</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">TABLET3 菜单项</p> 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 至 32767&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">数字化仪菜单的单元号</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">10</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">TABLET4 菜单项</p> 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 至 32767&nbsp;</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">数字化仪菜单的单元号</p>
+</td>
+</tr>
+<tr class="row_2">
+<td class="BasicLeft_CELL">
+<p class="table_body">11</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">AUX 菜单项</p> 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">0 至 999</p>
+<p class="table_body">1000 至 1999</p>
+<p class="table_body">2000 至 2999</p>
+<p class="table_body">3000 至 3999</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">AUX1 菜单按钮号</p>
+<p class="table_body">AUX2 菜单按钮号</p>
+<p class="table_body">AUX3 菜单按钮号</p>
+<p class="table_body">AUX4 菜单按钮号</p>
+</td>
+</tr>
+<tr class="row_1">
+<td class="BasicLeft_CELL">
+<p class="table_body">12</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">定点设备按钮（在类型 6或类型 11 后返回） 
+</td><td class="BasicLeft_CELL">
+<p class="table_body">三维点</p>
+</td><td class="BasicLeft_CELL">
+<p class="table_body">点坐标</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="body">使用 grread 处理用户输入</p> 
+<p>当 grread 函数调用处于激活状态时，按下 ESC 键便可通过键盘中断 AutoLISP 程序的运行（除非指定的 allkeys 参数不允许这样做）。任何其他的输入都直接传给 grread 
+函数，这使得应用程序控制所有的输入设备。</p>
+<p>如果用户在屏幕菜单项或下拉式菜单项上按下定点设备按钮，grread 函数返回一个类型为 6 或 11 的代码，但在随后的调用中，它并不返回类型代码 12。因为只有在屏幕的绘图区域中按下定点设备按钮，类型代码 12 才会跟随在类型代码 6 或 11 之后返回。</p> 
+<p>在试图用定点设备按钮或辅助按钮执行另一操作之前，将类型代码 12 的数据从缓冲区中清除，是非常重要的。为了做到这一点，可以执行如下嵌套的 grread 函数调用：</p> 
+<p>(setq code_12 (grread (setq code (grread))))</p>
+<p>上述代码就象从输入流设备上获取输入一样，获取类型代码 12 的值表。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

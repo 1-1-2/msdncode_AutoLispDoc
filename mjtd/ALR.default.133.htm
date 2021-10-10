@@ -1,0 +1,85 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>grvecs</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">grvecs</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">在图形屏幕上绘制多个矢量</p>
+<pre class="prog_in_end">(grvecs vlist [trans]) </pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">vlist</p>
+<p class="define_text">由一系列的可选颜色代码（整数）和两个点表组成的矢量表。关于设置 vlist 格式的详细信息，请参见矢量表格式。</p> 
+<p class="define_head">trans</p>
+<p class="define_text">转换矩阵，用来改变定义在矢量表中的矢量位置或比例。它是由四个子表组成的，每个子表又由四个实数组成。</p>
+<p class="Heading-2">返回值</p>
+<p class="body">
+<span class="CharCourier">nil</span>
+</p>
+<p class="body">矢量表格式</p>
+<p class="body">vlist 的格式为：</p> 
+<pre class="prog_in_end">([color1] from1 to1 [color2] from2 to2 ...) </pre>
+<p class="body">颜色值可以作用于随后的所有矢量，直到 vlist 指定另一种颜色为止。<br> 
+AutoCAD 颜色代码的取值范围是 0 到 255。如果颜色代码值大于 255，则后续矢量会以 XOR（异或）方式显示，也就是以取补颜色生成被该矢量覆盖的对象。而且当矢量被覆盖时，它自身会消失。如果颜色代码小于 0，将亮显后续矢量。亮显方式取决于显示设备，大多数显示设备用虚线表示亮显，但某些显示设备是用一种有区别的颜色来表示。</p> 
+<p class="body">两个点表 from 和 to 指定矢量的两个端点，它们是以当前 UCS 表示的。这些点可以是二维点或三维点。必须把矢量的两个端点作为一对点（即两个连续的点表）来传送，否则，对 grvecs 函数的调用将会失败。</p> 
+<p class="body">AutoCAD 会将矢量进行裁剪以适应屏幕。</p> 
+<p class="Heading-2">示例</p>
+<p class="body">下列代码在图形屏幕上显示五条垂直矢量，而且每条颜色各不相同：</p>
+<pre class="prog_in">(grvecs '(1 (1 2)(1 5)       绘制从 (1,2) 到 (1,5) 的红线 </pre>
+<pre class="prog_in">          2 (2 2)(2 5)       绘制从 (2,2) 到 (2,5) 的黄线 </pre>
+<pre class="prog_in">          3 (3 2)(3 5)       绘制从 (3,2) 到 (3,5) 的绿线 </pre>
+<pre class="prog_in">          4 (4 2)(4 5)       绘制从 (4,2) 到 (4,5) 的青线</pre>
+<pre class="prog_in">          5 (5 2)(5 5)       绘制从 (5,2) 到 (5,5) 的蓝线 </pre>
+<pre class="prog_in_end">) )</pre>
+<p class="body">以下矩阵表示以 1.0 的比例作统一的比例缩放并作偏移量为 (5.0,5.0,0.0) 的平移。如果将该矩阵作用到上述矢量上，它们将被平移 (5.0,5.0,0.0)。</p> 
+<pre class="prog_in">'((1.0 0.0 0.0 5.0)</pre>
+<pre class="prog_in">   (0.0 1.0 0.0 5.0)</pre>
+<pre class="prog_in">   (0.0 0.0 1.0 0.0)</pre>
+<pre class="prog_in">   (0.0 0.0 0.0 1.0)</pre>
+<pre class="prog_in_end">)</pre>
+<p class="see_also">参阅</p>
+<p class="body">关于转换矩阵的详细信息，请参见 <a href="ALR.default.169.htm">nentselp</a> 
+函数，关于在两点间绘制矢量，请参见 <a href="ALR.default.130.htm">grdraw</a>  
+函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

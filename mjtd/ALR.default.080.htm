@@ -1,0 +1,72 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>distof</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">distof</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">将一个表示实（浮点）数的字符串转换成一个实数</p>
+<pre class="prog_in_end">(distof string [mode])</pre>
+<p class="body">distof 函数和 rtos 函数是一对互补函数。如果将 rtos 函数的返回值作为参数传给 distof，distof 必返回一个有效值，反之亦然（假定 mode 参数的值相同）。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">string</p>
+<p class="define_text">要转换的字符串。该参数必须能按 mode 指定的单位由 distof 正确地进行语法分析。它既可以与 rtos 函数返回字符串具有相同的形式，也可以是 AutoCAD 允许的键盘输入格式。 </p> 
+<p class="define_head">mode</p>
+<p class="define_text">字符串所用格式的单位，它的值应与 AutoCAD 的系统变量 LUNITS 的允许取值相对应，其取值如下表所示：</p> 
+<p class="define_text">
+<span class="CharSansBold">1</span>  科学</p>
+<p class="define_text">
+<span class="CharSansBold">2</span>  小数</p>
+<p class="define_text">
+<span class="CharSansBold">3</span>  工程（英尺和小数英寸）</p>
+<p class="define_text">
+<span class="CharSansBold">4</span>  建筑（英尺和分数英寸）</p>
+<p class="define_text">
+<span class="CharSansBold">5</span>  分数</p>
+<p class="Heading-2">返回值</p>
+<p class="body">如果操作成功，则返回实数，否则返回 nil。<br> 
+</p>
+<p class="note">
+<span class="note_char">注意</span>&nbsp;distof 函数将方式代码 3 和方式代码 4 同等对待。即，如果 mode 为 3（工程）或 4（建筑）单位，而且 string 为两种格式之一，则 distof 将返回正确的实数值。</p> 
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

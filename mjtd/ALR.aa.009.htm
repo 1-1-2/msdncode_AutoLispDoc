@@ -1,0 +1,152 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>lslib</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.aa.001.htm"><span class="BookTitleLink">明经通道 外部定义命令</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 外部定义命令&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.aa.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">lslib</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">管理配景库（外部定义：render ARX 应用程序）</p>  
+<pre class="prog_in_end">(c:lslib mode [options])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">mode</p>
+<p class="define_text">mode 参数的有效值为：</p>  
+<p class="define_text">
+<span class="CharSansBold">ADD</span>  向配景库中添加项目</p> 
+<p class="define_text">
+<span class="CharSansBold">DELETE</span>  从配景库中删除项目</p> 
+<p class="define_text">
+<span class="CharSansBold">MODIFY</span>  修改配景库中的项目</p> 
+<p class="define_text">
+<span class="CharSansBold">OPEN</span> 打开配景库</p>  
+<p class="define_text">
+<span class="CharSansBold">SAVE</span>  保存当前的配景库</p> 
+<p class="define_text">
+<span class="CharSansBold">LIST</span>  列出当前配景库中的项目</p> 
+<p class="define_head">options</p>
+<p class="define_text">options 参数的有效值决定于 mode，因此对每种模式单独列出。</p>  
+<p class="body">ADD</p>
+<p class="body">向当前配景库中添加项目。</p>
+<pre class="prog_in_end">(c:lslib &quot;ADD&quot; name texture-map opacity-map alignment)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定配景库中项目的名称。</p>
+<p class="define_head">texture-map</p>
+<p class="define_text">字符串，指定项目的图像文件名。</p>
+<p class="define_head">opacity-map</p>
+<p class="define_text">字符串，指定项目的不透明图像文件名。</p>
+<p class="define_head">alignment</p>
+<p class="define_text">整数，指定项目的几何图形和对齐方式。有效值为：
+</p>
+<p class="define_text">
+<span class="CharSansBold">0</span>  单一表面相机对齐</p> 
+<p class="define_text">
+<span class="CharSansBold">1</span>  单一表面非相机对齐</p> 
+<p class="define_text">
+<span class="CharSansBold">2</span>  跨越表面非相机对齐</p> 
+<p class="define_text">
+<span class="CharSansBold">3</span>  跨越表面相机对齐</p> 
+<p class="body">这些参数都没有缺省值。</p>
+<p class="Heading-2">示例</p>
+<p class="body">向当前配景库中添加名为“Maple tree”的项目：</p>  
+<pre class="prog_in_end">(c:lslib &quot;ADD&quot; &quot;Maple tree&quot; &quot;maple.tga&quot; &quot;mapleo.tga&quot; 0)</pre>
+<p class="body">DELETE</p>
+<p class="body">从当前配景库中删除项目。</p>
+<pre class="prog_in_end">(c:lslib &quot;DELETE&quot; name)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定配景库中项目的名称。</p>
+<p class="Heading-2">示例</p>
+<p class="body">从当前配景库中删除名为“Maple tree”的项目：</p>  
+<pre class="prog_in_end">(c:lslib &quot;delete&quot; &quot;Maple tree&quot;)</pre>
+<p class="body">MODIFY</p>
+<pre class="prog_in_end">(c:lslib &quot;MODIFY&quot; name texture-map [opacity-map [alignment]])</pre>
+<p class="body">修改当前配景库中的项目。texture-map、opacity-map 和 alignment 参数为空时，它们的值保持不变。</p>  
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定配景库中项目的名称。</p>
+<p class="define_head">texture-map</p>
+<p class="define_text">字符串，指定项目的图像文件名。</p>
+<p class="define_head">opacity-map</p>
+<p class="define_text">字符串，指定项目的不透明图像文件名。</p>
+<p class="define_head">alignment</p>
+<p class="define_text">整数，指定项目的几何图形和对齐方式。有效值为：</p>
+<p class="define_text">
+<span class="CharSansBold">0</span>  单一表面相机对齐</p> 
+<p class="define_text">
+<span class="CharSansBold">1</span>  单一表面非相机对齐</p> 
+<p class="define_text">
+<span class="CharSansBold">2</span>  跨越表面非相机对齐</p> 
+<p class="define_text">
+<span class="CharSansBold">3</span>  跨越表面相机对齐</p> 
+<p class="body">这些参数都没有缺省值。</p>
+<p class="Heading-2">示例</p>
+<p class="body">将“Maple tree”的对齐方式改为跨越表面非相机对齐：</p>  
+<pre class="prog_in_end">(c:lslib &quot;MODIFY&quot; &quot;Maple tree&quot; nil nil 2)</pre>
+<p class="body">OPEN</p>
+<p class="body">打开新的配景库，并使其成为当前配景库。</p>
+<pre class="prog_in_end">(c:lslib &quot;OPEN&quot; name)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定要打开的配景库的名称。</p>
+<p class="Heading-2">示例</p>
+<p class="body">打开 TREES.LLI 文件，并使其成为当前配景库：</p>  
+<pre class="prog_in_end">(c:lslib &quot;OPEN&quot; &quot;TREES.LLI&quot;)</pre>
+<p class="body">SAVE</p>
+<p class="body">将当前配景库另存为命名文件。</p>
+<pre class="prog_in_end">(c:lslib &quot;SAVE&quot; name)</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">name</p>
+<p class="define_text">字符串，指定配景库文件的名称。</p>
+<p class="Heading-2">示例</p>
+<p class="body">文件保存为 TREES.LLI：</p>  
+<pre class="prog_in_end">(c:lslib &quot;SAVE&quot; &quot;TREES.LLI&quot;)</pre>
+<p class="body">LIST</p>
+<p class="body">列出当前配景库中的所有元素。此命令不接受任何参数。列表内容为 _("NAME" "TEX-MAP" "OP-MAP" ALIGN) 形式的配景项目。</p>  
+<pre class="prog_in_end">(c:lslib &quot;LIST&quot;)</pre>
+<p class="Heading-2">示例</p>
+<p class="body">LIST 选项的输出样例如下：</p>  
+<pre class="prog_in">((&quot;Bush #1&quot; &quot;8bush02l.tga&quot; &quot;8bush02o.tga&quot; 0) </pre>
+<pre class="prog_in">(&quot;Cactus&quot; &quot;8plnt15l.tga&quot; &quot;8plnt15o.tga&quot; 0) </pre>
+<pre class="prog_in_end">(&quot;Dawn Redwood&quot; &quot;8tree39l.tga&quot; &quot;8tree39o.tga&quot; 0))</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

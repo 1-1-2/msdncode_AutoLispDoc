@@ -1,0 +1,77 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>defun-q</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">defun-q</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">将函数定义为表</p>
+<pre class="prog_in_end">(defun-q sym ([arguments] [/ variables...]) expr...) </pre>
+<p class="body">defun-q 函数是仅仅出于与早期版本 AutoLISP 的兼容性考虑而设置的，不能用作其他用途。在需要访问定义为表结构的函数时，可以使用 defun-q。这种使用方式与早期非编译 AutoLISP 版本中 defun 的实现方式一致。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">sym</p>
+<p class="define_text">用于命名函数的符号。</p>
+<p class="define_head">arguments</p>
+<p class="define_text">函数中需要的形式参数名。</p>
+<p class="define_head">/ variables</p>
+<p class="define_text">函数使用的一个或多个局部变量名。</p>
+<p class="define_text">局部变量名称前的斜线和第一个局部名称之间，以及该斜线和最后一个参数（如果存在的话）之间，都必须保持至少一个空格的距离。</p>
+<p class="define_head">expr</p>
+<p class="define_text">执行函数时要执行的任意数目 AutoLISP 表达式。</p> 
+<p class="body">如果没有声明任何参数或局部符号，则在函数名称后必须使用空括号。</p>
+<p class="body">如果指定了重复的参数或符号名称，AutoLISP 使用第一个出现的名称，而忽略其他的名称。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">最后计算的表达式的值。</p>
+<p class="Heading-2">示例</p>
+<pre class="prog_in">_$ (defun-q my-startup (x) (print (list x)))</pre>
+<pre class="prog_in">MY-STARTUP</pre>
+<pre class="prog_in">_$ (my-startup 5)</pre>
+<pre class="prog_in_end">(5) (5)</pre>
+<p class="body">使用 defun-q-list-ref 显示 my-startup 的表结构：</p> 
+<pre class="prog_in">_$ (defun-q-list-ref 'my-startup)</pre>
+<pre class="prog_in_end">((X) (PRINT (LIST X)))</pre>
+<p class="see_also">参阅</p>
+<p class="body"> <a href="ALR.default.070.htm">defun-q-list-ref</a> 和 <a href="ALR.default.071.htm">defun-q-list-set</a>  
+函数。</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>

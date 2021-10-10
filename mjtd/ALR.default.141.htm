@@ -1,0 +1,77 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>inters</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">inters</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">求两条直线的交点</p>
+<pre class="prog_in_end">(inters pt1 pt2 pt3 pt4 [onseg]) </pre>
+<p class="body">所有的点都以当前 UCS 表示，如果提供的四个点都是三维点，inters 函数检查三维交点。只要所提供的点中有一个是二维点，inters 函数就将这两条线投影到当前构造平面上，仅检查二维交点。</p> 
+<p class="Heading-2">参数</p>
+<p class="define_head">pt1</p>
+<p class="define_text">第一条直线的端点。</p>
+<p class="define_head">pt2</p>
+<p class="define_text">第一条直线的另一端点。</p>
+<p class="define_head">pt3</p>
+<p class="define_text">第二条直线的端点。</p>
+<p class="define_head">pt4</p>
+<p class="define_text">第二条直线的另一端点。</p>
+<p class="define_head">onseg</p>
+<p class="define_text">如果指定为 nil，则由四个 pt 参数定义的两条线被认为是无限长的。如果省略 onseg 参数或其值不为 nil，则交点必须同时位于两条线上，否则 inters 返回 nil。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">如果 onseg 参数存在且为 nil，则 inters 返回交点坐标，即使这个交点不在其中的一条线（或者两条线）的端点范围之内。如果忽略 onseg 参数或其值不为 nil，则交点必须同时位于两条线上，否则 inters 返回 nil。如果两条直线不相交，inters 函数返回 nil。</p> 
+<p class="Heading-2">示例</p>
+<pre class="prog_in">(setq a '(1.0 1.0) b '(9.0 9.0)) </pre>
+<pre class="prog_in_end">(setq c '(4.0 1.0) d '(4.0 2.0))</pre>
+<p class="prompt_end">命令： <span class="CharSansBold">(inters a b c d)</span>
+</p>
+<p class="prompt_end">nil </p>
+<p class="prompt_end">命令： <span class="CharSansBold">(inters a b c d T)</span>
+</p>
+<p class="prompt_end">nil </p>
+<p class="prompt_end">命令： <span class="CharSansBold">(inters a b c d nil)</span>
+</p>
+<p class="prompt_end">(4.0 4.0)</p>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
