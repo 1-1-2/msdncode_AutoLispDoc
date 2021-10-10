@@ -1,0 +1,75 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>vl-string-mismatch</title>
+<link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
+<link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
+<script src="ac_common.js" language="javascript"></script><script src="ac.strings.js" language="javascript"></script><script src="ac.acad_ak.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<div class="HeadingDiv">
+<table class="HeadingTable" border="0" cellspacing="0" cellpadding="0" width="103%">
+<tr valign="top">
+<td class="BookTitleCell" height="29">
+<div class="BookTitle">
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">明经通道 Visual LISP 函数</span></a>
+</div>	
+									&nbsp;
+								</td><td align="right">
+<table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
+<tr>
+<td class="InfoLine" id="infoline" align="right">明经通道 Visual LISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一层..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="TopHead">vl-string-mismatch</div>
+</td>
+</tr>
+<tr valign="bottom">
+<td height="33" colspan="2">
+<table cellpadding="0" cellspacing="0" border="0" class="TabTable">
+<tr>
+<td width="10">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<p id="crleadin" class="cr_leadin">返回两个字符串中从指定位置开始，最长的共同前缀的长度&nbsp;</p>
+<pre class="prog_in_end">(vl-string-mismatch str1 str2 [pos1 pos2 ignore-case-p])</pre>
+<p class="Heading-2">参数</p>
+<p class="define_head">str1</p>
+<p class="define_text">第一个要匹配的字符串。</p>
+<p class="define_head">str2</p>
+<p class="define_text">第二个要匹配的字符串。</p>
+<p class="define_head">pos1</p>
+<p class="define_text">整数型，从第一个字符串的该处开始搜索。如果省略则设为 0。</p> 
+<p class="define_head">pos2</p>
+<p class="define_text">整数型，从第二个字符串的该处开始搜索。如果省略则设为 0。</p> 
+<p class="define_head">ignore-case-p</p>
+<p class="define_text">如果该参数指定为 T 则不考虑大小写，否则区分大小写。</p> 
+<p class="Heading-2">返回值</p>
+<p class="body">整数。</p>
+<p class="Heading-2">示例</p>
+<pre class="prog_in">_$ (vl-string-mismatch &quot;VL-FUN&quot; &quot;VL-VAR&quot;)</pre>
+<pre class="prog_in">3</pre>
+<pre class="prog_in">_$ (vl-string-mismatch &quot;vl-fun&quot; &quot;avl-var&quot;)</pre>
+<pre class="prog_in">0</pre>
+<pre class="prog_in">_$ (vl-string-mismatch &quot;vl-fun&quot; &quot;avl-var&quot; 0 1)</pre>
+<pre class="prog_in">3</pre>
+<pre class="prog_in">_$ (vl-string-mismatch &quot;VL-FUN&quot; &quot;Vl-vAR&quot;)</pre>
+<pre class="prog_in">1</pre>
+<pre class="prog_in">_$ (vl-string-mismatch &quot;VL-FUN&quot; &quot;Vl-vAR&quot; 0 0 T)</pre>
+<pre class="prog_in_end">3</pre>
+<table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
+<tr valign="top">
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所有 未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
+</tr>
+</table>
+<p class="footer_padding">&nbsp;</p>
+</body> 
+</html>
