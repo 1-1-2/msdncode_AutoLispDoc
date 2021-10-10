@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>ssadd</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一�?.." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,46 +39,46 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">������ͼԪ�����뵽ѡ���У��򴴽��µ�ѡ��</p>
+<p id="crleadin" class="cr_leadin">将对象（图元）加入到选择集中，或创建新的选择�?/p>
 <pre class="prog_in_end">(ssadd [ename [ss]])</pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">ename</p>
-<p class="define_text">ͼԪ���ơ�</p>
+<p class="define_text">图元名称�?/p>
 <p class="define_head">ss</p>
-<p class="define_text">ѡ�񼯡�</p>
-<p class="body">��������������� ssadd �������������������κγ�Ա��ѡ�񼯣���ѡ�񼯣���������ñ�����ʱ�����ṩͼԪ������ ename����������һ��������ͼԪ��ѡ�񼯡�������ñ�����ʱͬʱ�ṩ��ͼԪ��������ѡ�� ss��ssadd ����ָ��ͼԪ���뵽��ѡ���С�</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">�ɹ�ʱ�������ں����ڶ��������еı��޸Ĺ���ѡ�񼯣����򷵻� 
-nil ��</p>
-<p class="Heading-2">ʾ��</p>
-<p class="body">��ѡ��������һ��ͼԪʱ����ͼԪ�������뵽����ѡ���У��������ɲ��� ss �����ѡ�񼯡������������ѡ�񼯱�����������������Ҳ�ᷴӳ���������ݡ����Ҫ���ӵ�ͼԪ�Ѵ�����ѡ���У��򽫺��� ssadd �����Ĳ������Ҳ������κδ���</p> 
-<p class="body">�� e1 ��Ϊͼ���е�һ��ͼԪ��ͼԪ����</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq e1 (entnext))</span>
+<p class="define_text">选择集�?/p>
+<p class="body">如果不带参数调用 ssadd 函数，它将创建不含任何成员的选择集（空选择集）。如果调用本函数时，仅提供图元名参数 ename，它将创建一个仅含该图元的选择集。如果调用本函数时同时提供了图元名参数和选择�?ss，ssadd 将把指定图元加入到该选择集中�?/p> 
+<p class="Heading-2">返回�?/p>
+<p class="body">成功时，返回在函数第二个参数中的被修改过的选择集；否则返回 
+nil �?/p>
+<p class="Heading-2">示例</p>
+<p class="body">在选择集中增加一个图元时，新图元将被加入到已有选择集中，并返回由参�?ss 传入的选择集。这样，如果该选择集被赋给其他变量，它也会反映新增的内容。如果要增加的图元已存在于选择集中，则将忽�?ssadd 函数的操作，且不报告任何错误�?/p> 
+<p class="body">�?e1 设为图形中第一个图元的图元名：</p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(setq e1 (entnext))</span>
 </p>
-<p class="prompt_end">&lt;ͼԪ��: 1d62d60&gt;</p>
-<p class="body">�� ss ��Ϊ��ѡ�񼯣�</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq ss (ssadd))</span>
-</p>
-<p class="prompt_end">&lt;Selection set:
-2&gt;</p>
-<p class="body">�������� e1 ͼԪ���ӵ��� ss ���յ�ѡ���У�&nbsp;</p>
-<p class="prompt_end">��� <span class="CharSansBold">(ssadd e1 ss)</span>
+<p class="prompt_end">&lt;图元�? 1d62d60&gt;</p>
+<p class="body">�?ss 设为空选择集：</p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(setq ss (ssadd))</span>
 </p>
 <p class="prompt_end">&lt;Selection set:
 2&gt;</p>
-<p class="body">��ȡ e1 �����ͼԪ��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(setq e2 (entnext
+<p class="body">下面的命令将 e1 图元添加到由 ss 参照的选择集中�?nbsp;</p>
+<p class="prompt_end">命令�?<span class="CharSansBold">(ssadd e1 ss)</span>
+</p>
+<p class="prompt_end">&lt;Selection set:
+2&gt;</p>
+<p class="body">获取 e1 后面的图元：</p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(setq e2 (entnext
 e1))</span>
 </p>
-<p class="prompt_end">&lt;ͼԪ��: 1d62d68&gt;</p>
-<p class="body">�� e2 ���ӵ� ss��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(ssadd e2 ss)</span>
+<p class="prompt_end">&lt;图元�? 1d62d68&gt;</p>
+<p class="body">�?e2 添加�?ss�?/p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(ssadd e2 ss)</span>
 </p>
 <p class="prompt_end">&lt;Selection set:
 2&gt;</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所�?未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>vl-catch-all-apply</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.246v.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ Visual LISP º¯Êý</span></a>
+<a href="ALR.default.246v.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ Visual LISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ Visual LISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ Visual LISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.246v.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,40 +39,40 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">½«²ÎÊý±í´«µÝ¸øÖ¸¶¨º¯Êý²¢½ØÈ¡´íÎó</p>
+<p id="crleadin" class="cr_leadin">å°†å‚æ•°è¡¨ä¼ é€’ç»™æŒ‡å®šå‡½æ•°å¹¶æˆªå–é”™è¯?/p>
 <pre class="prog_in_end">(vl-catch-all-apply 'function list)</pre>
-<p class="Heading-2">²ÎÊý</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">&rsquo;function</p>
-<p class="define_text">º¯Êý¡£function ²ÎÊý¿ÉÒÔÎª±êÊ¶ defun µÄ·ûºÅ»ò lambda ±í´ïÊ½¡£</p> 
+<p class="define_text">å‡½æ•°ã€‚function å‚æ•°å¯ä»¥ä¸ºæ ‡è¯?defun çš„ç¬¦å·æˆ– lambda è¡¨è¾¾å¼ã€?/p> 
 <p class="define_head">list</p>
-<p class="define_text">±í£¬°üº¬Òª´«µÝ¸øº¯ÊýµÄ²ÎÊý¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">Èç¹û³É¹¦Ôò·µ»Øº¯Êýµ÷ÓÃµÄ½á¹û¡£Èç¹û³öÏÖ´íÎó£¬vl-catch-all-apply ·µ»ØÒ»¸ö´íÎó¶ÔÏó¡£</p> 
-<p class="Heading-2">Ê¾Àý</p>
-<p class="body">Èç¹û vl-catch-all-apply µ÷ÓÃº¯Êý³É¹¦£¬ÔòÐ§¹ûºÍÊ¹ÓÃ apply Ò»Ñù£¬ÈçÏÂÀýËùÊ¾£º</p> 
+<p class="define_text">è¡¨ï¼ŒåŒ…å«è¦ä¼ é€’ç»™å‡½æ•°çš„å‚æ•°ã€?/p>
+<p class="Heading-2">è¿”å›žå€?/p>
+<p class="body">å¦‚æžœæˆåŠŸåˆ™è¿”å›žå‡½æ•°è°ƒç”¨çš„ç»“æžœã€‚å¦‚æžœå‡ºçŽ°é”™è¯¯ï¼Œvl-catch-all-apply è¿”å›žä¸€ä¸ªé”™è¯¯å¯¹è±¡ã€?/p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="body">å¦‚æžœ vl-catch-all-apply è°ƒç”¨å‡½æ•°æˆåŠŸï¼Œåˆ™æ•ˆæžœå’Œä½¿ç”?apply ä¸€æ ·ï¼Œå¦‚ä¸‹ä¾‹æ‰€ç¤ºï¼š</p> 
 <pre class="prog_in">_$ (setq catchit (apply '/ '(50 5)))</pre>
 <pre class="prog_in">10</pre>
 <pre class="prog_in">_$ (setq catchit (vl-catch-all-apply '/ '(50 5)))</pre>
 <pre class="prog_in_end">10</pre>
-<p class="body">Ê¹ÓÃ vl-catch-all-apply µÄºÃ´¦ÊÇ¿ÉÒÔ½ØÈ¡´íÎó£¬È»ºó¼ÌÐø´¦Àí¹ý³Ì¡£Èç¹ûÊ¹ÓÃ apply Ê±Óöµ½±»Áã³ýµÄÇé¿ö£¬Ôò£º</p> 
+<p class="body">ä½¿ç”¨ vl-catch-all-apply çš„å¥½å¤„æ˜¯å¯ä»¥æˆªå–é”™è¯¯ï¼Œç„¶åŽç»§ç»­å¤„ç†è¿‡ç¨‹ã€‚å¦‚æžœä½¿ç”?apply æ—¶é‡åˆ°è¢«é›¶é™¤çš„æƒ…å†µï¼Œåˆ™ï¼š</p> 
 <pre class="prog_in">_$ (setq catchit (apply '/ '(50 0)))</pre>
-<pre class="prog_in_end">; ´íÎó£º³ýÊýÎªÁã</pre>
-<p class="body">Ê¹ÓÃ apply Ê±³öÏÖÁËÒâÍâÇé¿ö£¬½«ÏÔÊ¾´íÎóÐÅÏ¢¡£</p> 
-<p class="body">Èç¹ûÊ¹ÓÃ vl-catch-all-apply&nbsp;</p>
+<pre class="prog_in_end">; é”™è¯¯ï¼šé™¤æ•°ä¸ºé›?/pre>
+<p class="body">ä½¿ç”¨ apply æ—¶å‡ºçŽ°äº†æ„å¤–æƒ…å†µï¼Œå°†æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯ã€?/p> 
+<p class="body">å¦‚æžœä½¿ç”¨ vl-catch-all-apply&nbsp;</p>
 <pre class="prog_in">_$ (setq catchit (vl-catch-all-apply '/ '(50 0)))</pre>
 <pre class="prog_in_end">#&lt;%catch-all-apply-error%&gt;</pre>
-<p class="body">vl-catch-all-apply º¯Êý½ØÈ¡´íÎó²¢·µ»ØÒ»¸ö´íÎó¶ÔÏó¡£Ê¹ÓÃ vl-catch-all-error-message À´²é¿´´íÎó¶ÔÏóÖÐµÄ´íÎóÐÅÏ¢£º</p> 
+<p class="body">vl-catch-all-apply å‡½æ•°æˆªå–é”™è¯¯å¹¶è¿”å›žä¸€ä¸ªé”™è¯¯å¯¹è±¡ã€‚ä½¿ç”?vl-catch-all-error-message æ¥æŸ¥çœ‹é”™è¯¯å¯¹è±¡ä¸­çš„é”™è¯¯ä¿¡æ¯ï¼š</p> 
 <p class="prompt_end">_$ <span class="CharCourierBold">(vl-catch-all-error-message
 catchit)</span>
 </p>
-<pre class="prog_in_end">&quot;³ýÊýÎªÁã&quot;</pre>
-<p class="see_also">²ÎÔÄ</p>
-<p class="body">±¾²Î¿¼ÖÐµÄ <a href="ALR.default.096.htm">*error*</a>¡¢ <a href="ALR.default.256.htm">vl-catch-all-error-p</a> 
-ºÍ <a href="ALR.default.255.htm">vl-catch-all-error-message</a> º¯Êý£¬ÒÔ¼° 
-¡¶Visual LISP ¿ª·¢ÈËÔ±ÊÖ²á¡·ÖÐµÄ <a href="ms-its:ACAD_ALG.chm::/ALG.08.047.htm">´íÎó´¦Àí</a>¡£</p>
+<pre class="prog_in_end">&quot;é™¤æ•°ä¸ºé›¶&quot;</pre>
+<p class="see_also">å‚é˜…</p>
+<p class="body">æœ¬å‚è€ƒä¸­çš?<a href="ALR.default.096.htm">*error*</a>ã€?<a href="ALR.default.256.htm">vl-catch-all-error-p</a> 
+å’?<a href="ALR.default.255.htm">vl-catch-all-error-message</a> å‡½æ•°ï¼Œä»¥å?
+ã€ŠVisual LISP å¼€å‘äººå‘˜æ‰‹å†Œã€‹ä¸­çš?<a href="ms-its:ACAD_ALG.chm::/ALG.08.047.htm">é”™è¯¯å¤„ç†</a>ã€?/p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

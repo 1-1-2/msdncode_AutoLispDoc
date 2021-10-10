@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>ssnamex</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一�?.." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,31 +39,31 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ȡ����ѡ�񼯴�����ʽ����Ϣ</p>
+<p id="crleadin" class="cr_leadin">获取关于选择集创建方式的信息</p>
 <pre class="prog_in_end">(ssnamex ss [index]) </pre>
-<p class="body">������ֻ�ܲ��ҵ�ǰͼ��ģ�Ϳռ��ͼֽ�ռ��е�ͼԪ�������ܲ��ҷ�ͼ�ζ���������鶨���е�ͼԪ��</p>
-<p class="Heading-2">����</p>
+<p class="body">本函数只能查找当前图形模型空间和图纸空间中的图元，而不能查找非图形对象和其他块定义中的图元�?/p>
+<p class="Heading-2">参数</p>
 <p class="define_head">ss</p>
-<p class="define_text">ѡ�񼯡�&nbsp;</p>
+<p class="define_text">选择集�?nbsp;</p>
 <p class="define_head">index</p>
-<p class="define_text">��������ʵ������ָ��ѡ���е�һ��Ԫ�ء�ѡ���еĵ�һ��Ԫ�ص����Ϊ�� (0)��</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">����ɹ���ssnamex ���� index ָ����ͼԪ�����Լ����ѡ�и�ͼԪ��˵�����ݡ����û���ṩ index ������������������һ���������а�����ѡ���е�ÿ��Ԫ�ص�ͼԪ�������ѡ�и�ͼԪ��˵�����ݡ���� index Ϊ�����򳬳���ѡ���е����ͼԪ��ţ�ssnamex ���� nil��</p> 
-<p class="body">ssnamex �������ص�������һ�������б������е�ÿ���ӱ�Ҫô��������ͼԪ����ѡ��ʽ����Ϣ��Ҫô������������ѡ��һ������ͼԪ�Ķ���ε���Ϣ��ÿһ������ѡ����ĳ��ͼԪ���ӱ��������������֣�ѡ��ʽ�� ID �ţ����ڻ���� 0 ������������ѡͼԪ��ͼԪ��������ͼԪѡ��ʽ�йص��ض����ݣ�����������ͼԪ����α�ѡ�еģ���</p> 
+<p class="define_text">整数（或实数），指定选择集中的一个元素。选择集中的第一个元素的序号为零 (0)�?/p> 
+<p class="Heading-2">返回�?/p>
+<p class="body">如果成功，ssnamex 返回 index 指定的图元名，以及如何选中该图元的说明数据。如果没有提�?index 参数，本函数将返回一个表，表中包括该选择集中的每个元素的图元名和如何选中该图元的说明数据。如�?index 为负数或超出了选择集中的最高图元序号，ssnamex 返回 nil�?/p> 
+<p class="body">ssnamex 函数返回的数据是一个表的列表，表中的每个子表要么包含描述图元和其选择方式的信息，要么包含描述用来选择一个或多个图元的多边形的信息。每一个描述选择集中某个图元的子表都包括三个部分：选择方式�?ID 号（大于或等�?0 的整数），被选图元的图元名，和与图元选择方式有关的特定数据（它用于描述图元是如何被选中的）�?/p> 
 <pre class="prog_in_end">((sel_id1 ename1 (data))(sel_id2ename2 (data)) ... )</pre>
-<p class="body">�±��г���ѡ��ʽ�� ID��</p> 
+<p class="body">下表列出了选择方式�?ID�?/p> 
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="2">
-<p class="table_heading">ѡ��ʽ ID </p> 
+<p class="table_heading">选择方式 ID </p> 
 </th>
 </tr>
 <tr class="row_0">
 <th>
 <p class="table_heading">ID</p>
 </th><th>
-<p class="table_heading">˵��</p>
+<p class="table_heading">说明</p>
 </th>
 </tr>
 </thead>
@@ -72,57 +72,57 @@
 <td class="BasicLeft_CELL">
 <p class="table_body">0 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">û��������Ϣ���� Last All��</p> 
+<p class="table_body">没有特殊信息（如 Last All�?/p> 
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">1 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ʰȡ</p>
+<p class="table_body">拾取</p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">2 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">���ڻ�ȦΧ</p>
+<p class="table_body">窗口或圈�?/p>
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">3</p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">������Ȧ��</p>
+<p class="table_body">窗交或圈�?/p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">4 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">��ѡ</p>
+<p class="table_body">栏�?/p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="body"></p>
-<p class="body">��������ѡ��ͼԪ���ö���ε��ӱ���ʽ���£�����һ������� ID �ţ�С�� 0 ���������������ǵ����������</p> 
+<p class="body">用来描述选择图元所用多边形的子表格式如下：先是一个多边形 ID 号（小于 0 的整数），接着是点的描述符�?/p> 
 <pre class="prog_in_end">(polygon_idpoint_description_1point_description_n... )</pre>
-<p class="body">����� ID �Ŵ� -1 ��ʼ���� -1 �ݼ������ں���ʾλ���йأ��������¼��ַ�ʽ���������޳�ֱ�ߡ����߻��߶Ρ�ÿ����������������������֣��������� ID �ţ�Ҫ������������ͣ������������һ����ѡ�ĵ�λ�������õ�λ�������������������޳��ߵķ��򣬻������������߶�����һ�˵�ƫ������</p> 
+<p class="body">多边�?ID 号从 -1 开始并�?-1 递减。由于和显示位置有关，点用以下几种方式描述：无限长直线、射线或线段。每个点的描述符包括三个部分：点描述�?ID 号（要描述的项的类型）、该项的起点和一个可选的单位向量，该单位向量或者用来描述无限长线的方向，或者用来描述线段另外一端的偏移量�?/p> 
 <pre class="prog_in_end">(point_descriptor_idbase_point[unit_or_offset_vector])</pre>
-<p class="body">�±��г�����Ч�ĵ��������� ID �ţ�</p> 
+<p class="body">下表列出了有效的点描述符�?ID 号：</p> 
 <table class="BasicLeft" rules="cols" cellspacing="0">
 <thead>
 <tr class="row_0">
 <th colspan="2">
-<p class="table_heading">�������� ID </p> 
+<p class="table_heading">点描述符 ID </p> 
 </th>
 </tr>
 <tr class="row_0">
 <th>
 <p class="table_heading">ID</p>
 </th><th>
-<p class="table_heading">˵��</p>
+<p class="table_heading">说明</p>
 </th>
 </tr>
 </thead>
@@ -131,48 +131,48 @@
 <td class="BasicLeft_CELL">
 <p class="table_body">0 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">���޳���</p>
+<p class="table_body">无限长线</p>
 </td>
 </tr>
 <tr class="row_2">
 <td class="BasicLeft_CELL">
 <p class="table_body">1 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">����</p>
+<p class="table_body">射线</p>
 </td>
 </tr>
 <tr class="row_1">
 <td class="BasicLeft_CELL">
 <p class="table_body">2 </p>
 </td><td class="BasicLeft_CELL">
-<p class="table_body">ֱ���߶�</p>
+<p class="table_body">直线线段</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="body"></p>
-<p class="body">����ӵ㲻�� 0,0,1�������� unit_or_offset_vector��</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="body">�� Pick������ 1����ʽѡ��ͼԪ����������� data �ǵ����������������磬���� WCS ��ƽ����ͼ��ʰȡ�� (1,1) ��ѡ����һ��ͼԪ�����صı�����������ʾ��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(ssnamex ss3 0)</span>
+<p class="body">如果视点不是 0,0,1，将返回 unit_or_offset_vector�?/p> 
+<p class="Heading-2">示例</p>
+<p class="body">�?Pick（类�?1）方式选择图元相关联的数据 data 是单个点描述符。例如，对在 WCS 的平面视图中拾取�?(1,1) 而选到的一个图元，返回的表可能如下所示：</p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(ssnamex ss3 0)</span>
 </p>
-<p class="prompt_end">((1 &lt;ͼԪ��:
+<p class="prompt_end">((1 &lt;图元�?
 1d62da0&gt; 0 (0 (1.0 1.0 0.0))))</p>
-<p class="body">�봰�ڡ�ȦΧ��������Ȧ��ѡ�񷽷������������ data ��ѡ��ͼԪ���õĶ���ε����� ID �š�������α�־�������������Լ��ڶ����������ѡ���ͼԪ�佨����ϵ����ȡ����Ӧ�ó������磬���ɴ�����ʽѡȡ��һ��ͼԪ�����صı�����������ʾ����ע������ ID ���� -1����</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(ssnamex ss4 0)</span>
+<p class="body">与窗口、圈围、窗交或圈交选择方法相关联的数据 data 是选定图元所用的多边形的整数 ID 号。将多边形标志符关联起来，以及在多边形与它所选择的图元间建立联系，则取决于应用程序。例如，对由窗交方式选取的一个图元，返回的表可能如下所示（请注意多边形 ID 号是 -1）：</p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(ssnamex ss4 0)</span>
 </p>
-<p class="prompt_end">((3 &lt;ͼԪ��:
+<p class="prompt_end">((3 &lt;图元�?
 1d62d60&gt; 0 -1) (-1 (0 (-1.80879 8.85536 0.0)) (0 (13.4004 8.85536
 0.0)) (0 (13.4004 1.80024 0.0)) (0 (-1.80879 1.80024 0.0))))</p>
-<p class="body">����ѡ��ʽ�������������һ���ɵ����������ɵı�����Щ����������������ѡ������ͼԪֱ���ϵĽ��㡣���磬��һ�����ƴ�ֱ���� Z ��ѡ�����ཻ���ε�ֱ�ߣ����صı�����������ʾ��</p> 
-<p class="prompt_end">��� <span class="CharSansBold">(ssnamex ss5 0)</span>
+<p class="body">与栏选方式相关联的数据是一个由点和描述符组成的表，这些点描述符描述的是选择栏和图元直观上的交点。例如，对一条近似垂直且�?Z 型选择栏相交三次的直线，返回的表可能如下所示：</p> 
+<p class="prompt_end">命令�?<span class="CharSansBold">(ssnamex ss5 0)</span>
 </p>
-<p class="prompt_end">((4 &lt;ͼԪ��:
+<p class="prompt_end">((4 &lt;图元�?
 1d62d88&gt; 0 (0 (5.28135 6.25219 0.0) ) (0 (5.61868 2.81961 0.0) )
 (0 (5.52688 3.75381 0.0) ) ) )</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所�?未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

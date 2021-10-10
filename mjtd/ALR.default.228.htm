@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>subst</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">Ã÷¾­Í¨µÀ AutoLISP º¯Êý</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">æ˜Žç»é€šé“ AutoLISP å‡½æ•°</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">Ã÷¾­Í¨µÀ AutoLISP º¯Êý&nbsp;</td><td class="NavGif"><a title="»Øµ½ÉÏÒ»²ã..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">æ˜Žç»é€šé“ AutoLISP å‡½æ•°&nbsp;</td><td class="NavGif"><a title="å›žåˆ°ä¸Šä¸€å±?.." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,60 +39,60 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">ÔÚ±íÖÐËÑË÷Ä³¾ÉÏî£¬²¢½«±íÖÐ³öÏÖµÄÃ¿Ò»¸ö¾ÉÏîÓÃÐÂÏî´úÌæ£¬È»ºó·µ»ØÐÞ¸ÄºóËùµÃµÄ±í</p>
+<p id="crleadin" class="cr_leadin">åœ¨è¡¨ä¸­æœç´¢æŸæ—§é¡¹ï¼Œå¹¶å°†è¡¨ä¸­å‡ºçŽ°çš„æ¯ä¸€ä¸ªæ—§é¡¹ç”¨æ–°é¡¹ä»£æ›¿ï¼Œç„¶åŽè¿”å›žä¿®æ”¹åŽæ‰€å¾—çš„è¡?/p>
 <pre class="prog_in_end">(subst newitem olditem lst)</pre>
-<p class="Heading-2">²ÎÊý</p>
+<p class="Heading-2">å‚æ•°</p>
 <p class="define_head">newitem</p>
-<p class="define_text">Ô­×Ó»ò±í¡£</p>
+<p class="define_text">åŽŸå­æˆ–è¡¨ã€?/p>
 <p class="define_head">olditem</p>
-<p class="define_text">Ô­×Ó»ò±í¡£</p>
+<p class="define_text">åŽŸå­æˆ–è¡¨ã€?/p>
 <p class="define_head">lst</p>
-<p class="define_text">±í¡£</p>
-<p class="Heading-2">·µ»ØÖµ</p>
-<p class="body">±í¡£ÆäÖÐÓÃ newitem Ìæ»»ÁËËùÓÐ³öÏÖµÄ olditem¡£Èç¹û lst ÖÐÎ´ÕÒµ½ olditem£¬subst ·µ»ØÔ­À´µÄ lst¡£</p> 
-<p class="Heading-2">Ê¾Àý</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(setq sample '(a 
+<p class="define_text">è¡¨ã€?/p>
+<p class="Heading-2">è¿”å›žå€?/p>
+<p class="body">è¡¨ã€‚å…¶ä¸­ç”¨ newitem æ›¿æ¢äº†æ‰€æœ‰å‡ºçŽ°çš„ olditemã€‚å¦‚æž?lst ä¸­æœªæ‰¾åˆ° olditemï¼Œsubst è¿”å›žåŽŸæ¥çš?lstã€?/p> 
+<p class="Heading-2">ç¤ºä¾‹</p>
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(setq sample '(a 
 b (c d) b))</span>
 </p>
 <p class="prompt_end">(A B (C D) B)</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(subst 'qq 'b sample)</span>
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(subst 'qq 'b sample)</span>
 </p>
 <p class="prompt_end">(A QQ (C D) QQ)</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(subst 'qq 'z sample)</span>
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(subst 'qq 'z sample)</span>
 </p>
 <p class="prompt_end">(A B (C D) B)</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(subst 'qq '(c d)
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(subst 'qq '(c d)
 sample)</span>
 </p>
 <p class="prompt_end">(A B QQ B)</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(subst '(qq rr) '(c
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(subst '(qq rr) '(c
 d) sample)</span>
 </p>
 <p class="prompt_end">(A B (QQ RR) B)</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(subst '(qq rr) 'z
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(subst '(qq rr) 'z
 sample)</span>
 </p>
 <p class="prompt_end">(A B (C D) B)</p>
-<p class="body">Óë assoc ¹²Í¬Ê¹ÓÃÊ±£¬subst º¯Êý¿ÉÒÔ·½±ãµØÌæ»»¹ØÁª±íÖÐÓëÄ³¹Ø¼ü×ÖÏà¹ØµÄÖµ¡£ÈçÏÂËùÊ¾¡£</p> 
-<p class="body">½«±äÁ¿ who ÉèÖÃÎª¹ØÁª±í£º</p> 
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(setq who '((first
+<p class="body">ä¸?assoc å…±åŒä½¿ç”¨æ—¶ï¼Œsubst å‡½æ•°å¯ä»¥æ–¹ä¾¿åœ°æ›¿æ¢å…³è”è¡¨ä¸­ä¸ŽæŸå…³é”®å­—ç›¸å…³çš„å€¼ã€‚å¦‚ä¸‹æ‰€ç¤ºã€?/p> 
+<p class="body">å°†å˜é‡?who è®¾ç½®ä¸ºå…³è”è¡¨ï¼?/p> 
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(setq who '((first
 john) (mid q) (last public)))</span>
 </p>
 <p class="prompt_end">((FIRST JOHN) (MID
 Q) (LAST PUBLIC))</p>
-<p class="body">È»ºó½« old ÉèÖÃÎª (FIRST JOHN)£¬new ÉèÖÃÎª (FIRST J)£º</p> 
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(setq old (assoc
+<p class="body">ç„¶åŽå°?old è®¾ç½®ä¸?(FIRST JOHN)ï¼Œnew è®¾ç½®ä¸?(FIRST J)ï¼?/p> 
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(setq old (assoc
 'first who) new '(first j))</span>
 </p>
 <p class="prompt_end">(FIRST J)</p>
-<p class="body">×îºó£¬Ìæ»»¹ØÁª±íÖÐµÚÒ»ÏîµÄÖµ£º</p>
-<p class="prompt_end">ÃüÁî£º <span class="CharSansBold">(subst new old who)</span>
+<p class="body">æœ€åŽï¼Œæ›¿æ¢å…³è”è¡¨ä¸­ç¬¬ä¸€é¡¹çš„å€¼ï¼š</p>
+<p class="prompt_end">å‘½ä»¤ï¼?<span class="CharSansBold">(subst new old who)</span>
 </p>
 <p class="prompt_end">((FIRST J) (MID Q)
 (LAST PUBLIC))</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>Ã÷¾­Í¨µÀ</a> °æÈ¨ËùÓÐ Î´¾­Ðí¿É ²»µÃ´«²¥</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="µã»÷´Ë´¦·¢ËÍÓÐ¹Ø¶Ô±¾Ö÷ÌâµÄÆÀÂÛ">ÆÀÂÛ</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>æ˜Žç»é€šé“</a> ç‰ˆæƒæ‰€æœ?æœªç»è®¸å¯ ä¸å¾—ä¼ æ’­</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="ç‚¹å‡»æ­¤å¤„å‘é€æœ‰å…³å¯¹æœ¬ä¸»é¢˜çš„è¯„è®º">è¯„è®º</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>

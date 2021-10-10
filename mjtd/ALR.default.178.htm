@@ -1,6 +1,6 @@
 <html>
 <head>
-<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>osnap</title>
 <link type="text/css" href="ac.acad_ak.css" rel="StyleSheet">
 <link media="print" type="text/css" href="ac.acad_ak_print.css" rel="StyleSheet">
@@ -12,13 +12,13 @@
 <tr valign="top">
 <td class="BookTitleCell" height="29">
 <div class="BookTitle">
-<a href="ALR.default.001.htm"><span class="BookTitleLink">����ͨ�� AutoLISP ����</span></a>
+<a href="ALR.default.001.htm"><span class="BookTitleLink">明经通道 AutoLISP 函数</span></a>
 </div>	
 									&nbsp;
 								</td><td align="right">
 <table border="0" cellspacing="0" cellpadding="0" class="HeadNavTable">
 <tr>
-<td class="InfoLine" id="infoline" align="right">����ͨ�� AutoLISP ����&nbsp;</td><td class="NavGif"><a title="�ص���һ��..." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
+<td class="InfoLine" id="infoline" align="right">明经通道 AutoLISP 函数&nbsp;</td><td class="NavGif"><a title="回到上一�?.." href="ALR.default.001.htm"><span onmouseout="showinfo(0);" onmouseover="showinfo(1);" class="HeadNavLink"><img border="0" src="ac.pg_up.gif"></span></a></td><td>&nbsp;</td> 
 </tr>
 </table>
 </td>
@@ -39,26 +39,26 @@
 </tr>
 </table>
 </div>
-<p id="crleadin" class="cr_leadin">��ĳ�ֶ���׽ģʽ������ָ��������һ���㣬�����ظõ�</p>
+<p id="crleadin" class="cr_leadin">将某种对象捕捉模式作用于指定点而获得一个点，并返回该点</p>
 <pre class="prog_in_end">(osnap pt mode) </pre>
-<p class="Heading-2">����</p>
+<p class="Heading-2">参数</p>
 <p class="define_head">pt</p>
-<p class="define_text">�㡣</p>
+<p class="define_text">点�?/p>
 <p class="define_head">mode</p>
-<p class="define_text">�ַ��������а�����һ��������Ч�Ķ���׽ģʽ��־������ mid��cen �ȣ�������־��֮���ö��Ÿ�����</p> 
-<p class="Heading-2">����ֵ</p>
-<p class="body">�㡣���ʰȡû�з��ض�������ʰȡ����û�м��ζ��󣬻򼸺ζ���������ѡ���Ķ���׽ģʽ�����򷵻� nil��osnap �������صĵ�ȡ���ڵ�ǰ��ά��ͼ��ϵͳ���� APERTURE �����á�</p> 
-<p class="Heading-2">ʾ��</p>
-<p class="prompt_end">��� <span class="CharSansBold">(setq pt1 (getpoint))</span>
+<p class="define_text">字符串，其中包含了一个或多个有效的对象捕捉模式标志符（如 mid、cen 等），各标志符之间用逗号隔开�?/p> 
+<p class="Heading-2">返回�?/p>
+<p class="body">点。如果拾取没有返回对象（如在拾取框内没有几何对象，或几何对象不能用于选定的对象捕捉模式），则返回 nil。osnap 函数返回的点取决于当前三维视图和系统变量 APERTURE 的设置�?/p> 
+<p class="Heading-2">示例</p>
+<p class="prompt_end">命令�?<span class="CharSansBold">(setq pt1 (getpoint))</span>
 </p>
 <p class="prompt_end">(11.8637 3.28269 0.0)</p>
-<p class="prompt_end">��� <span class="CharSansBold">(setq pt2 (osnap
+<p class="prompt_end">命令�?<span class="CharSansBold">(setq pt2 (osnap
 pt1 "_end,_int"))</span>
 </p>
 <p class="prompt_end">(12.1424 3.42181 0.0)</p>
 <table cellpadding="4" cellspacing="0" border="0" width="100%" class="FooterTable">
 <tr valign="top">
-<td><P class=element><a href=http://www.mjtd.com>����ͨ��</a> ��Ȩ���� δ������ ���ô���</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="����˴������йضԱ����������">����</span></a>&nbsp;</td>
+<td><P class=element><a href=http://www.mjtd.com>明经通道</a> 版权所�?未经许可 不得传播</td><td><script language=javascript src='ac.acad_mc.js'></script></td><td align="right">&nbsp;<a href="javascript:doComments();"><span class="CommentsLink" title="点击此处发送有关对本主题的评论">评论</span></a>&nbsp;</td>
 </tr>
 </table>
 <p class="footer_padding">&nbsp;</p>
